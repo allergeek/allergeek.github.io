@@ -1,0 +1,166 @@
+/* COLORS */
+
+@white:      #ffffff;
+@lightbg:    #f2f2f2;
+/* variation #dfdfdf */
+@lightgrey:  #b3b3b3;
+/* variation #7b7b7b */
+@darkgrey:   #4d4d4d;
+@blue:       royalblue;
+
+
+body {
+  background: @lightbg;
+}
+
+menu {
+  color: @darkgrey;
+  menuitem.bar {
+    background-color: @blue;
+    color: @lightbg; // need this for the ellipsis
+  }
+  menuitem span {
+    color: @lightbg;
+  }
+  a {
+    background: @blue;
+  }
+}
+
+h1, h2, p, span {
+  color: @darkgrey;
+}
+
+h3 {
+  color: @blue;
+}
+
+a {
+  &:visited {
+    color: @darkgrey;
+  }
+}
+
+a.sets {
+  color: @blue;
+}
+
+div.loader {
+  background: @blue;
+}
+
+.loader span,
+.form button {
+  color: @white;
+}
+
+span.tag,
+span.menu-item {
+  background: @lightbg - 0.20 * lightness(@lightbg);
+  /* #dfdfdf */
+  color: @darkgrey;
+    &:hover {
+      background: @blue;
+      color: @white;
+    }
+}
+
+.form {
+  background: @lightbg - 0.20 * lightness(@lightbg);
+  /* #dfdfdf */
+  input[type="text"] {
+    background-color: @white;
+    color: @blue;
+  }
+  button {
+    background: @blue;
+  }
+}
+
+.form-focus {
+    background-color: @blue;
+    span {
+      color: tint(@blue, 90%);
+    }
+    button.back-ctrl {
+      background-color: tint(@blue, 10%);
+      color: tint(@blue, 90%);
+    }
+}
+
+.form-focus button {
+  background-color: tint(@blue, 10%);
+}
+
+input::-webkit-input-placeholder {
+  color: @darkgrey;
+}
+
+/* TYPOGRAPHY */
+
+@header: 30px;
+// @header: 4vw;
+@paragraph: (@header / 3) * 2;
+
+h1 {
+  font-size: 1.25 * @header;
+  line-height: 1.5 * @header;
+}
+
+h2.unit {
+  font-size: @header;
+  line-height: 1.25 * @header;
+}
+
+h3, p,
+p.title  {
+  font-size: @paragraph;
+  line-height: 1.25 * @paragraph;
+}
+
+.loader span {
+  font-size: 1.25 * @paragraph;
+}
+
+menu .bar {
+  font-size: @paragraph;
+}
+
+span.stats {
+  font-size: 0.75 * @paragraph;
+}
+
+span, span.tag {
+ font-size: @paragraph;
+}
+
+p.introduction,
+p.subtitle {
+  font-size: 1.25 * @paragraph;
+  line-height: 1.5 * @paragraph;
+}
+
+.form button {
+  font-size: @paragraph;
+}
+
+input[type="text"] {
+  font-size: 1.25 * @paragraph;
+}
+
+.form-focus {
+  span {
+    font-size: 1.25 * @paragraph;
+  }
+  button {
+    font-size: 1.25 * @paragraph;
+  }
+}
+
+.subscribe button {
+  font-size: 1.25 * @paragraph;
+}
+
+button.back-ctrl {
+  font-size: @paragraph;
+}
