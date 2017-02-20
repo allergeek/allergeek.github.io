@@ -1,3 +1,1 @@
-# allergeek.github.io
-alice2
-hi there. 
+# hi there, this is a blog I keep in my spare time.
