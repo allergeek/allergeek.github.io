@@ -8,43 +8,176 @@
         <link rel="stylesheet/less" type="text/css" href="blog.less">
         <link rel="stylesheet" href="blog.css">
         <script src="less.js"></script>
+        <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+        <script src="../vue.js"></script>
     </head>
     <body>
         <header>
         </header>
-        <div class="centered">
+        <div class="centered" id="">
           <nav>
             <!-- <span class="b">Alice, too</span> -->
             <span class="menu-item"><a href="#">all posts in this blog</a></span><span class="menu-item"><a href="#">themes and tags</a></span>
           </nav>
           <p class="introduction"><b>Alice</b>: Hi, here's where I keep <b>my notes</b>. They cover a few different things as <a href="#"><b>nutrition</b></a>, <b>sleep</b>, <b>usability</b> and <b>popular science</b>. I also write about means to stay active, like <a href="#"><b>how to start running</b></a>. Look through the feed and pick whatever is of interest to you. Newest go first. This is an introduction to the blog feed.</p>
-        </div>
-        <div class="centered">
+
+          <div class="unit-card">
             <h2 class="unit">It only takes 3 hours for nicotine to leave your body.</h2>
-            <a href="alice-tag-page.html"><span class="tag tag-title">quit smoking for good<span class="stats">432</span></span></a>
-        </div>
-        <div class="centered">
+            <span class="tag tag-title">beginner's guide to quitting smoking</span>
+          </div>
+
+          <div id="myapp">
+            <!-- the v-for directive can be used for displaying a list of items using the data from an Array -->
+
+            <!-- STATIC -->
+            <!-- <h2 v-for="note in book">{{ note.text }}</h2> -->
+          </div>
+          <div id="myapp2">
+            <nott-comp v-for="item in book" v-bind:someProp="item"></nott-comp>
+            <spannn></spannn>
+          </div>
+
+          <div id="app-7">
+            <ol>
+              <!-- Now we provide each todo-item with the todo object    -->
+              <!-- it's representing, so that its content can be dynamic -->
+              <todo-comp v-for="abcD in PPpp" v-bind:thatPRo="abcD"></todo-comp>
+              <!-- abcD working (case-sensitive)?? the random capitalization of props 'thatpro' working?? -->
+            </ol>
+          </div>
+
+
+          <div class="unit-card">
             <h2 class="unit">Smoking is related to a range of life-threatening illnesses.</h2>
-            <a href="alice-tag-page.html"><span class="tag tag-title">quit smoking for good<span class="stats">432</span></span></a>
-        </div>
-        <div class="centered">
+            <a href="alice-tag-page.html"><span class="tag tag-title">beginner's guide to quitting smoking</span></a>
+          </div>
             <h2 class="unit">Choose an easy route for your first run.</h2>
-            <a href="alice-tag-page.html"><span class="tag tag-title tag-run">running, cardio and aerobic exercise<span class="stats">102</span></span></a>
-        </div>
-        <div class="centered">
+            <a href="alice-tag-page.html"><span class="tag tag-title tag-run">running, cardio and aerobic exercise</span></a>
+
             <h2 class="unit">You don't have to buy running gear to start running.</h2>
-            <a href="alice-tag-page.html"><span class="tag tag-title tag-run">running, cardio and aerobic exercise<span class="stats">102</span></span></a>
-        </div>
-        <div class="centered">
+            <a href="alice-tag-page.html"><span class="tag tag-title tag-run">running, cardio and aerobic exercise</span></a>
+
             <h2 class="unit">After the first couple days you will feel anxious. Hold on, the feeling will cease.</h2>
-            <a href="alice-tag-page.html"><span class="tag tag-title">tag title and subscription theme<span class="stats">432</span></span></a>
-        </div>
-        <div class="divider">
-        </div>
-        <div class="centered">
+            <a href="alice-tag-page.html"><span class="tag tag-title">tag title and subscription theme</span></a>
+            <div class="divider">
+            </div>
             <div class="loader">
                 <span>see more</span>
             </div>
         </div>
+        <script>
+
+          // VUE js
+
+          //component example
+          //used as '<todo-item></todo-item>' in the DOM
+
+          Vue.component('todo-item', {
+            template: '<li>This is a todo</li>'
+          })
+
+          // - - -
+
+
+          // Define a new component called 'note-comp',
+          // it is then used in the HTML markup.
+          Vue.component('nott-comp', {
+            // declare the props
+            // a prop is like a custom attribute
+            props: ['someprop'],
+            //
+
+            // this is the same variable from props
+            // that will now be used in a template
+            template: '<h2 class="unit" style="color: blue"> {{ someprop.txt }} </h2>'
+            // template: '<h2 class="unit">{{ notes.item }}</h2>'
+          })
+
+          Vue.component('spannn', {
+            // declare the props
+            // a prop is like a custom attribute
+            props: ['spanref'],
+            //
+
+            // this is the same variable from props
+            // that will now be used in a template
+            template: '<span class="tag tag-title">STATIC</span>'
+            // template: '<h2 class="unit">{{ notes.item }}</h2>'
+          })
+
+
+          //the v-for directive can be used for displaying a list
+          //of items using the data from an Array
+
+          var myapp2 = new Vue({
+            el: '#myapp2',
+            data: {
+              book: [
+                { txt: 'Vegetables' },
+                { txt: 'Cheese' },
+                { text: 'Whatever else humans are supposed to eat' }
+              ]
+            }
+          })
+
+          // var myapp = new Vue({
+          //   el: '#myapp',
+          //   data: {
+          //     book: [
+          //       { text: 'Vegetables' },
+          //       { text: 'Cheese' },
+          //       { text: 'Whatever else humans are supposed to eat' }
+          //     ]
+          //   }
+          // })
+
+          // - - -
+
+          Vue.component('todo-comp', {
+            props: ['thatpro'],
+            template: '<h2 class="unit" style="color: green">{{ thatpro.nnn }}</h2>'
+            // NO camelback or capitalization for these two! WHY?
+          })
+
+          var app7 = new Vue({
+            el: '#app-7',
+            data: {
+              PPpp: [
+                { nnn: 'Vegetables. Case-sensitive.' },
+                // { text: 'Cheese' },
+                { nnn: 'Whatever else humans are supposed to eat. A good question, actually...' }
+              ]
+            }
+          })
+
+    // Vue.component('terms-of-service', {
+    //   template: '\
+    //     <div v-once>\
+    //       <h1>Terms of Service</h1>\
+    //       ... a lot of static content ...\
+    //     </div>\
+    //   '
+    // })
+
+
+        </script>
+        <script>
+
+          (function() {
+            function viewPage() {
+              location.href = 'alice-tag-page.html';
+            }
+            function read() {
+              var num = document.getElementsByClassName('unit-card').length;
+              console.log(num);
+              for (i = 0; i < num; i++) {
+                document.getElementsByClassName('unit-card')[i].addEventListener('click', viewPage);
+              }
+            }
+            read();
+          })();
+
+
+        </script>
     </body>
-</html>
+    </html>

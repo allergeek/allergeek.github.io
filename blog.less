@@ -58,11 +58,16 @@ span.tag,
 span.menu-item {
   background: @lightbg - 0.20 * lightness(@lightbg);
   /* #dfdfdf */
-  color: @darkgrey;
+  // color: @darkgrey;
     &:hover {
-      background: @blue;
-      color: @white;
+      // background: @blue;
+      // color: @white;
     }
+}
+
+span.menu-item:hover {
+  background: @blue;
+  color: @white;
 }
 
 .form {
