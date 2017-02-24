@@ -108,6 +108,7 @@ span.tag-title {
 }
 
 nav span,
+#second-nav span,
 span.tag-similar {
   display: inline-block;
 }
@@ -172,7 +173,7 @@ div.loader {
     text-align: left;
     /*padding: 2.25vw 0;*/
     padding: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 div.subscribe button {
@@ -378,13 +379,16 @@ h2.unit {
 }
 
 .unit-card {
-  /*background: grey;*/
   border-radius: 4px;
   margin: 30px 0 10px;
 }
 
+.unit-card:last-of-type {
+  margin-bottom: 40px;
+}
+
 .unit-card h2 {
-  margin: 0 0 10px;
+  margin: 0 0 15px;
 }
 
 .unit-card {
@@ -396,7 +400,6 @@ h2.unit {
 }
 
 .unit-card:hover {
-  background: white;
 }
 
 .shared {
@@ -715,6 +718,14 @@ nav {
   margin: 20px 0 0;
 }
 
+#second-nav {
+  margin: 80px 0 40px;
+}
+
+p.introduction a {
+  color: rgb(77, 77, 77);
+}
+
 p.introduction a {
   border-bottom: 1px solid rgb(77, 77, 77);
 }
@@ -728,15 +739,21 @@ span.menu-item {
   margin: 0 10px 0 0;
 }
 
-nav span.menu-item a {
+nav span.menu-item a,
+#second-nav span.menu-item a {
   /*display: block;*/
   /*margin: 0;*/
   color: white;
 }
 
-nav span.menu-item {
+nav span.menu-item,
+#second-nav span.menu-item {
   padding: 0 6px 3px;
   /* COMPENSATING FOR SMALL-CAPS */
+}
+
+#second-nav span.menu-item {
+  background: grey;
 }
 
 p.introduction a:hover {
