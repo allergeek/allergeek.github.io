@@ -18,7 +18,8 @@
         <div class="centered" id="">
           <nav>
             <span class="menu-item"><a href="#">all posts in this blog</a></span><!--
-         --><span class="menu-item"><a href="#">themes and tags</a></span>
+         --><span class="menu-item"><a href="#">themes and tags</a></span><!--
+         --><span class="menu-item about-alice"><a href="#">about alice</a></span>
           </nav>
 
           <div id="introduction">
@@ -27,7 +28,7 @@
           </div>
 
           <div id="gather">
-            <div v-for="item in notesarray" class="unit-card">
+            <div v-for="item in notesArray" class="unit-card">
               <h2 class="unit"> {{ item.note }} </h2>
               <span class="tag tag-title"> {{ item.title }} </span>
             </div>
@@ -37,17 +38,21 @@
             <span>see more</span>
           </div>
 
-          <!-- <div id="second-nav">
+          <div id="footer-nav">
             <span class="menu-item"><a href="#">all posts in this blog</a></span>
             <span class="menu-item"><a href="#">themes and tags</a></span>
-          </div> -->
+            <span class="menu-item"><a href="#">about alice</a></span>
+          </div>
 
         </div>
 
         <script>
 
-          var indexmodel = {
-            notesarray: [
+          var indexModel = {
+            notesArray: [
+              { note: 'TO-DO: turn off text select for notes in the feed',
+                title: 'to-do' },
+
               { note: 'It only takes 3 hours for nicotine to leave your body.',
                 title: 'beginner\'s guide to quitting smoking' },
 
@@ -72,7 +77,7 @@
 
           var myview = new Vue({
             el: '#gather',
-            data: indexmodel
+            data: indexModel
           });
 
           // - - -
@@ -104,7 +109,7 @@
 
           (function() {
             function viewPage() {
-              location.href = 'alice-tag-page.html';
+              // location.href = 'alice-tag-page.html';
             }
             function read() {
               var num = document.getElementsByClassName('unit-card').length;
