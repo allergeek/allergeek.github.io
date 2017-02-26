@@ -1,7 +1,6 @@
-* {
+html {
     font-family: sans-serif;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    /*font-family: "Fira Sans", Helvetica, Arial, sans-serif;*/
 }
 
 * {
@@ -36,7 +35,6 @@ html {
 
 body {
   position: relative;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
     /*background: rgba(0,0,0,0.8);*/
     margin: 0 auto;
     /*padding: 0;*/
@@ -78,7 +76,7 @@ p {
 
 .centered {
     margin: 0 auto;
-    /*max-width: 60vw; /* var 1 - 35 characters max - 60 vw / 4vw */
+    /*max-width: 60vw; var 1 - 35 characters max - 60 vw / 4vw */
     /* max-width: 72vw;  ? characters max - 72 vw / 4vw */
     max-width: calc(100vw - 40px);
     width: 100%;
@@ -91,6 +89,14 @@ p {
 .str {
   font-style: normal;
     text-decoration: line-through;
+}
+
+.source-title {
+  color: #b3b3b3;
+  font-weight: 300;
+  display: block;
+  margin: 0 0 0 20px;
+  font-variant: small-caps;
 }
 
 span.tag {
@@ -108,9 +114,14 @@ span.tag-title {
 }
 
 nav span,
-#second-nav span,
+#footer-nav span,
 span.tag-similar {
   display: inline-block;
+}
+
+span.tag-page {
+  display: inline-block;
+  margin: 0 4px 4px 0;
 }
 
 span.tag-run {
@@ -301,6 +312,10 @@ div.auth {
   background: none;
 }
 
+div.comments {
+  margin: 0;
+}
+
 .comments textarea {
   width: 100%;
   resize: none;
@@ -449,7 +464,7 @@ p.title {
   font-weight: 400;
 }
 
-p,tags {
+p.tags {
   margin: 15px 0 10px;
 }
 
@@ -650,7 +665,7 @@ button.comment-page {
 }
 
 .level-block:first-of-type {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .level-block {
@@ -659,8 +674,12 @@ button.comment-page {
 }
 
 a.suggest {
+  display: inline-block;
+  /*background: red;*/
+  margin: 0 0px;
   /*text-align: right;*/
   /*align-items: flex-end;*/
+  white-space: nowrap;
 }
 
 .float-r {
@@ -718,7 +737,7 @@ nav {
   margin: 20px 0 0;
 }
 
-#second-nav {
+#footer-nav {
   margin: 80px 0 40px;
 }
 
@@ -736,24 +755,28 @@ span.menu-item {
   border-radius: 4px;
   font-weight: 400;
   font-variant: small-caps;
-  margin: 0 10px 0 0;
+  margin: 0 10px 10px 0;
 }
 
 nav span.menu-item a,
-#second-nav span.menu-item a {
+#footer-nav span.menu-item a {
   /*display: block;*/
   /*margin: 0;*/
   color: white;
 }
 
 nav span.menu-item,
-#second-nav span.menu-item {
+#footer-nav span.menu-item {
   padding: 0 6px 3px;
   /* COMPENSATING FOR SMALL-CAPS */
 }
 
-#second-nav span.menu-item {
-  background: grey;
+#footer-nav span.menu-item {
+  background: #dfdfdf;
+}
+
+#footer-nav span.menu-item a {
+  color: #7b7b7b;
 }
 
 p.introduction a:hover {
