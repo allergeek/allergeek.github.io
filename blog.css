@@ -76,8 +76,6 @@ p {
 
 .centered {
     margin: 0 auto;
-    /*max-width: 60vw; var 1 - 35 characters max - 60 vw / 4vw */
-    /* max-width: 72vw;  ? characters max - 72 vw / 4vw */
     max-width: calc(100vw - 40px);
     width: 100%;
 }
