@@ -117,9 +117,14 @@ span.tag-similar {
   display: inline-block;
 }
 
-span.tag-page {
+span.tag-page,
+span.entry-tag {
   display: inline-block;
   margin: 0 4px 4px 0;
+}
+
+span.entry-tag {
+  color: #b3b3b3;
 }
 
 span.tag-run {
@@ -393,11 +398,11 @@ h2.unit {
 
 .unit-card {
   border-radius: 4px;
-  margin: 30px 0 10px;
+  margin: 30px 0;
 }
 
 .unit-card:last-of-type {
-  margin-bottom: 40px;
+  /*margin-bottom: 140px;*/
 }
 
 .unit-card h2 {
@@ -405,7 +410,8 @@ h2.unit {
 }
 
 .unit-card {
-  cursor: pointer;
+  /*background: grey;*/
+  /*cursor: pointer;*/
 }
 
 .unit-card h2 {
@@ -464,6 +470,31 @@ p.title {
 
 p.tags {
   margin: 15px 0 10px;
+}
+
+.unit-card h2.entry-title {
+  display: inline;
+  font-weight: 400;
+  border-bottom: 2px solid rgb(77, 77, 77);
+  /*text-transform: uppercase;*/
+  /*color: #4d4d4d;*/
+  /*margin: 42px 0 0;*/
+}
+
+h2.entry-title:hover {
+  /*color: royalblue;*/
+}
+
+.unit-card > span {
+  display: inline-block;
+  padding: 0 0 20px;
+}
+
+div.unit-title-wrapper {
+}
+
+#feed {
+  padding-bottom: 10px;
 }
 
 .form input {
