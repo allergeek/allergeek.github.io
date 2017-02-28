@@ -117,6 +117,10 @@ span.tag-similar {
   display: inline-block;
 }
 
+span.tag-similar {
+  cursor: pointer;
+}
+
 span.tag-page,
 span.entry-tag {
   display: inline-block;
@@ -161,11 +165,6 @@ menu menuitem.bar {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-menu menuitem span {
-
-
 }
 
 menu menuitem a {

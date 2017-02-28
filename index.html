@@ -5,11 +5,11 @@
         <meta name=viewport content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
         <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="index.css">
         <link rel="stylesheet/less" type="text/css" href="blog.less" />
+        <link rel="stylesheet" href="index.css">
         <script src="less.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script src="vue.js"></script>
+        <!-- <script src="../vue.js"></script> -->
     </head>
     <body>
         <header>
@@ -17,7 +17,7 @@
         <div class="centered" id="">
           <nav>
             <span class="menu-item"><a href="#">all posts in this blog</a></span><!--
-         --><span class="menu-item"><a href="alice-all-tags.html">themes and tags</a></span>
+         --><span class="menu-item"><a href="#">themes and tags</a></span>
           </nav>
 
           <div id="introduction">
@@ -36,11 +36,10 @@
             <span>see more</span>
           </div>
 
-          <div id="footer-nav">
+          <!-- <div id="footer-nav">
             <span class="menu-item"><a href="#">all posts in this blog</a></span>
             <span class="menu-item"><a href="#">themes and tags</a></span>
-            <span class="menu-item"><a href="#">about alice</a></span>
-          </div>
+          </div> -->
 
         </div>
 
@@ -48,6 +47,9 @@
 
           var indexModel = {
             notesArray: [
+              { note: 'How many percent ready for the next release? 60',
+                title: 'to-do' },
+
               { note: 'TO-DO: turn off text select for notes in the feed',
                 title: 'to-do' },
 
@@ -107,18 +109,19 @@
 
           (function() {
             function viewPage() {
-              // location.href = 'alice-tag-page.html';
+              location.href = 'alice-tag-page.html';
             }
             function read() {
-              var num = document.getElementsByClassName('unit-card').length;
+              var num = [];
+              num = document.querySelectorAll('h2.unit');
               console.log(num);
-              for (i = 0; i < num; i++) {
-                document.getElementsByClassName('unit-card')[i].addEventListener('click', viewPage);
+              console.log(num.length);
+              for (i = 0; i < num.length ; i++) {
+                num[i].addEventListener('click', viewPage);
               }
             }
             read();
           })();
-
 
         </script>
     </body>

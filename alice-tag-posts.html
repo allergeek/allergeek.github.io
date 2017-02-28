@@ -9,7 +9,7 @@
       <link rel="stylesheet/less" type="text/css" href="blog.less" />
       <script src="less.js"></script>
       <script src="https://unpkg.com/vue/dist/vue.js"></script>
-      <!-- <script src="../vue.js"></script> -->
+      <!-- <script src="vue.js"></script> -->
     </head>
     <body>
       <div class="body-container">
@@ -17,9 +17,9 @@
         </header>
         <div class="centered">
           <div class="form">
-            <h1>All posts in this blog</h1>
+            <h1>All posts about <b>Health</b></h1>
           </div>
-          <p class="introduction"><b>Alice</b>: Here are all the recent posts.</p>
+          <p class="introduction"><b>Alice</b>: Here are all posts about <b>Health</b>.</p>
           <div id="feed">
             <div class="unit-card">
               <span><a href="alice-tag-page.html"><h2 class="unit entry-title">What is usability?
@@ -50,7 +50,7 @@
           </div>
           <div class="unit-card">
             <span>
-              <h2 class="unit entry-title">How to quit smoking, part&nbsp;1</h2>
+              <a href="alice-tag-page.html"><h2 class="unit entry-title">How to quit smoking, part&nbsp;1</h2></a>
             </span>
               <div>
                 <span class="tag entry-tag">smoking</span>
@@ -83,7 +83,24 @@
       </div>
     </div>
 
-  <script>
-  </script>
+    <script>
+
+      (function() {
+        function viewPostsByTag() {
+          location.href = 'alice-tag-posts.html';
+        }
+        function exploreTag() {
+          var num = [];
+          num = document.querySelectorAll('span.entry-tag');
+          console.log(num);
+          console.log(num.length);
+          for (i = 0; i < num.length ; i++) {
+            num[i].addEventListener('click', viewPostsByTag);
+          }
+        }
+        exploreTag();
+      })();
+
+    </script>
   </body>
 </html>
