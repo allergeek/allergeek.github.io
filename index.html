@@ -12,28 +12,70 @@
         <!-- <script src="../vue.js"></script> -->
     </head>
     <body>
-        <header>
-        </header>
-        <div class="centered" id="">
-          <nav>
-            <span class="menu-item"><a href="#">all posts in this blog</a></span><!--
-         --><span class="menu-item"><a href="#">themes and tags</a></span>
-          </nav>
+    <header>
+    </header>
+      <div id="app" class="centered">
+      <!-- #app is an element to mount root Vue instance -->
 
-          <div id="introduction">
-            <!-- <blog-intro></blog-intro> -->
-            <p v-html="introduction" class="introduction blog-intro"></p>
-          </div>
+      <!-- <div id="index-menu" v-html="menulabel"> -->
+      <!-- </div> -->
 
-          <div id="gather">
+      <div id="introduction">
+        <!-- <to-do></to-do> -->
+        <p v-html="introduction" class="introduction blog-intro"></p>
+      </div>
+
+      <div id="feed">
+        <!-- <comp-name></comp-name> -->
+
+        <!-- template tag is not rendered and can be placed anywhere in the HTML -->
+        <!-- it can be used for complex HTML content -->
+
+        <!-- this is also called child's component constructor -->
+        <my-unit
+          v-for="item in running1"
+          v-bind:note-prop="item.note"
+          v-bind:title-prop="item.title">
+        </my-unit>
+      </div>
+
+      </div>
+
+      <template id="todolist-template">
+        <div v-once>
+          <p class="introduction blog-intro">
+            <i class="str">Make loader component work.</i>
+            <i class="str">How to assign classes with Vue?</i>
+          </p>
+        </div>
+      </template>
+
+      <template id="feed-template">
+        <div class="unit-card">
+          <!-- <h2 class="unit"> {{ one }} </h2> -->
+          <!-- <h2 class="unit"> {{ two }} </h2> -->
+          <!-- <h2 class="unit"> {{ three }} </h2> -->
+          <h2 class="unit"> {{ noteProp }}</h2>
+          <span class="tag tag-title"> {{ titleProp }} </span>
+        </div>
+      </template>
+
+      <template id="loader-template">
+        <div class="loader full-width">
+          <!-- <span>see more</span> -->
+          <span class="subtle-message">there are no more notes now</span>
+        </div>
+      </template>
+
+          <!-- <div id="gather">
             <div v-for="item in notesArray" class="unit-card">
               <h2 class="unit"> {{ item.note }} </h2>
               <span class="tag tag-title"> {{ item.title }} </span>
             </div>
-          </div>
+          </div> -->
 
-          <div class="loader">
-            <span>see more</span>
+          <div id="vue-container">
+            <loader v-on:click=""></loader>
           </div>
 
           <!-- <div id="footer-nav">
@@ -41,55 +83,120 @@
             <span class="menu-item"><a href="#">themes and tags</a></span>
           </div> -->
 
-        </div>
-
         <script>
 
-          var indexModel = {
-            notesArray: [
-              { note: 'How many percent ready for the next release? 60',
-                title: 'to-do' },
+        var indexModel = {
+          running1: [
+            { note: 'Choose an easy route for your first run.\
+                     Plan your route around neighborhood streets you\'re already familiar with.',
+              title: 'how to start running'
+            },
+            { note: 'You don\'t have to buy running gear to start running.\
+                     Put on something you feel comfortable in. Pick your favorite hoodie or t-shirt over everything else.',
+              title: 'how to start running'
+            },
+            { note: 'It\'s a good thing to gather all the items you plan to wear on the day before.\
+                     Having everything set will get logistics out of your way and boost your confidence.\
+                     ',
+              title: 'how to start running'
+            },
+            { note: 'Keep an eye for traffic.\
+                     You can run streets that have lite traffic or none at all – and walk the busy ones.\
+                     ',
+              title: 'how to start running'
+            },
+            { note: 'Try to find your moderate speed.\
+                     It is a good speed if you can breeze through the nose and get enough air.\
+                     ',
+              title: 'how to start running'
+            }
+          ],
+          notesArray: [
+            { note: 'How many percent ready for the next release? 60',
+              title: 'to-do' },
 
-              { note: 'TO-DO: turn off text select for notes in the feed',
-                title: 'to-do' },
+            { note: 'TO-DO: turn off text select for notes in the feed',
+              title: 'to-do' },
 
-              { note: 'It only takes 3 hours for nicotine to leave your body.',
-                title: 'beginner\'s guide to quitting smoking' },
+            { note: 'It only takes 3 hours for nicotine to leave your body.',
+              title: 'beginner\'s guide to quitting smoking' },
 
-              { note: 'Smoking is related to a range of life-threatening illnesses.',
-                title: 'running, cardio and aerobic exercise' },
+            { note: 'Smoking is related to a range of life-threatening illnesses.',
+              title: 'running, cardio and aerobic exercise' },
 
-              { note: 'Choose an easy route for your first run.',
-                title: 'running, cardio and aerobic exercise' },
+            { note: 'Choose an easy route for your first run.',
+              title: 'running, cardio and aerobic exercise' },
 
-              { note: 'You don\'t have to buy running gear to start running.\
-                       Put on something you feel comfortable in.',
-                title: 'running, cardio and aerobic exercise' },
+            { note: 'You don\'t have to buy running gear to start running.\
+                     Put on something you feel comfortable in.',
+              title: 'running, cardio and aerobic exercise' },
 
-              { note: 'After the first couple days you will feel anxious. Hold on, the feeling will cease.',
-                title: 'running, cardio and aerobic exercise' }
-            ],
-            mews: [
-              { mymew: 'mew1' },
-              { mymew: 'mew2' }
-            ]
-          };
+            { note: 'After the first couple days you will feel anxious. Hold on, the feeling will cease.',
+              title: 'running, cardio and aerobic exercise' }
+          ],
+          mews: [
+            { mymew: 'mew1' },
+            { mymew: 'mew2' }
+          ]
+        };
 
-          var myview = new Vue({
-            el: '#gather',
+        // var myview = new Vue({
+        //   el: '#gather',
+        //   data: indexModel
+        // });
+
+        // - - -
+
+        var feedLoader = {
+          template: "#loader-template"
+        }
+
+        var todoList = {
+          template: "#todolist-template"
+        }
+
+
+          // component goes first, then Vue instance that uses it
+          // the template property value is used to replace the component when HTML is rendered
+          // Vue.component('comp-name', {
+            // template: '<span>Hello</span>'
+          //   template: '#comp-template',
+          //   props: []
+          // });
+
+          // var myExtension = Vue.extend({
+          //   template: '#comp-template',
+          //   props: ['note-prop', 'title-prop']
+          // });
+
+          // Vue.component('my-unit', myExtension);
+
+          Vue.component('my-unit', {
+            template: '#feed-template',
+            props: ['note-prop', 'title-prop']
+          });
+
+          var mounted = new Vue ({
+            el: "#feed",
+
+            // data:
+            //   function() {
+            //     return {
+            //       one: 'this is one',
+            //       two: 'that is two',
+            //       three: 'and three'
+            //     }
+            //   }
+
             data: indexModel
           });
 
-          // - - -
-
-          // Vue.component('blog-intro', {
-          //   template: '\
-          //     <div v-once>\
-          //     <p class="introduction blog-intro">\
-          //     <b>Alice</b>: Hi, here\'s where I keep <b>my notes</b>. They cover a few different things as <a href="#"><b>nutrition</b></a>, <b>sleep</b>, <b>usability</b> and <b>popular science</b>. I also write about means to stay active, like <a href="#"><b>how to start running</b></a>. Look through the feed and pick whatever is of interest to you. Newest go first. This is an introduction to the blog feed.</p>\
-          //     </div>\
-          //   '
-          // });
+          new Vue({
+            el: '#vue-container',
+            components: {
+              'loader' : feedLoader
+            }
+          });
 
           new Vue({
             el: '#introduction',
@@ -100,7 +207,21 @@
               \
               I also write about means to stay active, like <a href="#"><b>how to start running</b></a>.\
               \
-              Each note you may find below will take you to a blog entry.'
+              Each note you may find below will take you to a blog entry (not yet).\
+              '
+            },
+            components: {
+              'to-do' : todoList
+            }
+          });
+
+          new Vue({
+            el: '#index-menu',
+            data: {
+              menulabel: '<nav>\
+                <span class="menu-item"><a href="#">all posts in this blog</a></span>\
+                <span class="menu-item"><a href="#">themes and tags</a></span>\
+              </nav>'
             }
           });
 
@@ -120,7 +241,7 @@
                 num[i].addEventListener('click', viewPage);
               }
             }
-            read();
+            // read();
           })();
 
         </script>

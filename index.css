@@ -112,7 +112,7 @@ p.introduction a:hover {
 .unit-card {
   border-radius: 4px;
   margin: 30px 0;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
 .unit-card:last-of-type {
@@ -140,7 +140,25 @@ h2.unit {
   cursor: pointer;
   text-align: left;
   padding: 24px;
+  height: 73px;
   margin-bottom: 20px;
+}
+
+span.subtle-message {
+  font-weight: 300;
+}
+
+div.full-width {
+  border-radius: 0;
+  margin: 0;
+  height: 100px;
+  display: flex;
+}
+
+.full-width span {
+  width: 100%;
+  align-self: center;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
