@@ -1,64 +1,4 @@
-* {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-html {
-  font-family: sans-serif;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-}
-
-body {
-  position: relative;
-  margin: 0 auto;
-}
-
-header {
-  width: 100%;
-  top: 0;
-}
-
-h2 {
-  font-weight: 400;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-  margin: 15px 0 30px;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-}
-
-b {
-  font-weight: 400;
-}
-
-.muted {
-  color: #bbb;
-}
-
-.str {
-  text-decoration: line-through;
-  font-style: normal;
-}
-
-.centered {
-  margin: 0 auto;
-  max-width: calc(100vw - 40px);
-  width: 100%;
-}
-
-nav {
-  margin: 20px 0 0;
-}
-
-#footer-nav {
-  margin: 80px 0 40px;
-}
+@import url("basics.css");
 
 .menu-item {
   padding: 6px 12px;
@@ -77,6 +17,10 @@ nav {
 
 nav .menu-item {
   background: royalblue;
+}
+
+#footer-nav {
+  margin: 80px 0 40px;
 }
 
 #footer-nav .menu-item {
@@ -112,7 +56,7 @@ p.introduction a:hover {
 .unit-card {
   border-radius: 4px;
   margin: 30px 0;
-  /*cursor: pointer;*/
+  cursor: pointer;
 }
 
 .unit-card:last-of-type {
@@ -127,11 +71,6 @@ h2.unit {
 
 .unit-card:nth-child(1) h2 {
   font-weight: 400;
-}
-
-.hidden {
-  display: none !important;
-  visibility: hidden;
 }
 
 .loader {
@@ -159,10 +98,4 @@ div.full-width {
   width: 100%;
   align-self: center;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .centered {
-    max-width: 768px;
-    width: 60vw;
 }

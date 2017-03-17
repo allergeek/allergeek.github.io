@@ -3,185 +3,178 @@
   <head>
     <meta charset="utf-8">
       <meta name=viewport content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="reset.css">
       <link rel="stylesheet/less" type="text/css" href="blog.less" />
-      <link rel="stylesheet" type="text/css" href="blog.css">
+      <link rel="stylesheet" type="text/css" href="post.css">
       <script src="less.js"></script>
-      <script src="https://unpkg.com/vue/dist/vue.js"></script>
-      <!-- <script src="../vue.js"></script> -->
+      <script src="vue.min.js"></script>
     </head>
     <body>
       <div class="body-container">
         <header>
         </header>
-        <menu>
-          <menuitem class="bar">
-            <span>How to start running, or doing cardio and aerobic exercise</span>
-          </menuitem>
-        </menu>
+        <div id="post-title" class="fixed-bar">
+          <a href="#"><div class="bar-wrapper"><span class="title-bar">How to start running (cardio exercise)</span><span class="top-icon">&#10141;</span></div></a>
+        </div>
         <div class="centered">
-            <h1>How to start running, or doing cardio and aerobic exercise</h1>
-            <p class="introduction"><b>Alice</b>: What is this set about? I'd really like to share what I've learned about exercise and nutrition. These are very simple facts, that are somewhat hard to stumble upon, but you might have seen a few already. I am looking forward to talk with you about any of the topics in this set! This is a set introduction. A short description that is about content, not frequency.</p>
+          <div id="app2">
+            <heading></heading>
+            <feed></feed>
 
-            <p class="introduction tags"><b>This set is about:</b></p>
-            <span class="tag tag-similar">exercise</span>
-            <span class="tag tag-similar">running</span>
-            <span class="tag tag-similar">health</span>
-
-            <div class="form subscribe">
-                <!-- for now, let's just subscribe to all content at once -->
-                <button id="subbutton" class="">get updates in your inbox</button>
+            <div class="form subscribe next">
+              <a href="#0"><b>NEXT: </b>{{ nextPost }}</a>
             </div>
 
-            <div class="that">
-                <h2 class="unit"><b>To-do:</b>
-                  Make a Vue comp from About Alice.
-                  <!-- <i class="str">Sync Git, upload and test.</i> -->
-                </h2>
-            </div>
-
-            <h2 class="unit">Day one tip is easy to digest. The most important thing is you don't have to train hard. On the opposite, <b>training easy</b> will keep you safe. <span class="counter">1</span></h2>
-        </div>
-        <div class="that">
-          <div class="respond">
-            <button>share</button>
-            <button>respond</button>
-            <span class="shared">12</span>
+            <about></about>
+            <subscribe></subscribe>
           </div>
-          <div class="centered">
-            <div class="this">
-              <h2 class="unit">Choose an easy route for your first run. 93 Think running streets that you already <b>know well</b>.<span class="counter">4</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="centered">
-            <h2 class="unit">You don't have to buy running gear to start running. 168 It is a good thing to put together all the items you plan to put on so you don't have to look for it in a hurry. <span class="counter">2</span></h2>
-        </div>
-        <div class="centered">
-            <h2 class="unit">Try to run at a moderate speed. 108 It is a good speed if you can <b>breeze through the nose</b> and get enough air. <span class="counter">0</span></h2>
-        </div>
-        <div class="centered">
-            <div class="loader">
-                <span>show me more</span>
-            </div>
-        </div>
-        <div class="divider">
-        </div>
-        <div class="centered">
-            <div class="form">
-                <button>subsrcibe for similar posts</button>
-        </div>
 
-        <div class="divider">
-        </div>
+            <template id="heading1-template">
+              <div>
+                <h1>{{ postTitle }}</h1>
+                <p class="introduction"><b>Alice: </b>{{ postIntro }}</p>
+                <p class="introduction tags"><b>This set is about:</b></p>
+                <span
+                  v-for="tag in postTags"
+                  class="tag tag-similar">{{ tag }}</span>
+              </div>
+            </template>
 
-        <div class="centered">
-          <p class="title">Sets like this:</p>
-          <h3><a href="" class="sets">How to pick running shoes</a></3>
-          <h3><a href="" class="sets">Learn about the chemistry of smoking</a></h3>
-          <h3><a href="" class="sets">How to start your walking routines</a></h3>
-        </div>
+            <template id="feed-template">
+              <div>
+                <div
+                  class="note-card"
+                  v-for="value in name"
+                  v-bind:myprops="name">
+                  <h2 class="unit">
+                    {{ value.note }}
+                    <span class="counter" title="comments and references">{{ value.num }}</span>
+                  </h2>
+                  <p class="break"> {{ value.par }} </p>
+                </div>
+              </div>
+            </template>
 
-        <div class="divider">
-        </div>
+            <template id="about-template">
+              <div id="about-alice" class="outro" v-once>
+                <p><b>About Alice</b></p>
+                <p>The thing is, human memory is limited. Who wouldn't love some extra help here! We carry paper pads in our pockets and backpacks, lined with our daily plans, to-do's and reminder notes. And I do, too.</p>
+                <p><b>'Alice, too'</b> is a blog for capturing short notes that may come helpful later. The notes make more sense when they go along with a reference. Hope, you're finding some of them useful. If you'd like to see what comes next, please subscribe
+                <!-- <a href="#0">subscribe</a>  -->
+                for updates.</p>
+                <p><a href="mailto:inbox@aiice2.com" class="no-wrap">Send me an email</a> if you need to reach me.
+                </p>
+              </div>
+            </template>
 
-        <div class="centered">
-          <div class="form linked">
-            <a href="index.html"><span>feed with all notes ('micro-posts')</span></a>
-          </div>
-          <div class="form linked">
-            <a href="alice-all-posts.html"><span>all posts by title</span></a>
-          </div>
-          <div class="form linked">
-            <a href="alice-all-tags.html"><span>all themes in this blog</span></a>
-          </div>
-          <!-- <div class="form linked">
-            questions and answers
-          </div> -->
-          <p><b>Alice:</b></p>
-          <p>The thing is, human memory is limited. Who wouldn't like to use some extra help here! We carry paper pads in our pockets and backpacks, lined with to-do's, brief ideas, daily plans and reminders. I do, too.</p>
-          <p><b>'Alice, too'</b> is a blog for capturing short notes. Well, not all kinds of notes, but those made when learning something new. If you find some of them useful, you may want to see what comes next.</p>
-          <a href="#" class="relink">go up ^</a>
-        </div>
+            <template id="mailchimp-template">
+              <div id="mailchimp">
+                <form action="//tumblr.us14.list-manage.com/subscribe/post?u=883863466a386f508af7858e4&amp;id=cc882b617c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll">
+                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="subscribe with your email">
+                	<div id="mce-responses" class="clear">
+                		<div class="response" id="mce-error-response" style="display:none"></div>
+                		<div class="response" id="mce-success-response" style="display:none"></div>
+                	</div>
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_883863466a386f508af7858e4_cc882b617c" tabindex="-1" value=""></div>
+                  <input type="submit" value="get updates" name="subscribe" id="mc-embedded-subscribe"  class="button chimp-input">
+                  </div>
+                </form>
+              </div>
+            </template>
 
-        <div class="divider">
-        </div>
-        <div class="divider">
-        </div>
-
-        <div class="form form-focus hidden" id="subform">
-          <p class="contrasted">Get daily tips about <span class="b u">Health</span> in your inbox!</p>
-          <input type="text" placeholder="your email">
-          <button type="">OK</button>
-          <button class="back-ctrl" id="back-ctrl">go back</button>
+          <button id="btn-wrapper" class="back-ctrl small-ctrl">go back</button>
         </div>
       </div>
 
-        <script>
-          (function() {
+      <script>
 
-            function shiftClass() {
-              this.classList.toggle("hidden");
+        var heading1 = {
+          template: "#heading1-template",
+          data: function () {
+            return {
+              postTags: [
+                'exercise', 'running', 'sports', 'cardio exercise', 'health','routines'
+              ],
+              postTitle: 'How to start running (cardio exercise)',
+              postIntro: 'What is this set about? This is a set introduction. A short description that is about content, not frequency.'
             }
+          }
+        }
 
-            function shiftFormClass() {
-              document.getElementById("subform").classList.toggle("hidden");
+        var aboutAlice = {
+          template: "#about-template"
+        }
+
+        var formOne = {
+          template: "#mailchimp-template"
+        }
+
+        var feed = {
+          template: '#feed-template',
+          props: 'myprops',
+          data: function () {
+            return {
+              name: [
+                { note: 'Choose an easy route for your first run.\
+                         Plan your route around neighborhood streets you\'re already familiar with.',
+                  num: 0 },
+
+                { note: 'You don\'t have to buy running gear to start running.\
+                         Put on something you feel comfortable in. Pick your favorite hoodie or t-shirt over everything else.',
+                  num: 0 },
+
+                { note: 'It\'s a good thing to gather all the items you plan to wear on the day before.\
+                         Having everything set will get logistics out of your way and boost your confidence.',
+                  num: 0 },
+
+                { note: 'Try to stay on the sidewalk and keep an eye for traffic.\
+                         Choose streets that have lite traffic or none at all – and walk the busy ones.',
+                  num: 0,
+                  par:  '' },
+
+                { note: 'Once you\'re out there, don\'t push yourself to be fast.\
+                         Running easy will keep you safe while you become comfortable with the running mechanics.',
+                  num: 0,
+                  par:  'Moving at a slow, but steady pace will still count as a good workout. It will strengthen your heart, lungs and burn almost as many calories.' },
+
+                { note: 'Try to find your moderate speed.\
+                         It is a good speed if you can breeze through the nose and get enough air.',
+                  num: 0 },
+
+                { note: 'Make a stop whenever you feel like it.',
+                  num: 0 }
+              ]
             }
+          }
+        }
 
-            function showForm() {
-              document.getElementById('subbutton').onclick =
-              function() {
-                this.addEventListener( 'click', shiftFormClass);
-              }
-            }
+        new Vue({
+          el: '#app2',
+          data: { nextPost : 'how to waste time or how to herd cats, for example' },
+          components: {
+            'heading' : heading1,
+            'feed' : feed,
+            'about' : aboutAlice,
+            'subscribe' : formOne
+          }
+        });
+      </script>
 
-            function closeForm() {
-              document.getElementById('back-ctrl').onclick =
-              function() {
-                this.addEventListener( 'click', shiftFormClass);
-              }
-            }
+      <script>
+        (function() {
+          function refIndex() {
+            location.href='index.html';
+          }
 
-            function ref1() {
-              location.href='alice-comment-page.html';
-            }
+          function goHome() {
+            var obj = document.getElementById ('btn-wrapper');
+            obj.onclick = obj.addEventListener('click', refIndex);
+          }
 
-            function goToPage() {
-              var obj = document.getElementsByClassName ('this')[0];
-              obj.onclick = obj.addEventListener('click', ref1);
-            }
-
-            function noteHover() {
-              var obj = document.getElementsByClassName ('this')[0];
-              // obj.addEventListener('onmouseover', obj.appendChild('<div class="this-clicked"></div>')) ;
-            }
-
-
-            (function() {
-              function viewPostsByTag() {
-                location.href = 'alice-tag-posts.html';
-              }
-              function exploreTag() {
-                var num = [];
-                num = document.querySelectorAll('span.tag-similar');
-                console.log(num);
-                console.log(num.length);
-                for (i = 0; i < num.length ; i++) {
-                  num[i].addEventListener('click', viewPostsByTag);
-                }
-              }
-              exploreTag();
-            })();
-
-
-            showForm();
-            closeForm();
-            goToPage();
-            noteHover();
-            exploreTag();
-
-          })();
-        </script>
+          goHome();
+        })();
+      </script>
     </body>
-</html>
+  </html>

@@ -3,13 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name=viewport content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet/less" type="text/css" href="blog.less" />
         <link rel="stylesheet" href="index.css">
         <script src="less.js"></script>
-        <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <!-- <script src="../vue.js"></script> -->
+        <script src="vue.min.js"></script>
 
       <!-- start Mixpanel -->
       <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
@@ -22,23 +21,12 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
       <header>
       </header>
       <div id="app" class="centered">
-      <!-- #app is an element to mount root Vue instance -->
-
-      <!-- <div id="index-menu" v-html="menulabel"> -->
-      <!-- </div> -->
 
       <div id="introduction">
-        <!-- <to-do></to-do> -->
         <p v-html="introduction" class="introduction blog-intro"></p>
       </div>
 
       <div id="feed">
-        <!-- <comp-name></comp-name> -->
-
-        <!-- template tag is not rendered and can be placed anywhere in the HTML -->
-        <!-- it can be used for complex HTML content -->
-
-        <!-- this is also called child's component constructor -->
         <my-unit
           v-for="item in running1"
           v-bind:note-prop="item.note"
@@ -48,20 +36,8 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
 
       </div>
 
-      <template id="todolist-template">
-        <div v-once>
-          <p class="introduction blog-intro">
-            <i class="str">Make loader component work.</i>
-            <i class="str">How to assign classes with Vue?</i>
-          </p>
-        </div>
-      </template>
-
       <template id="feed-template">
         <div class="unit-card">
-          <!-- <h2 class="unit"> {{ one }} </h2> -->
-          <!-- <h2 class="unit"> {{ two }} </h2> -->
-          <!-- <h2 class="unit"> {{ three }} </h2> -->
           <h2 class="unit"> {{ noteProp }}</h2>
           <span class="tag tag-title"> {{ titleProp }} </span>
         </div>
@@ -168,11 +144,6 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
           template: "#loader-template"
         }
 
-        var todoList = {
-          template: "#todolist-template"
-        }
-
-
           // component goes first, then Vue instance that uses it
           // the template property value is used to replace the component when HTML is rendered
           // Vue.component('comp-name', {
@@ -224,12 +195,9 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
               \
               I also write about means to stay active, like <a href="#"><b>how to start running</b></a>.\
               \
-              Each note you may find below will take you to a blog entry (not yet).\
+              Each note you may find below will take you to a blog entry.\
               '
             },
-            components: {
-              'to-do' : todoList
-            }
           });
 
           new Vue({
@@ -258,7 +226,7 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
                 num[i].addEventListener('click', viewPage);
               }
             }
-            // read();
+            read();
           })();
 
         </script>

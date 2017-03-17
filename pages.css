@@ -1,65 +1,14 @@
-* {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
-html {
-  font-family: sans-serif;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-}
-
-body {
-  position: relative;
-  margin: 0 auto;
-}
+@import url("basics.css");
 
 .body-container {
     padding: 0 0 120px 0;
 }
 
-h2 {
-  font-weight: 400;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-  margin: 15px 0 30px;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-}
-
-b {
-  font-weight: 400;
-}
-
-.muted {
-  color: #bbb;
-}
-
-.small {
-  font-size: 100%;
-}
-
-.str {
-  text-decoration: line-through;
-  font-style: normal;
-}
-
-.centered {
-  margin: 0 auto;
-  max-width: calc(100vw - 40px);
-  width: 100%;
-}
-
 div.form {
-    width: 100%;
-    margin: 40px 0 40px;
-    padding: 40px;
-    border-radius: 4px;
+  width: 100%;
+  margin: 40px 0 40px;
+  padding: 40px;
+  border-radius: 4px;
 }
 
 p.introduction a {
@@ -113,15 +62,6 @@ span.entry-tag {
   color: #b3b3b3;
 }
 
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-
-.linked {
-  cursor: pointer;
-}
-
 a.relink {
   color: royalblue;
   border-bottom: solid 2px royalblue;
@@ -145,10 +85,4 @@ a.relink {
     cursor: pointer;
     margin: 0;
     width: 100%;
-}
-
-@media (min-width: 768px) {
-  .centered {
-    max-width: 768px;
-    width: 60vw;
 }
