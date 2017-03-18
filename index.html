@@ -8,33 +8,62 @@
         <link rel="stylesheet/less" type="text/css" href="blog.less" />
         <link rel="stylesheet" href="index.css">
         <script src="less.js"></script>
-        <script src="vue.min.js"></script>
 
-      <!-- start Mixpanel -->
       <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
 0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
 for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
 mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
-      <!-- end Mixpanel -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93963162-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
     </head>
     <body>
       <header>
       </header>
-      <div id="app" class="centered">
-
-      <div id="introduction">
-        <p v-html="introduction" class="introduction blog-intro"></p>
+      <div id="app">
+      <div id="feed" class="index-margin">
+        <div class="centered">
+          <intro
+            v-bind:label-prop="introLabel">
+          </intro>
+          <my-unit
+            v-for="item in running1"
+            v-bind:note-prop="item.note"
+            v-bind:title-prop="title">
+          </my-unit>
+          <my-unit
+            v-for="item in smoking1"
+            v-bind:note-prop="item.note"
+            v-bind:title-prop="title2">
+          </my-unit>
+          <my-unit
+            v-for="item in ref1"
+            v-bind:note-prop="item.note"
+            v-bind:title-prop="title3">
+          </my-unit>
+        </div>
+        <loader></loader>
+      </div>
       </div>
 
-      <div id="feed">
-        <my-unit
-          v-for="item in running1"
-          v-bind:note-prop="item.note"
-          v-bind:title-prop="item.title">
-        </my-unit>
-      </div>
+      <template id="menu-template">
+        <nav>
+          <span class="menu-item" v-for="item in menuOptions.menuItem"><a v-bind:href="item.ref">{{ item.label }}</a></span>
+        </nav>
+      </template>
 
-      </div>
+      <template id="introduction-template">
+        <div v-once>
+          <p class="introduction blog-intro" v-html="labelProp"></p>
+        </div>
+      </template>
 
       <template id="feed-template">
         <div class="unit-card">
@@ -50,165 +79,112 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
         </div>
       </template>
 
-          <!-- <div id="gather">
-            <div v-for="item in notesArray" class="unit-card">
-              <h2 class="unit"> {{ item.note }} </h2>
-              <span class="tag tag-title"> {{ item.title }} </span>
-            </div>
-          </div> -->
+      <script src="../vue.js"></script>
+      <script>
+      var menuOptions = {
+        menuItem: [
+          { label: 'all posts',
+            ref: '#11' },
+          { label: 'themes',
+            ref: '#22' }
+        ]
+      }
 
-          <div id="vue-container">
-            <loader v-on:click=""></loader>
-          </div>
+      var pageTitle = 'how to start running';
+      var pageTitle2 = 'what to expect when you quit smoking';
+      var pageTitle3 = 'Exercise reorganizes the brain to be more resilient to stress';
 
-          <!-- <div id="footer-nav">
-            <span class="menu-item"><a href="#">all posts in this blog</a></span>
-            <span class="menu-item"><a href="#">themes and tags</a></span>
-          </div> -->
+      var introContent = '\
+        <b>Alice</b>:\
+        Hi, here\'s where I keep my <b>notes</b>.\
+        They cover a few different things as <a href="#"><b>nutrition</b></a>, <b>sleep</b>, <b>usability</b> and <b>popular science</b>.\
+        \
+        I also write about means to stay active, like <a href="alice-tag-page.html"><b>how to start running</b></a>.\
+        \
+        Each note you may find below will take you to a blog entry.\
+      ';
 
-        <script>
+      var indexModel = {
+        introLabel: introContent,
+        title: pageTitle,
+        title2: pageTitle2,
+        title3: pageTitle3,
+        running1: [
+          { note: 'Choose an easy route for your first run.\
+                   Plan your route around neighborhood streets you\'re already familiar with.' },
+          { note: 'You don\'t have to buy running gear to start running.\
+                   Put on something you feel comfortable in. Pick your favorite hoodie or t-shirt over everything else.' },
+          { note: 'It\'s a good thing to gather all the items you plan to wear on the day before.\
+                   Having everything set will get logistics out of your way and boost your confidence.' },
+          { note: 'Try to stay on the sidewalk and keep an eye for traffic.\
+                   Choose streets that have lite traffic or none at all – and walk the busy ones.' },
+          { note: 'Once you\'re out there, don\'t push yourself to be fast.\
+                   Running easy will keep you safe while you become comfortable with the running mechanics.' },
+          { note: 'Try to find your moderate speed.\
+                   It is a good speed if you can breeze through the nose and get enough air.' },
+          { note: 'Make a stop whenever you feel like it.' }
+        ],
 
-        var indexModel = {
-          running1: [
-            { note: 'Choose an easy route for your first run.\
-                     Plan your route around neighborhood streets you\'re already familiar with.',
-              title: 'how to start running'
-            },
-            { note: 'You don\'t have to buy running gear to start running.\
-                     Put on something you feel comfortable in. Pick your favorite hoodie or t-shirt over everything else.',
-              title: 'how to start running'
-            },
-            { note: 'It\'s a good thing to gather all the items you plan to wear on the day before.\
-                     Having everything set will get logistics out of your way and boost your confidence.\
-                     ',
-              title: 'how to start running'
-            },
-            { note: 'Try to stay on the sidewalk and keep an eye for traffic.\
-                     Choose streets that have lite traffic or none at all – and walk the busy ones.\
-                     ',
-              title: 'how to start running'
-            },
-            { note: 'Once you\'re out there, don\'t push yourself to be fast.\
-                     Running easy will keep you safe while you become comfortable with the running mechanics.\
-                     ',
-              title: 'how to start running'
-            },
-            { note: 'Try to find your moderate speed.\
-                     It is a good speed if you can breeze through the nose and get enough air.\
-                     ',
-              title: 'how to start running'
-            },
-            { note: 'Make a stop whenever you feel like it.\
-                     \
-                     ',
-              title: 'how to start running'
-            }
-          ],
-          notesArray: [
-            { note: 'How many percent ready for the next release? 60',
-              title: 'to-do' },
+        smoking1: [
+          { note: 'It only takes 3 hours for nicotine to leave your body.' },
+          // { note: 'Smoking is related to a range of life-threatening illnesses.' },
+          { note: 'After the first couple days you will feel anxious. Hold on, the feeling will cease.' }
+        ],
 
-            { note: 'TO-DO: turn off text select for notes in the feed',
-              title: 'to-do' },
+        ref1: [
+          { note: 'Physical activity reduces stress and anxiety.' },
+          { note: 'Less stress means a better ability to response to a challenging situation.' },
+          { note: 'Running, in particular, produces a large increase in the number of new neurons in the hippocampus, a brain region that is known to regulate stress.' },
+          { note: 'Exercise strengthens the mechanisms that prevent high levels of anxiety.' },
+          { note: 'A choice of sedentary or active lifestyle changes how the brain functions and how we feel.' }
+        ]
+      };
 
-            { note: 'It only takes 3 hours for nicotine to leave your body.',
-              title: 'beginner\'s guide to quitting smoking' },
+      // var todoList = {
+      //   template: "#todolist-template"
+      // }
 
-            { note: 'Smoking is related to a range of life-threatening illnesses.',
-              title: 'running, cardio and aerobic exercise' },
-
-            { note: 'Choose an easy route for your first run.',
-              title: 'running, cardio and aerobic exercise' },
-
-            { note: 'You don\'t have to buy running gear to start running.\
-                     Put on something you feel comfortable in.',
-              title: 'running, cardio and aerobic exercise' },
-
-            { note: 'After the first couple days you will feel anxious. Hold on, the feeling will cease.',
-              title: 'running, cardio and aerobic exercise' }
-          ],
-          mews: [
-            { mymew: 'mew1' },
-            { mymew: 'mew2' }
-          ]
-        };
-
-        // var myview = new Vue({
-        //   el: '#gather',
-        //   data: indexModel
+        // var myExtension = Vue.extend({
+        //   template: '#comp-template',
+        //   props: ['note-prop', 'title-prop']
         // });
 
-        // - - -
+        // Vue.component('my-unit', myExtension);
 
-        var feedLoader = {
-          template: "#loader-template"
-        }
+        Vue.component('my-unit', {
+          template: '#feed-template',
+          props: [ 'note-prop', 'title-prop' ]
+        });
 
-          // component goes first, then Vue instance that uses it
-          // the template property value is used to replace the component when HTML is rendered
-          // Vue.component('comp-name', {
-            // template: '<span>Hello</span>'
-          //   template: '#comp-template',
-          //   props: []
-          // });
+        var introduction = Vue.component('intro', {
+          template: '#introduction-template',
+          props: [ 'label-prop' ]
+        });
 
-          // var myExtension = Vue.extend({
-          //   template: '#comp-template',
-          //   props: ['note-prop', 'title-prop']
-          // });
+        var feedLoader = Vue.component('loader', {
+          template: '#loader-template',
+        });
 
-          // Vue.component('my-unit', myExtension);
-
-          Vue.component('my-unit', {
-            template: '#feed-template',
-            props: ['note-prop', 'title-prop']
-          });
-
-          var mounted = new Vue ({
-            el: "#feed",
-
-            // data:
-            //   function() {
-            //     return {
-            //       one: 'this is one',
-            //       two: 'that is two',
-            //       three: 'and three'
-            //     }
-            //   }
-
-            data: indexModel
-          });
-
-          new Vue({
-            el: '#vue-container',
-            components: {
-              'loader' : feedLoader
+        var menuLabel = Vue.component('top-menu',{
+          template: '#menu-template',
+          props: [ 'title-prop' ],
+          data: function() {
+            return {
+              menuOptions
             }
-          });
+          }
+        });
 
-          new Vue({
-            el: '#introduction',
-            data: {
-              introduction: '<b>Alice</b>:\
-              Hi, here\'s where I keep my <b>notes</b>.\
-              They cover a few different things as <a href="#"><b>nutrition</b></a>, <b>sleep</b>, <b>usability</b> and <b>popular science</b>.\
-              \
-              I also write about means to stay active, like <a href="#"><b>how to start running</b></a>.\
-              \
-              Each note you may find below will take you to a blog entry.\
-              '
-            },
-          });
-
-          new Vue({
-            el: '#index-menu',
-            data: {
-              menulabel: '<nav>\
-                <span class="menu-item"><a href="#">all posts in this blog</a></span>\
-                <span class="menu-item"><a href="#">themes and tags</a></span>\
-              </nav>'
-            }
-          });
+        var mounted = new Vue ({
+          el: "#app",
+          data: indexModel,
+          components: {
+            // 'to-do' : todoList,
+            menuLabel,
+            introduction,
+            feedLoader
+          }
+        });
 
         </script>
         <script>
@@ -220,8 +196,6 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
             function read() {
               var num = [];
               num = document.querySelectorAll('.unit-card');
-              console.log(num);
-              console.log(num.length);
               for (i = 0; i < num.length ; i++) {
                 num[i].addEventListener('click', viewPage);
               }

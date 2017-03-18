@@ -6,9 +6,13 @@ textarea::-webkit-input-placeholder {
   font-weight: 300;
 }
 
+input::placeholder,
 textarea::placeholder {
   color: #aaa;
 }
+
+
+input:focus::placeholder,
 textarea:focus::placeholder {
   color: #bbb;
 }
@@ -39,6 +43,31 @@ div.auth {
 
 div.comments {
   margin: 0;
+}
+
+.comments button {
+  font-variant: small-caps;
+}
+
+.comments input[type="text"],
+.comments textarea {
+  width: 100%;
+}
+
+input.comment-input {
+  background: #dfdfdf !important;
+  /* NEEDS A FIX */
+  color: white;
+  min-height: 54px;
+  padding: 0 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto 20px;
+  font-size: 20px;
+}
+
+button.comment-submit {
+  margin-bottom: 20px;
 }
 
 .comments textarea {

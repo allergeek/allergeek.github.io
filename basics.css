@@ -78,4 +78,8 @@ b {
     max-width: 768px;
     width: 60vw;
   }
+
+  .index-margin {
+    margin-top: 30vh !important;
+  }
 }
