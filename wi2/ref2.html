@@ -5,8 +5,8 @@
       <meta name=viewport content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="../reset.css">
-      <link rel="stylesheet/less" type="text/css" href="blog.less" />
-      <link rel="stylesheet" type="text/css" href="post.css">
+      <link rel="stylesheet/less" type="text/css" href="../blog.less" />
+      <link rel="stylesheet" type="text/css" href="../post.css">
       <script src="../less.js"></script>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -24,36 +24,42 @@
         <header>
         </header>
         <div id="post-title" class="fixed-bar">
-          <a href="#"><div class="bar-wrapper"><span class="title-bar">Exercise reorganizes the brain to be more resilient to stress</span><span class="top-icon">&#10141;</span></div></a>
+          <a href="#"><div class="bar-wrapper"><span class="title-bar">How we are programmed to be poor</span><span class="top-icon">&#10141;</span></div></a>
         </div>
         <div class="centered">
 
         <div id="app2">
           <heading></heading>
           <div class="source-card-wrapper">
-            <div class="source-img-card">
+            <div class="source-img-card img-2">
             </div>
             <div class="source-card">
               <h2 class="unit">
-                Exercise reorganizes the brain to be more resilient to stress
+                News Feature: The neuroscience of poverty
               </h2>
-              <a href="https://www.princeton.edu/main/news/archive/S37/28/70Q72/index.xml"><span>princeton.edu</span></a>
+              <a href="http://www.pnas.org/content/112/51/15530.full"><span>pnas.org</span></a>
             </div>
           </div>
           <h2 class="unit">
-            Physical activity reduces stress and anxiety.
+            Low socioeconomic status (SES) affected "functions thought to engage specific brain circuits: for example, <b>language</b>, certain dimensions of <b>memory</b>, and the <b>ability to regulate thoughts and emotions</b>."
           </h2>
           <h2 class="unit">
-            Less stress means a better ability to response to a challenging situation.
+            Higher levels of stress are connected to <b>weaker memory</b> performance. "One design quirk of the brain is that the hippocampus, a key structure for consolidating memories, happens to be loaded with stress hormone receptors."
           </h2>
           <h2 class="unit">
-            Running, in particular, produces a large increase in the number of new neurons in the hippocampus, a brain region that is known to regulate stress.
+            During a brain scan called functional tomography "low-SES five-year-olds showed less specialization in a key region of the cortex implicated in <b>reading</b>."
           </h2>
           <h2 class="unit">
-            Exercise also strengthens the mechanisms that prevent high levels of anxiety.
+            "Much of the work over the past few years ... has highlighted structural differences, including preliminary findings in the amygdala, which plays a role in <b>processing fear and other emotions</b>, and in the prefrontal cortex, involved in <b>decision-making and self-control</b>."
           </h2>
           <h2 class="unit">
-            A choice of sedentary or active lifestyle changes how the brain functions and how we feel.
+            "The most consistent finding has been that of a smaller hippocampus in low-SES children." The "trajectory starts ... in the toddler years, with a clear difference <b>by the age of four</b>."
+          </h2>
+          <h2 class="unit">
+            <b>Nutrition</b>, <b>prenatal care</b>, parents' <b>mental health</b> and levels of <b>stress</b> in a family are considered factors as "some poverty-associated brain changes could be <b>occurring prenatally</b>."
+          </h2>
+          <h2 class="unit">
+            The good news is, "especially in children, the <b>brain is extremely plastic</b>", so a positive intervention is possible, for example, in forms of educational programs for parents and parents-to-be or financial support.
           </h2>
           <about></about>
           <subscribe></subscribe>
@@ -61,7 +67,12 @@
 
           <template id="heading1-template">
             <div>
-              <h1>{{ postTitle }}</h1>
+              <h1>{{ postTitle }}
+                <span
+                  v-for="tag in postThemes"
+                  class="tag-theme">
+                  <span class="muted">posted in</span> <a href="#0">{{ tag }}</a></span>
+              </h1>
               <p class="introduction"><b>Alice: </b>{{ postIntro }}</p>
               <p class="introduction tags"><b>This set is about:</b></p>
               <span
@@ -136,11 +147,12 @@
         template: "#heading1-template",
         data: function () {
           return {
+            postThemes: [ 'Neuroscience' ],
             postTags: [
-              'exercise', 'running', 'sports', 'health', 'anxiety',  'neuroscience', 'popular science'
+              'neuroscience', 'stress', 'poverty', 'education', 'mental health', 'anxiety',  'how the brain works', 'popular science'
             ],
-            postTitle: 'Exercise reorganizes the brain to be more resilient to stress',
-            postIntro: 'These are my notes for an article on how exercise affects us in an unexpected way.'
+            postTitle: 'How we are programmed to be poor',
+            postIntro: 'Environmental factors yield differences in developement of brain structures.'
           }
         }
       }

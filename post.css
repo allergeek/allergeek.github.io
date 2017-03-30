@@ -60,14 +60,25 @@ h1 {
   height: 16vh;
   border-radius: 4px;
   background:
-  linear-gradient(
-  rgba(255, 255, 255, 0.5),
-  rgba(255, 255, 255, 0.5) ),
-
-  url('assets/exercise.jpg');
+    linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5) ),
+    url('assets/exercise.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  /*background-position: center;*/
+  filter: saturate(10%);
+}
+
+.img-2 {
+  background:
+    linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5) ),
+    url('wi2/function.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-position: center;*/
   filter: saturate(10%);
 }
 
@@ -90,6 +101,17 @@ h2.unit {
 
 p.tags {
   margin: 15px 0 10px;
+}
+
+.tag-theme {
+  /*display: inline-block;*/
+  padding: 9px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.tag-theme a {
+  color: #6d6d6d;
 }
 
 span.tag-similar {

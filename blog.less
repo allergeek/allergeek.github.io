@@ -46,25 +46,29 @@ a.sets {
   color: @blue;
 }
 
-div.loader {
+div.loader,
+div.new-draft {
   background: @blue;
 }
 
 .loader span,
+.new-draft span,
 .form button {
   color: @white;
 }
 
 span.tag,
+span.tag-theme,
 span.menu-item {
-  background: @lightbg - 0.20 * lightness(@lightbg);
+  background: @lightbg - 0.15 * lightness(@lightbg);
   /* #dfdfdf */
-  // color: @darkgrey;
     &:hover {
       // background: @blue;
       // color: @white;
     }
 }
+
+span.tag-theme,
 
 span.menu-item:hover {
   // background: @blue;
@@ -81,6 +85,10 @@ span.menu-item:hover {
   button {
     background: @blue;
   }
+}
+
+.form-mobile {
+  background: none;
 }
 
 .form-focus {
@@ -113,13 +121,13 @@ h1 {
   line-height: 1.5 * @header;
 }
 
-h2.unit {
+h2.unit,
+h2.entry-title {
   font-size: @header;
   line-height: 1.25 * @header;
 }
 
-h2.entry-title {
-  font-size: @header;
+.draft-theme {
   line-height: 1.25 * @header;
 }
 
