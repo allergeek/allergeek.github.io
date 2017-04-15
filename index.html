@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name=viewport content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="SNCMSXtYoSqKAlyxoRRHK-cUb4dYJJd8pgZsxBRajPU" />
-        
+
         <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet/less" type="text/css" href="blog.less" />
@@ -30,8 +30,9 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
       <header>
       </header>
       <div id="app">
-      <div id="feed" class="index-margin">
+      <div id="feed" class="start-margin">
         <div class="centered">
+          <top-menu></top-menu>
           <intro
             v-bind:label-prop="introLabel">
           </intro>
@@ -68,9 +69,9 @@ mixpanel.init("b21a6816850aa4130f507ac6a0ccc4bc");</script>
       </template>
 
       <template id="feed-template">
-        <div class="unit-card">
-          <h2 class="unit"> {{ noteProp }}</h2>
-          <span class="tag tag-title"> {{ titleProp }} </span>
+        <div class="unit-card spaced-card">
+          <h2 class="unit inline-unit" v-html="noteProp"></h2>
+          <span class="tag tag-title inline-title" v-html="titleProp"></span>
         </div>
       </template>
 
