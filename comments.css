@@ -103,7 +103,7 @@ button.comment-submit {
   border-radius: 4px;
   box-shadow: 0 2px 0 #d0d0d0;
   margin: 0px auto 0;
-  padding: 20px;
+  padding: 40px 40px 40px 40px;
 }
 
 .comment-block span {
@@ -126,8 +126,8 @@ button.comment-submit {
 }
 
 .comment-block a:hover {
-  color: royalblue;
-  border-color: royalblue;
+  /*color: royalblue;*/
+  /*border-color: royalblue;*/
 }
 
 .answer {
@@ -154,9 +154,11 @@ button.comment-submit {
 
 a.source-link {
   display: inline-block;
-  border-bottom: none;
+  border-bottom-color: #999;
   padding: 6px 0;
   margin-top: 10px;
+  font-size: 20px;
+  color: #999;
 }
 
 .block-wrapper {
@@ -181,8 +183,10 @@ a.suggest {
   white-space: nowrap;
 }
 
-div.email-me {
+div.contact-me {
   margin-bottom: calc(40px + 20px);
+  background: none;
+  padding: 0;
 }
 
 .section-block {
@@ -230,4 +234,63 @@ button.back-ctrl {
   display: block;
   margin: 0 0 0 20px;
   font-variant: small-caps;
+}
+
+.answer-ref {
+  min-width: 360px;
+  max-width: 80%;
+}
+
+/* DUBLICATE  with mailchimp.css*/
+
+/* external url */
+
+#mailchimp input.chimp-input,
+.messenger input.messenger-input {
+  font-size: 20px;
+  padding: 0 30px;
+  width: auto;
+  min-width: auto;
+  text-align: left;
+  white-space: nowrap;
+  background: royalblue;
+  border: 0;
+  min-height: 54px;
+  border-radius: 4px;
+  margin: 0;
+  color: white;
+  cursor: pointer;
+}
+
+/* messenger button, need to move elswhere */
+
+.mailchimp a,
+.messenger a {
+  display: inline-block;
+  /*margin-right: 10px;*/
+  /* NEED TO FIX side margin */
+}
+
+/* end DUB */
+
+
+.flex {
+  display: flex;
+}
+
+a.action-btn {
+  display: inline-block;
+  font-size: 20px;
+  color: #989898;
+  background: #dfdfdf;
+  border-radius: 9px;
+  padding: 12px 20px 12px 0;
+  font-weight: normal;
+  min-height: 28px;
+}
+
+.action-btn span {
+  color: #b3b3b3;
+  font-weight: normal;
+  padding: 0 12px;
 }

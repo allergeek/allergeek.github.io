@@ -147,6 +147,10 @@ div.form-mobile {
   padding: 0;
 }
 
+.all-themes span.tag-page {
+  padding: 16px 24px;
+}
+
 @media (min-width: 768px) {
   .new-draft {
     max-width: 400px;

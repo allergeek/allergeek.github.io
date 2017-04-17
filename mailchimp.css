@@ -52,3 +52,31 @@
   color: #aaa;
   font-weight: 300;
 }
+
+/* external url */
+
+#mailchimp input.chimp-input,
+.messenger input.messenger-input {
+  font-size: 20px;
+  padding: 0 30px;
+  width: auto;
+  min-width: auto;
+  text-align: left;
+  white-space: nowrap;
+  background: royalblue;
+  border: 0;
+  min-height: 54px;
+  border-radius: 4px;
+  margin: 0;
+  color: white;
+  cursor: pointer;
+}
+
+/* messenger button, need to move elswhere */
+
+.mailchimp a,
+.messenger a {
+  display: inline-block;
+  margin-right: 10px;
+  /* NEED TO FIX side margin */
+}
