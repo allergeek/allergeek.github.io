@@ -1,0 +1,9 @@
+!= partial( "_header" )
+
+h1 My Site Title in Jade
+p Welcome to my very first site.
+
+for post, slug in public.post._data
+   a( href="/post/#{ slug }" )
+     h2= post.title
+     h3= post.note
