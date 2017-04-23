@@ -3,8 +3,17 @@
     "title": "Hello World",
     "note": "Feb 28, 2013"
   },
+
   "item2": {
     "title": "Hello title",
     "note": "March 4, 2013"
+  },
+
+  "some": {
+    "layout": "_layout-2"
+  },
+
+  "about": {
+    "layout": false
   }
 }

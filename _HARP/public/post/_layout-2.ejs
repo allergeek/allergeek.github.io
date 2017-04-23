@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AIice2</title>
+    <title>Post page template</title>
     <!-- <script src="/javascripts/app.js"></script> -->
 
     <!-- <meta charset="utf-8">
@@ -12,17 +12,9 @@
     <link rel="stylesheet/less" type="text/css" href="blog.less" /> -->
   </head>
   <body>
-    <nav>
-  <span class="menu-item">
-    <a href="#1">item 1</a>
-  </span>
-  <span class="menu-item">
-    <a href="#1">item 1</a>
-  </span>
-</nav>
-<h1>My Site Title in Jade</h1><p>Welcome to my very first site.</p><a href="/post/item1"><h2>Hello World</h2><h3>Feb 28, 2013</h3></a><a href="/post/item2"><h2>Hello title</h2><h3>March 4, 2013</h3></a><a href="/post/some"><h2></h2><h3></h3></a><a href="/post/about"><h2></h2><h3></h3></a>
+    <%- yield %>
     <div id="footer">
-      <p>© foobar</p>
+      <p>© foobar 2</p>
     </div>
   </body>
 </html>
