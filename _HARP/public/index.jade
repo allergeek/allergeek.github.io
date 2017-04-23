@@ -1,18 +1,19 @@
+// code logic keeps here
+// only content unique for the page
+// for example, feed on the index page
 
-//doctype html
-//head
-//title a2
-
-//move head to a ejs file,  ejs partial <% include folder/head %>
+//move head to a ejs file,  ejs partial ? <% include folder/head %>
 // same with analytics
 
-//body
+//partials better moved to LAYOUT
 
 != partial( "_nav" )
 != partial( "_intro" )
 
-h1 My Site Title in Jade
-p Welcome to my very first site.
+h1 Test Title in Jade
+h2 vars pulled form /post folder
+
+br
 
 for post, slug in public.post._data
    a( href="/post/#{ slug }" )
