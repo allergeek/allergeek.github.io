@@ -1,6 +1,6 @@
 // data from post/_data.json
 
-p sdf 
+p sdf
 
 p= titles[0]
 
@@ -26,7 +26,7 @@ each ref, index in refs
 
   span one by one:
   each ttt, index2 in tags
-    span #{ tags [index] [index2] + [' '] }
+    span #{ tags [index] [index2] }
 
   br
   br
@@ -37,3 +37,12 @@ each tag, index in tags
   br
   span #{ tags [index] [1] }
   br
+
+-
+  var colors = ['red', 'blue', 'green']
+
+  //- var html = jade.renderFile('colors.jade', { colors: colors });
+  
+  console.log(html);
+
+//render('post/profile.html')

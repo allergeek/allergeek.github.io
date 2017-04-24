@@ -1,0 +1,25 @@
+//this is a post template
+//need to create a separate layout for this
+
+script(src="aa.js")
+
+| nnn
+
+each item in  public.post._data
+  p #{ item }
+
+-
+  console.log('log aaa')
+-
+  var colors = ['red', 'blue', 'green'];
+  console.log('vbbb')
+
+//renderFile(colors.jade, { colors: colors })
+
+
+//
+  mixin image(file, alt)
+    .image
+      img(src="/blog/img/" + file alt=alt)
+
+  +image("example.jpg", "Image description")
