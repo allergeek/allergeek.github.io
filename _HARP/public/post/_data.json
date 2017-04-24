@@ -1,12 +1,17 @@
 {
-  "item1": {
-    "title": "Hello World",
-    "note": "Feb 28, 2013"
+  "how-to-start-running": {
+    "title": "how to start running",
+    "theme": ""
   },
 
-  "item2": {
-    "title": "Hello title",
-    "note": "March 4, 2013"
+  "post-2": {
+    "title": "what to expect when you quit smoking",
+    "note": ""
+  },
+
+  "post-3": {
+    "title": "еxercise reorganizes the brain to be more resilient to stress",
+    "note": ""
   },
 
   "some": {

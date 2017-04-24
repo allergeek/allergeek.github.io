@@ -2,27 +2,11 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AIice2</title>
-
-    <meta charset="utf-8">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/_blog.less" />
-
-    <%- partial ("_analytics") %>
-
-  </head>
+  <%- include _head %>
   <body>
-    <div id="app">
-      <div id="feed" class="start-margin">
-        <div class="centered">
-          <%- yield %>
-        </div>
+    <div id="feed" class="start-margin">
+      <div class="centered">
+        <%- yield %>
       </div>
     </div>
     <div id="footer">
