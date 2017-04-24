@@ -1,6 +1,10 @@
 {
   "globals": {
     "foo": "bar",
-    "title": "Hello global title"
+    "title": "Hello global title",
+    "navigation": [
+      { "title": "all posts", "ref": "/all" },
+      { "title": "themes", "ref": "/themes" }
+    ]
   }
 }

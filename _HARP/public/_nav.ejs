@@ -1,8 +1,9 @@
 <nav>
-  <span class="menu-item">
-    <a href="#1">all posts</a>
-  </span>
-  <span class="menu-item">
-    <a href="#1">themes</a>
-  </span>
+  <% for (var i = 0; i < navigation.length; i++) { %>
+    <span class="menu-item">
+      <a href="#0"><%= navigation[i].title %></a>
+    </span>
+  <% } %>
 </nav>
+
+<!-- NEED to add url -->

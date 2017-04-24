@@ -1,21 +1,26 @@
-//this is a post template
-//need to create a separate layout for this
+// this is a post template
+// need to create a separate layout for this
 
 script(src="aa.js")
 
 | nnn
 
-each item in  public.post._data
-  p #{ item }
+//
+  jade files store content
+  NEED to generate unique PAGES ??
+  every text post should have its own JADE to store content ??
 
--
-  console.log('log aaa')
+include _raw/_all.jade
+
 -
   var colors = ['red', 'blue', 'green'];
-  console.log('vbbb')
 
-//renderFile(colors.jade, { colors: colors })
+each item in colors
+  p= item
 
+
+//
+  mixin example
 
 //
   mixin image(file, alt)
