@@ -1,4 +1,26 @@
 {
+  "running-theme": {
+    "titles": [
+      "post title - how to start running",
+      "post title - how to run an ultra"
+    ],
+    "refs": [
+      "postref-how-to-one",
+      "postref-how-to-two"
+    ],
+    "dates": [
+      "2016",
+      "2017"
+    ],
+    "tags": [
+      ["running11", "sports12"],
+      ["running too21", "sports too22"]
+    ]
+  },
+
+
+
+
   "how-to-start-running": {
     "title": "how to start running",
     "theme": ""

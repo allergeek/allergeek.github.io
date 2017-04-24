@@ -1,0 +1,39 @@
+// data from post/_data.json
+
+p sdf 
+
+p= titles[0]
+
+for title in titles
+  p= title
+
+
+each ref, index in refs
+  p
+    a( href="/post/running-theme/#{ ref }" )
+      span uri
+  span date - #{ dates [index] }
+  br
+  span tags - #{ tags [index] + [' hey' ] }
+
+  br
+  br
+
+  span url - #{ ref }
+
+  br
+  br
+
+  span one by one:
+  each ttt, index2 in tags
+    span #{ tags [index] [index2] + [' '] }
+
+  br
+  br
+
+p ALL tags, post by post
+each tag, index in tags
+  span #{ tags [index] [0] }
+  br
+  span #{ tags [index] [1] }
+  br
