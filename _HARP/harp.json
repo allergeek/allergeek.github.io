@@ -2,6 +2,7 @@
   "globals": {
     "foo": "bar",
     "title": "Hello global title from json",
+    "description": "My default description",
     "navigation": [
       { "title": "all posts", "ref": "/all-posts" },
       { "title": "themes", "ref": "/themes" }

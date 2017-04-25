@@ -9,11 +9,16 @@
 
 // how to make ALL new .jade posts use a certain layout ?
 
+// NEED to fill in the EJS post template somehow ?!
+// else: can I fill the EJS layout template directly from JSON ?!
+// pull data to variable from JSON to JADE file instead ?
+
+-
+  var yyy =
+  "here's that variable post title!"
+
 #mine
-  p some content from yield
-
-  for post, url in public.post._data
-    h1: a(href="/posts/#{ url }")= post.title
-
-  span theme
-  p post intro
+  h3= say_hello(yyy)
+  h3 some string content inplace of yield
+  span string theme
+  p string post intro
