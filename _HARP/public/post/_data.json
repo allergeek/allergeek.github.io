@@ -1,5 +1,6 @@
 {
   "running-theme": {
+    "theme": "running",
     "titles": [
       "post title - how to start running",
       "post title - how to run an ultra"
@@ -14,9 +15,14 @@
     ],
     "tags": [
       ["running11", "sports12"],
-      ["running too21", "sports too22"]
+      ["running too21", "sports too22", "sports too33"]
     ]
   },
+
+  "sleep-theme etc.": {
+    "theme": "sleep"
+  },
+
 
 
 

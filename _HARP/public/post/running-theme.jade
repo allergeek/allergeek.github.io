@@ -1,6 +1,13 @@
 // data from post/_data.json
 
-p sdf
+p This is a theme page.
+  | Here's how theme titles are inserted:
+
+div
+  for key, theme in public.post._data
+    a( href="/post/#{ theme }" )
+      span= key.theme
+    br
 
 p= titles[0]
 
@@ -26,23 +33,34 @@ each ref, index in refs
 
   span one by one:
   each ttt, index2 in tags
-    span #{ tags [index] [index2] }
+    span #{ tags [index] [index2] + [' ']}
 
   br
   br
 
-p ALL tags, post by post
+
+p ALL tags, post by post, tag by tag
+  br
+  | need to know length of the array (number of tags),
+  br
+  | to write a dynamic function
+
 each tag, index in tags
+  span post N #{ [index + 1] }
+  br
   span #{ tags [index] [0] }
   br
   span #{ tags [index] [1] }
+  br
+  span #{ tags [index] [2] }
+  br
   br
 
 -
   var colors = ['red', 'blue', 'green']
 
   //- var html = jade.renderFile('colors.jade', { colors: colors });
-  
+
   console.log(html);
 
 //render('post/profile.html')
