@@ -1,7 +1,7 @@
 {
   "running-theme": {
     "theme": "running",
-    "layout": "_layout-2",
+    "layout": "_index-layout",
     "titles": [
       "post title - how to start running",
       "post title - how to run an ultra"
@@ -25,16 +25,14 @@
   },
 
   "my-first-post": {
-    "layout": "_post-layout",
-    "title": "my unique post title from local json"
+    "title": "my unique post title from local json",
+    "theme": "my first theme"
   },
 
   "psot": {
-    "title": "bla bla"
+    "title": "bla bla",
+    "theme": "my psot theme"
   },
-
-
-
 
   "how-to-start-running": {
     "title": "how to start running",

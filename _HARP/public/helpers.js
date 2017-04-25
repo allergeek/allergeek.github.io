@@ -1,5 +1,3 @@
-(function() {
-  generate = function (name) {
-    return 'Hello, ' + name;
+say_hello = function (name) {
+return 'Hello, ' + name;
 }
-})()
