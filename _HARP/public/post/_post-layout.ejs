@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Post page template static title</title>
-    <%- partial ("_partils/_head") %>
+    <title><%= title %>
+    </title>
+    <%- include ../_includes/_head %>
   </head>
   <body>
     <%- yield %>
     <div id="footer">
-      <p>footer</p>
+      <p>footer in layout</p>
     </div>
   </body>
 </html>

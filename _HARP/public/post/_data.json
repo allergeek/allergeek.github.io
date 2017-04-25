@@ -1,6 +1,7 @@
 {
   "running-theme": {
     "theme": "running",
+    "layout": "_layout-2",
     "titles": [
       "post title - how to start running",
       "post title - how to run an ultra"
@@ -23,8 +24,9 @@
     "theme": "sleep"
   },
 
-  "post": {
-    "layout": "_post-layout"
+  "my-first-post": {
+    "layout": "_post-layout",
+    "title": "my unique post title from local json"
   },
 
 
@@ -43,10 +45,6 @@
   "post-3": {
     "title": "еxercise reorganizes the brain to be more resilient to stress",
     "note": ""
-  },
-
-  "some": {
-    "layout": "_layout-2"
   },
 
   "about": {

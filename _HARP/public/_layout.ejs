@@ -4,13 +4,16 @@
 <html>
   <head>
     <meta name="google-site-verification" content="SNCMSXtYoSqKAlyxoRRHK-cUb4dYJJd8pgZsxBRajPU" />
-    <%- include _head %>
+    <!-- ??? - include or partial ?? _partials/_head -->
+    <%- include _includes/_head %>
     <title><%= title %></title>
     <!-- NEED to fix titles -->
   </head>
   <body>
     <div id="feed" class="start-margin">
       <div class="centered">
+        <%- include _includes/_nav %>
+        <%- include _includes/_intro %>
         <%- yield %>
       </div>
     </div>

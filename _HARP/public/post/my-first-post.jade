@@ -1,0 +1,19 @@
+// this is a post template
+
+// script(src="some.js")
+
+// Jade files store content
+// NEED to generate unique PAGES - from Jade files
+// every text post should have its own JADE to store content ?
+// EXTEND pulls content - can I use it to generate post pages ?
+
+// how to make ALL new .jade posts use a certain layout ?
+
+#mine
+  p some content from yield
+
+  for post, url in public.post._data
+    h1: a(href="/posts/#{ url }")= post.title
+
+  span theme
+  p post intro
