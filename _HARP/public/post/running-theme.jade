@@ -9,17 +9,23 @@ div
       span= key.theme
     br
 
+p Examples of referencing:
 p= titles[0]
 
 for title in titles
   p= title
 
+br
+br
+
+p Post metadata (properties):
 
 each ref, index in refs
   p
     a( href="/post/running-theme/#{ ref }" )
       span uri
   span date - #{ dates [index] }
+  br
   br
   span tags - #{ tags [index] + [' hey' ] }
 
@@ -56,11 +62,5 @@ each tag, index in tags
   br
   br
 
--
-  var colors = ['red', 'blue', 'green']
-
-  //- var html = jade.renderFile('colors.jade', { colors: colors });
-
-  console.log(html);
 
 //render('post/profile.html')
