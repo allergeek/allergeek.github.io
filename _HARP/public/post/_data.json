@@ -26,7 +26,8 @@
 
   "my-first-post": {
     "title": "my unique post title from local json",
-    "theme": "my first theme"
+    "theme": "my first theme",
+    "published": true
   },
 
   "psot": {

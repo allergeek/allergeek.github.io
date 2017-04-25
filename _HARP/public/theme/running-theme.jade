@@ -1,10 +1,15 @@
 // uses data from theme/_data.json
 
 p This is a theme page.
-  | Here's how theme titles are inserted:
+  | Here's how theme titles are inserted (also, see the empty values):
 
 div
   for key, theme in public.post._data
+    a( href="/post/#{ theme }" )
+      span #{ key.theme }
+    | .
+div
+  for key, theme in public.theme._data
     a( href="/post/#{ theme }" )
       span= key.theme
     br
@@ -16,13 +21,12 @@ for title in titles
   p= title
 
 br
-br
 
 p Post metadata (properties):
 
 each ref, index in refs
   p
-    a( href="/post/running-theme/#{ ref }" )
+    a( href="/theme/running-theme/#{ ref }" )
       span uri
   span date - #{ dates [index] }
   br

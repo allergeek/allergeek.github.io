@@ -1,7 +1,8 @@
 {
   "running-theme": {
     "theme": "running",
-    "layout": "_index-layout",
+    "title": "theme about running",
+    "layout": "_theme-layout",
     "titles": [
       "post title - how to start running",
       "post title - how to run an ultra"

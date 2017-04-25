@@ -8,16 +8,22 @@
   </head>
   <body>
     <div class="centered start-margin">
-      <h1>
-        <%= title %>
-        <span>
-          <%= theme %>
-        </span>
-      </h1>
-      <%- yield %>
-      <div id="footer">
-        <p><b>footer in layout</b></p>
-      </div>
+      <% if(current.source !== 'index') { %>
+        <h1>
+          <%= title %>
+          <span>
+            <%= theme %>
+          </span>
+        </h1>
+        <% if(published || environment == "production") { %>
+          <%- yield %>
+        <% } %>
+        <div id="footer">
+          <p><b>footer in layout</b></p>
+        </div>
+      <% } else { %>
+        <span>LOL, empty index</span>
+      <% } %>
     </div>
   </body>
 </html>

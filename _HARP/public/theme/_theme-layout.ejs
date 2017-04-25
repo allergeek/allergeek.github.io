@@ -1,0 +1,16 @@
+<!-- theme HTML template -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ../_includes/_head %>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div id="feed" class="start-margin">
+      <div class="centered">
+        <%- yield %>
+      </div>
+    </div>
+  </body>
+</html>
