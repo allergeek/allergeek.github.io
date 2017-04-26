@@ -1,9 +1,14 @@
 <nav>
 <% for (var i = 0; i < navigation.length; i++) { %>
   <span class="menu-item">
-    <a href="#0"><%= navigation[i].title %></a>
+    <a href="<%= navigation[i].ref %>"><%= navigation[i].title %></a>
   </span>
 <% } %>
-</nav>
 
-<!-- NEED to add url -->
+<% for (item in refs, titles) { %>
+  <a href="<%= refs[item] %>">
+    <span class="menu-item"><%= titles[item] %></span>
+  </a>
+<% } %>
+
+</nav>
