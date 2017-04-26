@@ -1,1 +1,12 @@
-// mixins
+// mixins and examples
+
+- var items = { home : 'Home', about: 'About', account: 'Account' }
+  ul
+    - for item, path in items
+      li
+        a(href="/" + path) #{item}
+
+
+// ternary operator - if else
+h6 #{(0 > 0) ? "SPRITE" : "NO SPRITE"}
+h6 #{(1 > 0) ? "SPRITE" : "NO SPRITE"}

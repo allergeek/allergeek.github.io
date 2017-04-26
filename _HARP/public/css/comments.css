@@ -1,0 +1,296 @@
+/* ADDITIONAL CSS for comments page */
+
+textarea::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #aaa;
+  font-weight: 300;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #bbb;
+}
+
+h2.page-heading {
+  margin: 30px 0 30px;
+}
+
+div.comments,
+div.auth {
+  padding: 0;
+  position: relative;
+}
+
+div.comments,
+div.auth {
+  background: none;
+}
+
+div.auth {
+  margin: 20px 0 0;
+}
+
+.auth button {
+  color: white;
+  background: royalblue;
+}
+
+div.comments {
+  margin: 0;
+}
+
+.comments button {
+  font-variant: small-caps;
+}
+
+.comments input[type="text"],
+.comments textarea {
+  width: 100%;
+}
+
+input.comment-input {
+  background: #dfdfdf !important;
+  /* NEEDS A FIX */
+  color: white;
+  min-height: 54px;
+  padding: 0 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto 20px;
+  font-size: 20px;
+}
+
+button.comment-submit {
+  margin-bottom: 20px;
+}
+
+.comments textarea {
+  width: 100%;
+  resize: none;
+  /* NEED TO RESIZE PROGRAMMATICALLY !! */
+  font-size: 24px;
+  height: 80px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.comments textarea:hover {
+  cursor: pointer;
+}
+
+.comments textarea:focus {
+  cursor: text;
+}
+
+.level-block:first-of-type {
+  margin-top: 20px;
+}
+
+.level-block {
+  margin-bottom: 20px;
+}
+
+.comment-block {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 #d0d0d0;
+  margin: 0px auto 0;
+  padding: 40px 40px 40px 40px;
+}
+
+.comment-block span {
+  font-weight: 300;
+  line-height: 125%;
+}
+
+.comment-block span.comment-text {
+  font-size: 125%;
+  color: #555;
+}
+
+.comment-block span.unanswered {
+  color: #b3b3b3;
+}
+
+.comment-block a {
+  color: grey;
+  border-bottom: 1px solid grey;
+}
+
+.comment-block a:hover {
+  /*color: royalblue;*/
+  /*border-color: royalblue;*/
+}
+
+.answer {
+  box-shadow: none;
+  background: none;
+}
+
+.answer span {
+  display: block;
+  font-weight: 400;
+}
+
+.answer span a {
+  color: grey;
+}
+
+.answer-wrapper {
+  margin-bottom: 40px;
+}
+
+.answer-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+a.source-link {
+  display: inline-block;
+  border-bottom-color: #999;
+  padding: 6px 0;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #999;
+}
+
+.block-wrapper {
+  margin-bottom: calc(40px + 20px);
+}
+
+.comment-note {
+  /*float: right;*/
+  display: inline-block;
+  /*text-align: right;*/
+  margin-top: 20px;
+  width: 72%;
+}
+
+.indented {
+  margin: 10px 0 0px 0px;
+}
+
+a.suggest {
+  display: inline-block;
+  margin: 0 0px;
+  white-space: nowrap;
+}
+
+div.contact-me {
+  margin-bottom: calc(40px + 20px);
+  background: none;
+  padding: 0;
+}
+
+.section-block {
+  font-size: 150%;
+  line-height: 125%;
+  font-weight: 300;
+}
+
+.btn-wrapper {
+  height: 80px;
+  width: inherit;
+}
+
+button.back-ctrl {
+  /*align-self: flex-end;*/
+
+  color: white;
+  min-height: 54px;
+  padding: 0 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 2 * 40px);
+  height: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-wrapper button.small-ctrl {
+  height: 40px;
+  width: auto;
+  max-width: 160px;
+  margin: 0;
+  left: 10px;
+  bottom: 10px;
+  padding: 0 10px;
+}
+
+.source-title {
+  color: #b3b3b3;
+  font-weight: 300;
+  display: block;
+  margin: 0 0 0 20px;
+  font-variant: small-caps;
+}
+
+.answer-ref {
+  min-width: 360px;
+  max-width: 80%;
+}
+
+/* DUBLICATE  with mailchimp.css*/
+
+/* external url */
+
+#mailchimp input.chimp-input,
+.messenger input.messenger-input {
+  font-size: 20px;
+  padding: 0 30px;
+  width: auto;
+  min-width: auto;
+  text-align: left;
+  white-space: nowrap;
+  background: royalblue;
+  border: 0;
+  min-height: 54px;
+  border-radius: 4px;
+  margin: 0;
+  color: white;
+  cursor: pointer;
+}
+
+/* messenger button, need to move elswhere */
+
+.mailchimp a,
+.messenger a {
+  display: inline-block;
+  /*margin-right: 10px;*/
+  /* NEED TO FIX side margin */
+}
+
+/* end DUB */
+
+
+.flex {
+  display: flex;
+}
+
+a.action-btn {
+  display: inline-block;
+  font-size: 20px;
+  color: #989898;
+  background: #dfdfdf;
+  border-radius: 9px;
+  padding: 12px 20px 12px 0;
+  font-weight: normal;
+  min-height: 28px;
+}
+
+.action-btn span {
+  color: #b3b3b3;
+  font-weight: normal;
+  padding: 0 12px;
+}

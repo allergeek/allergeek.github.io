@@ -3,10 +3,15 @@
   <head>
     <title><%= title %>
     </title>
+    <link rel="stylesheet" href="../css/blog.less" />
     <%- include ../_includes/_head %>
     <script type="text/javascript" src= "/helpers.js"></script>
   </head>
   <body>
+    <div class="body-container start-margin">
+      <div class="fixed-bar">
+        <a href="#0"><div class="bar-wrapper"><span class="title-bar">How to start running (cardio exercise)</span><span class="top-icon">&#10141;</span></div></a>
+      </div>
     <div class="centered start-margin">
       <% if(current.source !== 'index') { %>
         <h1>
