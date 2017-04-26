@@ -31,8 +31,11 @@
   },
 
   "psot": {
-    "title": "bla bla",
-    "theme": "my psot theme"
+    "title": "post title bla bla",
+    "theme": "my psot theme",
+    "tags": [
+      "exercise", "running", "sports", "writing long tag names", "cardio exercise", "health", "routines", "staying active"
+    ]
   },
 
   "how-to-start-running": {
