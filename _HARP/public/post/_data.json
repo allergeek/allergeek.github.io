@@ -35,7 +35,8 @@
     "theme": "my psot theme",
     "tags": [
       "exercise", "running", "sports", "writing long tag names", "cardio exercise", "health", "routines", "staying active"
-    ]
+    ],
+    "origin": "single" 
   },
 
   "how-to-start-running": {

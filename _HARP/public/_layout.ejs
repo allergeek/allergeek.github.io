@@ -1,31 +1,19 @@
+<!-- index HTML keeps here -->
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %>
-    </title>
+    <meta name="google-site-verification" content="SNCMSXtYoSqKAlyxoRRHK-cUb4dYJJd8pgZsxBRajPU" />
     <%- include _includes/_head %>
-    <script type="text/javascript" src= "/helpers.js"></script>
+    <title><%= title %></title>
   </head>
   <body>
-    <div class="centered start-margin">
-      <% if(current.source !== 'index') { %>
-        <h1>
-          <%= title %> - <span><%= theme %></span>
-        </h1>
-        <% for (var i = 0; i < tags.length; i++) { %>
-          <span><% var = tags[i] %></span>
-        <% } %>
-        <%# if(environment == "production") { %>
-          <%- yield %>
-        <%# } %>
-        <div id="footer">
-          <p><b>footer in layout</b></p>
-        </div>
-      <% } else { %>
-        <span>LOL, empty index</span>
-        <p>need to fix it somehow and pull templates</p>
-        <p>so far, /post/index and /index</p>
-      <% } %>
+    <div id="feed" class="start-margin">
+      <div class="centered">
+        <%- include _includes/_nav %>
+        <%- include _includes/_intro %>
+        <%- yield %>
+      </div>
     </div>
   </body>
 </html>
