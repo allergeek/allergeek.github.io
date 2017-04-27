@@ -72,7 +72,7 @@ h1 {
     url('../assets/exercise.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  /*background-position: center;*/
+  background-position: center;
   filter: saturate(10%);
 }
 
@@ -158,6 +158,7 @@ p.tags {
   padding: 9px 12px;
   border-radius: 4px;
   white-space: nowrap;
+  margin-left: 10px;
 }
 
 .tag-theme a {
