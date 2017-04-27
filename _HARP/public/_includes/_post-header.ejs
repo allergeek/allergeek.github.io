@@ -1,6 +1,7 @@
 <h1>
-  <%= title %><span class="tag-theme"><span class="muted">posted in</span> <a href="/<%= theme %>"><%= theme %></a></span>
+  <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><span class="muted">posted in</span> <a href="/<%= theme %>"><%= theme %></a></span>
 </h1>
-<p class="introduction"><b>Alice:</b> <%= intro %></p>
+<p class="introduction"><b>Alice:</b> <%- intro %>
+  <% if (localized) { %><a href="<%= current.source + '-ru' %>" class="no-break">Read in Russian</a><% } %></p>
 <p class="introduction tags"><b>This set is about:</b></p>
 <% for (var i = 0; i < tags.length; i++) { %><span class="tag tag-similar"><%= tags[i] %></span><% } %>

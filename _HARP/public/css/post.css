@@ -154,11 +154,14 @@ p.tags {
 }
 
 .tag-theme {
-  /*display: inline-block;*/
   padding: 9px 12px;
   border-radius: 4px;
   white-space: nowrap;
-  margin-left: 10px;
+  margin-left: 0px;
+}
+
+a.no-break {
+  white-space: nowrap;
 }
 
 .tag-theme a {
