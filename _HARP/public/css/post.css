@@ -115,7 +115,7 @@ h1 {
   background: white;
   background: rgba(255,255,255,0.1);
   border-radius: 4vh;
-  padding: 0.5vh 0 0 0.6vh;
+  padding: 0 0 0 0.6vh;
 
   display: flex;
   align-items: center;
@@ -140,8 +140,9 @@ h1 {
   font-weight: 400;
 }
 
-.post-wrapper h2 {
+.post-body h2 {
   margin: 0 0 30px;
+  cursor: default;
 }
 
 .source-card h2.unit {
@@ -232,9 +233,15 @@ div.next a {
   line-height: 37.5px;
 }
 
-.post-wrapper p {
+.post-body p {
   margin: 30px 0 30px;
   color: #6d6d6d;
+  cursor: default;
+}
+
+h1,
+p.introduction {
+  cursor: default;
 }
 
 span.counter {
