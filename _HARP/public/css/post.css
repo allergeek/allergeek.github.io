@@ -140,8 +140,7 @@ h1 {
   font-weight: 400;
 }
 
-/*.note-card */
-h2.unit {
+.post-wrapper h2 {
   margin: 0 0 30px;
 }
 
@@ -233,7 +232,7 @@ div.next a {
   line-height: 37.5px;
 }
 
-p.break {
+.post-wrapper p {
   margin: 30px 0 30px;
   color: #6d6d6d;
 }

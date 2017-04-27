@@ -1,10 +1,20 @@
 <div class="source-card-wrapper">
-  <div class="source-img-card">
-  </div>
+  <a href="<%= originURL %>" target="_blank" class="source-link">
+    <% if (video == "indeed") { %>
+    <label class="video-card">
+      <div class="source-img-card img-3">
+      </div>
+    </label>
+
+    <% } else { %>
+    <div class="source-img-card">
+    </div>
+    <% } %>
+  </a>
   <div class="source-card">
     <h2 class="unit">
       <%= originTitle %>
     </h2>
-    <a href="<%= originURL %>"><span><%= originDomain %></span></a>
+    <a href="<%= originURL %>" target="_blank"><span><%= originDomain %></span></a>
   </div>
 </div>

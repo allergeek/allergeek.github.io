@@ -34,7 +34,9 @@ p.introduction a:hover {
 }
 
 p.unit,
-h2.unit {
+h2.unit,
+.post-wrapper p,
+.post-wrapper h2 {
   font-weight: 300;
   margin: 0 0 15px;
 }
