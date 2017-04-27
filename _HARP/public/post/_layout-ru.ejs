@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <%- include ../_includes/_head -%>
+    <%- include ../_includes/_post-css %>
+  </head>
+  <body>
+    <div class="body-container start-margin">
+      <div class="fixed-bar">
+        <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
+      </div>
+    <div class="centered">
+      <% include ../_includes-ru/_post-header %>
+
+      <%# If the post notes have single origin then show source card %>
+
+      <% if (origin == "single") { %>
+        <% include ../_includes-ru/_post-card %>
+      <% } %>
+
+      <%# if(environment == "production") { %>
+      <div class="post-body">
+        <%- yield %>
+      </div>
+      <%# } %>
+
+      <% include ../_includes-ru/_post-print %>
+      <% include ../_includes-ru/_post-outro %>
+      <% include ../_includes-ru/_post-chimp %>
+    </div>
+  </body>
+</html>

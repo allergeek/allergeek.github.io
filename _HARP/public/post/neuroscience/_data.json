@@ -1,16 +1,33 @@
 {
   "psot": {
+    "lang": "en",
     "title": "Exercise reorganizes the brain to lower stress",
     "theme": "Neuroscience",
     "intro": "Extending the title with more introductory information. The title itself may well be different from the original publication.",
     "tags": [
-      "exercise", "running", "sports", "health", "anxiety", "health", "neuroscience", "popular science"
+      "exercise", "running", "sports", "health", "anxiety", "neuroscience", "popular science"
     ],
     "origin": "single",
     "video": "indeed",
     "originTitle": "Exercise reorganizes the brain to be more resilient to stress",
     "originDomain": "princeton.edu",
     "originURL": "https://www.princeton.edu/main/news/archive/S37/28/70Q72/index.xml"
+  },
+
+  "psot-ru": {
+    "lang": "ru",
+    "title": "Физические упражнения позволяют понизить уровень стресса",
+    "theme": "Неврология",
+    "intro": "Физические нагрузки помогают уменьшить реакцию на стресс.",
+    "tags": [
+      "упражнения", "бег", "спорт", "здоровье", "тревожность", "неврология", "популярная наука"
+    ],
+    "origin": "single",
+    "video": "indeed",
+    "originTitle": "Exercise reorganizes the brain to be more resilient to stress",
+    "originDomain": "princeton.edu",
+    "originURL": "https://www.princeton.edu/main/news/archive/S37/28/70Q72/index.xml",
+    "layout": "layout-ru"
   },
 
   "my-first-post": {

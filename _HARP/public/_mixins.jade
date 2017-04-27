@@ -1,5 +1,21 @@
 // mixins and examples
 
+-
+  var colors = ['red', 'blue', 'green'];
+  each item in colors
+    p= item
+
+
+// mixin example
+
+// mixin image(file, alt)
+    .image
+      img(src="/blog/img/" + file alt=alt)
+
+      +image("example.jpg", "Image description")
+
+
+
 - var items = { home : 'Home', about: 'About', account: 'Account' }
   ul
     - for item, path in items
