@@ -4,19 +4,19 @@
     "title": "Hello global title from json",
     "description": "My default description",
     "navigation": [
-      { "title": "all posts", "ref": "/all-posts" },
-      { "title": "themes", "ref": "/themes" }
+      { "title": "all posts", "page": "/all-posts" },
+      { "title": "themes", "page": "/themes" }
     ],
 
-    "titles": [
+    "pageTitles": [
       "title 1",
       "title 2",
       "title 3"
     ],
-    "refs": [
-      "ref-one",
-      "ref-two",
-      "ref-three"
+    "pages": [
+      "page-one",
+      "page-two",
+      "page-three"
     ]
   }
 }

@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %>
-    </title>
-    <link rel="stylesheet" href="../css/blog.less" />
-    <%- include ../_includes/_head %>
-    <script type="text/javascript" src= "/helpers.js"></script>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <%- include ../_includes/_head -%>
+    <%- include ../_includes/_post-css %>
   </head>
   <body>
     <div class="body-container start-margin">
       <div class="fixed-bar">
-        <a href="#0"><div class="bar-wrapper"><span class="title-bar">How to start running (cardio exercise)</span><span class="top-icon">&#10141;</span></div></a>
+        <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
       </div>
-    <div class="centered start-margin">
+    <div class="centered">
       <% if(current.source !== 'index') { %>
         <h1>
-          <%= title %> - <span><%= theme %></span>
+          <%= title %><span class="tag-theme"><span class="muted">posted in</span> <a href="/<%= theme %>"><%= theme %></a></span>
         </h1>
+        <p class="introduction"><b>Alice:</b> <%= intro %></p>
+        <p class="introduction tags"><b>This set is about:</b></p>
         <%_ for (var i = 0; i < tags.length; i++) { _%>
-        <span><%= tags[i] %></span>
+        <span class="tag tag-similar"><%= tags[i] %></span>
         <%_ } _%>
 
-        If ref is single then show card.
+
+        <!-- If the post notes have single origin then show source card -->
         <% if (origin == "single") { %>
           <% include ../_includes/_card %>
         <% } %>

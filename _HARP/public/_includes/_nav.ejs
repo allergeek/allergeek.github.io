@@ -1,24 +1,6 @@
 <nav>
 <% for (var i = 0; i < navigation.length; i++) { %>
-  <a href="<%= navigation[i].ref %>">
+  <a href="<%= navigation[i].page %>">
     <span class="menu-item"><%= navigation[i].title %></span>
   </a>
 <% } %>
-
-<% for (item in refs, titles) { %>
-  <a href="<%= refs[item] %>">
-    <span class="menu-item"><%= titles[item] %></span>
-  </a>
-<% } %>
-
-</nav>
-
-
-<ul>
-  <li class="<%- current.source == 'index' ? 'active' : '' %>">
-    <a href="/">Home</a>
-  </li>
-  <li class="<%- current.source == 'about' ? 'active' : '' %>">
-    <a href="/about">About</a>
-  </li>
-</ul>

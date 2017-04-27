@@ -1,3 +1,5 @@
+@import "basics.css"
+
 html {
     font-family: sans-serif;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -111,7 +113,7 @@ span.tag-title {
   padding: 12px;
 }
 
-nav span,
+nav a,
 #footer-nav span,
 span.tag-similar {
   display: inline-block;
@@ -761,10 +763,6 @@ span.counter {
   margin: 5px 0 4px 8px;
 }
 
-nav {
-  margin: 20px 0 0;
-}
-
 #footer-nav {
   margin: 80px 0 40px;
 }
@@ -786,14 +784,12 @@ span.menu-item {
   margin: 0 10px 10px 0;
 }
 
-nav span.menu-item a,
 #footer-nav span.menu-item a {
   /*display: block;*/
   /*margin: 0;*/
   color: white;
 }
 
-nav span.menu-item,
 #footer-nav span.menu-item {
   padding: 0 6px 3px;
   /* COMPENSATING FOR SMALL-CAPS */

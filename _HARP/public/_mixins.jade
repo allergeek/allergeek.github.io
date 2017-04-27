@@ -10,3 +10,47 @@
 // ternary operator - if else
 h6 #{(0 > 0) ? "SPRITE" : "NO SPRITE"}
 h6 #{(1 > 0) ? "SPRITE" : "NO SPRITE"}
+
+
+// print out all the app contents (metadata and file list)
+pre #{ JSON.stringify(public, null, '\t') }
+
+
+// ways to build a menu or a list of pages
+// [1]
+<% for (item in pages, pageTitles) { %>
+  <a href="<%= pages[item] %>">
+    <span class="menu-item"><%= pageTitles[item] %></span>
+  </a>
+<% } %>
+
+</nav>
+
+// [2] ternary operator
+<ul>
+  <li class="<%- current.source == 'index' ? 'active' : '' %>">
+    <a href="/">Home</a>
+  </li>
+  <li class="<%- current.source == 'about' ? 'active' : '' %>">
+    <a href="/about">About</a>
+  </li>
+</ul>
+
+
+// from /index
+
+- var myvar = [ "First line", "Running easy will keep you safe while you become <br>comfortable with the running mechanics."]
+
+ul
+  for item in myvar
+   li!= item
+
+br
+
+for post, mmm in public.post._data
+   a( href="/post/#{ mmm }" )
+     h2= post.title
+     h3= post.note
+
+// current object
+<%= current.path.join('/') %>

@@ -5,24 +5,15 @@
 }
 
 .menu-item {
-  padding: 6px 12px;
   border-radius: 4px;
   font-variant: small-caps;
-  margin: 0 10px 10px 0;
+  margin: 0 0px 10px 0;
   display: inline-block;
   padding: 3px 12px 6px;
-  /*padding: 0 6px 3px;*/
   /* COMPENSATING FOR SMALL-CAPS */
 }
 
 .menu-item a {
-  color: white;
-  font-weight: 500;
-  font-size: 24px;
-}
-
-nav .menu-item {
-  background: #b3b3b3;
 }
 
 #footer-nav {

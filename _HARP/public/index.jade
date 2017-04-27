@@ -7,27 +7,10 @@
 
 // + how do I reference CSS files?<br>
 // + jade files are good for content. is it the right way to insert content (with stylistic html tags)?<br>
-// - why do I need _include_ in some partials?<br>
-// - + Json means no tags. Try JS files with vars. how can I further divide template and content? (move this to local/global JSON - can I have a json in PUBLIC dir?)<br>
+// + why do I need _include_ in some partials?<br>
+// + Json means no tags. Try JS files with vars. how can I further divide template and content? (move this to local/global JSON - can I have a json in PUBLIC dir?)<br>
 // + how do I mark new lines in EJS? br is just fine<br>
 
 // + partials better moved to LAYOUT
 
-br
-
-- var mmm = [ "sdfds", "Running easy will keep you safe while you become <br>comfortable with the running mechanics."]
-
-ul
-  for item in mmm
-   li!= item
-
-br
-
-for post, mmm in public.post._data
-   a( href="/post/#{ mmm }" )
-     h2= post.title
-     h3= post.note
-
-
-h1 Test Title in Jade
-h2 vars pulled form /post folder
+p Body

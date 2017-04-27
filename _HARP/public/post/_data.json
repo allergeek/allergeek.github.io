@@ -31,12 +31,12 @@
   },
 
   "psot": {
-    "title": "post title bla bla",
-    "theme": "my psot theme",
+    "title": "post title",
+    "theme": "post theme",
     "tags": [
       "exercise", "running", "sports", "writing long tag names", "cardio exercise", "health", "routines", "staying active"
     ],
-    "origin": "single" 
+    "origin": "single"
   },
 
   "how-to-start-running": {
