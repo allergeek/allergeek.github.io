@@ -2,12 +2,9 @@
 
 p Body
 p Now I have a list of posts in a single theme, in English only, and they have links to actual post pages.
-
-p include post/neuroscience/psot.jade<br>
-  | include post/neuroscience/my-first-post.jad<br>
-  | etc.
-
-br
+  | I can also manually include every post in the feed, by copying and formatting its content as a set of objects in the jade file<br>
+  | I may pull the themes titles with _current<br>
+  | Also, may use a function that creates an array from every line in jade, starting with h2 ?
 br
 
 for key, value in public.post.neuroscience._data
@@ -19,9 +16,25 @@ for key, value in public.post.neuroscience._data
 br
 br
 
+p How do I use the list of files that I can get with _CONTENT ?
+p Need to include jade file name as a var
+p may be I could pull the titles into a var from the previous loop
 
 include post/neuroscience/psot.jade
-include post/neuroscience/my-first-post.jade
+//include post/neuroscience/my-first-post.jade
 
-for note in bag
-  h1= note.h2
+//to show all notes in one specific post, psot.jade in Neuroscience
+// bag is a variable that became available after including psot.jade
+each note in bag
+  a(href= "post/psot")
+    h1= note.h2
+
+
+
+
+
+
+
+
+
+| .
