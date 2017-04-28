@@ -58,6 +58,21 @@ p.introduction a:hover {
   margin-top: 4px;
 }
 
+.page-body {
+
+}
+
+.page-body p,
+.page-body h2 {
+  font-weight: 300;
+  margin: 0 0 15px;
+}
+
+.page-body h2 {
+  margin: 0 0 30px;
+  cursor: default;
+}
+
 .unit-card {
   border-radius: 4px;
   margin: 30px 0;

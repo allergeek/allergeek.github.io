@@ -140,7 +140,7 @@ h1 {
   font-weight: 400;
 }
 
-.post-body h2 {
+.page-body h2 {
   margin: 0 0 30px;
   cursor: default;
 }
@@ -236,7 +236,7 @@ div.next a {
   line-height: 37.5px;
 }
 
-.post-body p {
+.page-body p {
   margin: 30px 0 30px;
   color: #6d6d6d;
   cursor: default;

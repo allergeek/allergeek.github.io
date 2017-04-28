@@ -54,5 +54,10 @@
 
   "about": {
     "layout": false
+  },
+
+  "index": {
+    "layout": false,
+    "^ this is /all-posts directive. need to": "fix to a specific layout"
   }
 }

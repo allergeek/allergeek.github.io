@@ -1,7 +1,9 @@
 {
   "psot": {
     "lang": "en",
+    "langg": true,
     "localized": true,
+    "date": "2017/04/25",
     "title": "Exercise reorganizes the brain to lower stress",
     "theme": "Neuroscience",
     "intro": "Extending the title with more introductory information. The <b>title itself</b> may well be different from the original publication.",
@@ -18,6 +20,7 @@
   "psot-ru": {
     "lang": "ru",
     "layout": "../_layout-ru",
+    "date": "2017/04/27",
     "title": "Физические упражнения позволяют понизить уровень стресса",
     "theme": "Неврология",
     "intro": "Физические нагрузки помогают уменьшить реакцию мозга на стресс.",
@@ -34,6 +37,7 @@
   "my-first-post": {
     "lang": "en",
     "localized": true,
+    "date": "2017/04/24",
     "title": "Exercise reorganizes the brain to lower stress",
     "theme": "Neuroscience",
     "intro": "Extending the title with more introductory information. The title itself may well be different from the original publication.",
@@ -49,6 +53,6 @@
 
   "post title and part-of-url": {
     "property box": "property value",
-    "lang": "en"
+    "lang": "ch"
   }
 }

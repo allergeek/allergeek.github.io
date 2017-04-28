@@ -4,12 +4,12 @@
     "title": "Hello global title from json",
     "description": "My default description",
     "navigation": [
-      { "title": "all posts", "page": "/all-posts" },
-      { "title": "themes", "page": "/themes" }
+      { "title": "all posts", "page": "/post" },
+      { "title": "themes", "page": "/theme" }
     ],
     "navigationru": [
-      { "title": "все посты", "page": "/all-posts" },
-      { "title": "темы", "page": "/themes" }
+      { "title": "все посты", "page": "/post" },
+      { "title": "темы", "page": "/theme" }
     ],
 
     "pageTitles": [
