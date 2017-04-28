@@ -19,5 +19,9 @@
       ["running11", "sports12"],
       ["running too21", "sports too22", "sports too33"]
     ]
+  },
+  "index": {
+    "layout": false,
+    "^ fix this": true
   }
 }

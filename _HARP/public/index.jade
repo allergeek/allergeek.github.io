@@ -2,6 +2,14 @@
 
 p Body
 p Now I have a list of posts in a single theme, in English only, and they have links to actual post pages.
+
+p include post/neuroscience/psot.jade<br>
+  | include post/neuroscience/my-first-post.jad<br>
+  | etc.
+
+br
+br
+
 for key, value in public.post.neuroscience._data
   if key.lang == "en"
     a(href=[value])
@@ -11,4 +19,9 @@ for key, value in public.post.neuroscience._data
 br
 br
 
+
 include post/neuroscience/psot.jade
+include post/neuroscience/my-first-post.jade
+
+for note in bag
+  h1= note.h2
