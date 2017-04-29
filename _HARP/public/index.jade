@@ -1,4 +1,86 @@
-// + how can I further divide template and content?<br>
+//- + how can I further divide template and content?<br>
+
+//- an array of posts that I want to show in the feed
+
+-
+  var titles = [
+    "psot title1",
+    "psot title",
+    "my first post title"
+  ]
+
+  var urls = [
+    "psot-url-1",
+    "psot-url-too",
+    "AAWWWWW"
+  ]
+
+  var themes = [
+    "neuroscience",
+    "null"
+  ]
+
+| NOW DO THE THEMES IN URLS
+| DEAL WITH THE INCULDE VS BLOCK, the jade post content can actually serve its purpose
+
+| When I add a new post preview to the feed,
+| I create a var with 3 preview notes in jade, then include this jade file in site index.
+| Then I need to replicate a function that generates 3 blocks of heading,
+| with the new var name.
+
+include post/neuroscience/psot.jade
+include post/neuroscience/my-first-post.jade
+
+//-
+  mixin loop
+    &thinsp;&thinsp;
+    span.tag.tag-title.inline-title= urls[index]
+    //span.tag.tag-title.inline-title wrap in a larger loop and try to iterate through the post titles here, or a mixin
+
+
+
+- var counter = 0
+
+each note in psot.h2
+  a(href= "post/#{urls[counter]}").note-wrapper
+    h2= note
+      &thinsp;&thinsp;
+      span.tag.tag-title.inline-title= titles[counter]
+
+- counter += 1
+each note in psot.h2
+  a(href= "post/#{urls[counter]}").note-wrapper
+    h2= note
+      &thinsp;&thinsp;
+      span.tag.tag-title.inline-title= titles[counter]
+
+- counter += 1
+each note in psottoo.h2
+  a(href= "post/#{urls[counter]}").note-wrapper
+    h2= note
+      &thinsp;&thinsp;
+      span.tag.tag-title.inline-title= titles[counter]
+
+
+
+
+
+//-
+  each note in psottoo.h2
+    a(href= "post/my-first-post").note-wrapper
+      h2= note
+        &thinsp;&thinsp;
+        span.tag.tag-title.inline-title my first post title
+
+//- to show all notes in one specific post, psot.jade in Neuroscience
+//- bag (or var postname) is a variable that became available after including psot.jade
+//-
+  each item in titles
+    each note in bag
+      a(href= "post/psot").note-wrapper
+        h2= note.h2
+          &thinsp;&thinsp;
+          span.tag.tag-title.inline-title= item
 
 p Body
 p Now I have a list of posts in a single theme, in English only, and they have links to actual post pages.
@@ -17,17 +99,7 @@ br
 br
 
 p How do I use the list of files that I can get with _CONTENT ?
-p Need to include jade file name as a var
 p may be I could pull the titles into a var from the previous loop
-
-include post/neuroscience/psot.jade
-//include post/neuroscience/my-first-post.jade
-
-//to show all notes in one specific post, psot.jade in Neuroscience
-// bag is a variable that became available after including psot.jade
-each note in bag
-  a(href= "post/psot")
-    h1= note.h2
 
 
 
