@@ -1,14 +1,15 @@
 //-
-  To add a new post preview to the feed, I add a new var with 3 preview notes.
+  To add a new post preview to the feed, I add a new var with 3 preview notes in feed.jade.
+  I add a title to var titles and a url to var urls (to the beginning of each array).
+  Then I need to go to index.jade to fix the function.
+
   Only h2 headings are included there, otherwise empty blocks are created for paragraphs.
 
-  I also add a title and a url to the beginning of each array, of titles and urls.
-
-  Here's an array of posts that I want to show in the feed, their urls an themes:
+  Here's an array of posts that I want to show in the feed, their urls and themes:
 
 -
   var num = 2
-  
+
   var titles = [
     "psot title1",
     "psot title",
