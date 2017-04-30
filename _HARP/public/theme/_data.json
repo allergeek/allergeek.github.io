@@ -1,7 +1,7 @@
 {
   "running-theme": {
     "theme": "running",
-    "title": "theme about running",
+    "title": "theme about running - NEED TO MOVE EXAMPLES TO A SEPARATE FOLDER",
     "layout": "_theme-layout",
     "titles": [
       "post title - how to start running",
@@ -23,5 +23,17 @@
   "index": {
     "layout": false,
     "^ fix this": true
+  },
+
+  "neuroscience": {
+    "layout": "_theme-layout"
+  },
+
+  "nevrologiya": {
+    "layout": "_theme-layout"
+  },
+
+  "running": {
+    "layout": "_theme-layout"
   }
 }

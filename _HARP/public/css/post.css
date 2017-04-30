@@ -145,6 +145,11 @@ h1 {
   cursor: default;
 }
 
+.page-body h2:nth-child(1) {
+  font-weight: 400;
+}
+
+
 .source-card h2.unit {
   margin: 0 0 20px;
 }
