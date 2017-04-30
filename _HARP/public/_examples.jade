@@ -5,8 +5,25 @@
   each item in colors
     p= item
 
+//- show a list of jade files
+for file in public.post.neuroscience._contents
+  a(href="post/#{file}")= file
+    br
 
-// mixin example
+//- show all posts in EN, in a specific theme
+for key, value in public.post.neuroscience._data
+  if key.lang == "en"
+    a(href=[value])
+      = key.title + [' | ' + value]
+      br
+
+mixin loop
+  &thinsp;&thinsp;
+  span.tag.tag-title.inline-title= some value
+
++loop
+
+
 
 // mixin image(file, alt)
     .image
