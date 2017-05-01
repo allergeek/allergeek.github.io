@@ -2,12 +2,17 @@
   <a href="<%= originURL %>" target="_blank" class="source-link">
     <% if (video == "indeed") { %>
     <label class="video-card">
-      <div class="source-img-card img-3">
+      <div class="source-img-card" style="background: url('../../assets/<%= image %>')">
       </div>
     </label>
-
     <% } else { %>
-    <div class="source-img-card">
+    <div
+      class="source-img-card"
+      style="background:
+        linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)),
+        url('../../assets/<%= image %>')">
     </div>
     <% } %>
   </a>
