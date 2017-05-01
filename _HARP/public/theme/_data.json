@@ -1,25 +1,4 @@
 {
-  "running-theme": {
-    "theme": "running",
-    "title": "theme about running - NEED TO MOVE EXAMPLES TO A SEPARATE FOLDER",
-    "layout": "_theme-layout",
-    "titles": [
-      "post title - how to start running",
-      "post title - how to run an ultra"
-    ],
-    "refs": [
-      "postref-how-to-one",
-      "postref-how-to-two"
-    ],
-    "dates": [
-      "2016",
-      "2017"
-    ],
-    "tags": [
-      ["running11", "sports12"],
-      ["running too21", "sports too22", "sports too33"]
-    ]
-  },
   "index": {
     "layout": false,
     "^ fix this": true

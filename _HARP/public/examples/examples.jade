@@ -1,0 +1,98 @@
+// mixins and examples
+
+//
+  - var colors = ['red', 'blue', 'green']
+    each item in colors
+      p= item
+
+//- show a list of jade files
+for file in public.post.neuroscience._contents
+  a(href="post/#{file}")= file
+    br
+
+//- show all posts in EN, in a specific theme
+for key, value in public.post.neuroscience._data
+  if key.lang == "en"
+    a(href=[value])
+      = key.title + [' | ' + value]
+      br
+
+//=
+  mixin loop
+    &thinsp;&thinsp;
+    span.tag.tag-title.inline-title= some value
+
+  +loop
+
+  - var myvar = [ "First line", "Running easy will keep you safe while you become <br>comfortable with the running mechanics."]
+
+  ul
+    for item in myvar
+     li!= item
+
+  br
+
+  for post, mmm in public.post._data
+     a( href="/post/#{ mmm }" )
+       h2= post.title
+       h3= post.note
+
+  // current object
+  <%= current.path.join('/') %>
+
+script.
+  if (10 == 10) {
+    //alert("working, too");
+  }
+
+-
+  var localVar =
+    "localVar var: here's that unique post title!"
+
+  // h3= say_hello(localVar)
+  h2= localVar
+
+// mixin image(file, alt)
+    .image
+      img(src="/blog/img/" + file alt=alt)
+
+      +image("example.jpg", "Image description")
+
+
+
+- var items = { home : 'Home', about: 'About', account: 'Account' }
+  ul
+    - for item, path in items
+      li
+        a(href="/" + path) #{item}
+
+
+// ternary operator - if else
+h6 #{(0 > 0) ? "SPRITE" : "NO SPRITE"}
+h6 #{(1 > 0) ? "SPRITE" : "NO SPRITE"}
+
+// ways to build a menu or a list of pages
+// [1]
+//
+  <% for (item in pages, pageTitles) { %>
+    <a href="<%= pages[item] %>">
+      <span class="menu-item"><%= pageTitles[item] %></span>
+    </a>
+  <% } %>
+
+</nav>
+
+// [2] ternary operator
+    <ul>
+      <li class="<%- current.source == 'index' ? 'active' : '' %>">
+        <a href="/">Home</a>
+      </li>
+      <li class="<%- current.source == 'about' ? 'active' : '' %>">
+        <a href="/about">About</a>
+      </li>
+    </ul>
+
+
+
+// print out all the app contents (metadata and file list)
+pre #{ JSON.stringify(public, null, '\t') }
