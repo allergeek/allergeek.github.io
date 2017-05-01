@@ -1,1 +1,10 @@
 p This is a Running theme page.
+
+br
+
+for any, key in public.post.running._data
+  - var language = any.lang
+  if language == "en"
+    a(href='../post/running/' + [key])
+      h2= any.title
+    br

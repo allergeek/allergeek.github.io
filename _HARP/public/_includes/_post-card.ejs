@@ -1,8 +1,18 @@
 <div class="source-card-wrapper">
   <a href="<%= originURL %>" target="_blank" class="source-link">
-    <% if (video == "indeed") { %>
+    <% if (video) { %>
     <label class="video-card">
-      <div class="source-img-card" style="background: url('../../assets/<%= image %>')">
+      <div
+        class="source-img-card"
+        style="background:
+          linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+          url('../../assets/<%= image %>');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        ">
       </div>
     </label>
     <% } else { %>
@@ -12,7 +22,11 @@
         linear-gradient(
           rgba(255, 255, 255, 0.5),
           rgba(255, 255, 255, 0.5)),
-        url('../../assets/<%= image %>')">
+        url('../../assets/<%= image %>');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      ">
     </div>
     <% } %>
   </a>

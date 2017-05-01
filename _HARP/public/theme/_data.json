@@ -1,15 +1,15 @@
 {
   "index": {
-    "layout": false,
-    "^ fix this": true
+    "layout": false
   },
 
   "neuroscience": {
     "layout": "_theme-layout"
   },
 
-  "nevrologiya": {
-    "layout": "_theme-layout"
+  "neuroscience-ru": {
+    "layout": "_theme-layout",
+    "something to distinguish from posts in English": true
   },
 
   "running": {

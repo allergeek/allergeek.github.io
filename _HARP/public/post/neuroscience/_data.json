@@ -11,7 +11,7 @@
     ],
     "image": "how-we-are-programmed-to-be-poor.gif",
     "origin": "single",
-    "video": "nope",
+    "video": false,
     "originTitle": "News Feature: The neuroscience of poverty",
     "originDomain": "pnas.org",
     "originURL": "http://www.pnas.org/content/112/51/15530.full"
@@ -29,7 +29,7 @@
     ],
     "image": "exercise-reorganizes-the-brain-to-lower-stress.jpg",
     "origin": "single",
-    "video": "nope",
+    "video": false,
     "originTitle": "Exercise reorganizes the brain to be more resilient to stress",
     "originDomain": "princeton.edu",
     "originURL": "https://www.princeton.edu/main/news/archive/S37/28/70Q72/index.xml"
@@ -48,7 +48,7 @@
     ],
     "image": "exercise-reorganizes-the-brain-to-lower-stress.jpg",
     "origin": "single",
-    "video": "nope",
+    "video": false,
     "originTitle": "Exercise reorganizes the brain to be more resilient to stress",
     "originDomain": "Принстонский университет",
     "originURL": "https://www.princeton.edu/main/news/archive/S37/28/70Q72/index.xml"
@@ -66,7 +66,7 @@
     ],
     "image": "how-the-brain-is-capable-of-growing-new-cells.jpeg",
     "origin": "single",
-    "video": "indeed",
+    "video": true,
     "originTitle": "You can grow new brain cells. Here's how",
     "originDomain": "ted.com",
     "originURL": "https://www.ted.com/talks/sandrine_thuret_you_can_grow_new_brain_cells_here_s_how"
