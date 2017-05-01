@@ -1,12 +1,12 @@
 {
   "why do I keep this file": {
-    "is": "to back up example code in examples/running-theme.jade",
+    "is": "to back up example code in /examples/running-theme.jade",
     "title": "test"
   },
 
   "running-theme": {
     "theme": "running",
-    "title": "theme about running - NEED TO MOVE EXAMPLES TO A SEPARATE FOLDER",
+    "title": "theme about running",
     "layout": "_theme-layout",
     "titles": [
       "post title - how to start running",
@@ -78,7 +78,6 @@
   },
 
   "index": {
-    "layout": false,
-    "^ this is /all-posts directive. need to": "fix to a specific layout"
+    "layout": false
   }
 }

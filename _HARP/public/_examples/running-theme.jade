@@ -17,9 +17,10 @@ div
 
 p Examples of referencing:
 p= titles[0]
+  |  - #0
 
-for title in titles
-  p= title
+for title, index in titles
+  p #{title} - #{index}
 
 br
 
@@ -27,7 +28,7 @@ p Post metadata (properties):
 
 each ref, index in refs
   p
-    a( href="/theme/running-theme/#{ ref }" )
+    a( href="/examples/running-theme/#{ ref }" )
       span uri
   span date - #{ dates [index] }
   br
@@ -70,5 +71,5 @@ each tag, index in tags
 
 // ! gets the key VALUES out !
 
-for any, key in public.post._data
+for any, key in public.post.neuroscience._data
   p= [key]

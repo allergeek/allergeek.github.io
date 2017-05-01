@@ -1,4 +1,21 @@
 {
+  "how-we-are-programmed-to-be-poor": {
+    "lang": "en",
+    "localized": false,
+    "date": "2017/05/01",
+    "title": "How we are programmed to be poor",
+    "theme": "Neuroscience",
+    "intro": "Environmental factors yield differences in developement of brain structures.",
+    "tags": [
+      "health", "poverty", "education", "mental heath", "stress", "anxiety", "how the brain works", "neuroscience", "popular science"
+    ],
+    "origin": "single",
+    "video": "nope",
+    "originTitle": "News Feature: The neuroscience of poverty",
+    "originDomain": "pnas.org",
+    "originURL": "http://www.pnas.org/content/112/51/15530.full"
+  },
+
   "exercise-reorganizes-the-brain-to-lower-stress": {
     "lang": "en",
     "localized": true,
@@ -46,7 +63,7 @@
     ],
     "origin": "single",
     "video": "indeed",
-    "originTitle": "Exercise reorganizes the brain to be more resilient to stress",
+    "originTitle": "You can grow new brain cells. Here's how",
     "originDomain": "ted.com",
     "originURL": "https://www.ted.com/talks/sandrine_thuret_you_can_grow_new_brain_cells_here_s_how"
   }
