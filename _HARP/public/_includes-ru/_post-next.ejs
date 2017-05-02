@@ -1,3 +1,29 @@
-<div class="form subscribe next">
-  <a href="#0"><b>NEXT: </b>Post</a>
-</div>
+<% var data = public.post.neuroscience._data %>
+<% var posts = [] %>
+<% var titles = [] %>
+
+<% for (var url in data) { %>
+  <% var pref = data[url] %>
+  <% if (pref.date && pref.lang == "ru") { %>
+    <% pref.url = url %>
+    <% posts.push(pref.url) %>
+    <% titles.push(pref.title) %>
+  <% } %>
+<% } %>
+
+<% for (var i = 0; i < posts.length; i++) { %>
+  <% if (posts[i] == current.source) { %>
+    <% if ( i + 1 !== posts.length ) { %>
+    <div class="form subscribe next">
+      <a href="<%= posts[i+1] %>"><b>NEXT: </b><%= titles[i+1] %></a>
+    </div>
+    <% } else { %>
+      <span>Заголовок блока</span><br>
+      <br>
+      <br>
+      <div class="all-themes">
+        <% for (var theme in public.theme._data) { %><% var pref = public.theme._data %><% if (pref[theme].lang == "ru" && pref[theme].index !== true && theme !== "neuroscience-ru") { %><a href="../../theme/<%= theme.toLowerCase() %>"><span class="tag tag-page"><%= pref[theme].ru.charAt(0).toUpperCase() + pref[theme].ru.substring(1) %></span></a><% } %><% } %>
+      </div>
+    <% } %>
+  <% } %>
+<% } %>

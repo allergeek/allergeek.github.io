@@ -65,7 +65,7 @@ h1 {
   height: 20vh;
   cursor: pointer;
   border-radius: 4px 4px 0 0;
-  
+
   filter: saturate(10%);
 }
 
@@ -159,6 +159,13 @@ a.no-break {
 
 .tag-theme a {
   color: #6d6d6d;
+}
+
+.all-themes span.tag-page {
+  padding: 16px 24px;
+  display: inline-block;
+  /*margin: 0 4px 4px 0;*/
+  /*cursor: pointer;*/
 }
 
 span.tag-similar {

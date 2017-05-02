@@ -1,32 +1,30 @@
+<% var data = public.post.neuroscience._data %>
+<% var posts = [] %>
+<% var titles = [] %>
 
-  <% var data = public.post.neuroscience._data %>
-  <% var posts = [] %>
-
-  <% for (var url in data) { %>
-    <% if (data[url].date && data[url].lang == "en" ) { %>
-      <% posts.push(url) %>
-      <%- data[url].date %>
-      <%- data[url].lang %>
-      <%- data[url].title %><br>
-    <% } %>
+<% for (var url in data) { %>
+  <% var pref = data[url] %>
+  <% if (pref.date && pref.lang == "en") { %>
+    <% pref.url = url %>
+    <% posts.push(pref.url) %>
+    <% titles.push(pref.title) %>
   <% } %>
-  <br>
-  <%- posts.join(', <br>') %>
-  <br>
-  <br>
-  <% for (var i = 0; i < posts.length; i++) { %>
-    <% var next = posts[i + 1] %>
-    <!-- <%= i + 1 %> -->
-    <!-- <%= posts.length %> -->
+<% } %>
 
-    <% for (var name in data) { %>
-    <% if (posts[i] == current.source && (i + 1) !== posts.length ) { %>
-      <div class="form subscribe next">
-        <a href="<%= posts[i] %>"><b>CURRENT: </b><%= posts[i] %></a>
-
-        <a href="<%= next %>"><b>NEXT: </b><%- data[name].title %></a>
-
+<% for (var i = 0; i < posts.length; i++) { %>
+  <% if (posts[i] == current.source) { %>
+    <% if ( i + 1 !== posts.length ) { %>
+    <div class="form subscribe next">
+      <a href="<%= posts[i+1] %>"><b>NEXT: </b><%= titles[i+1] %></a>
+    </div>
+    <% } else { %>
+      <span>This is the oldest post in Neuroscience</span><br>
+      <span>BUT HERE ARE OTHER, RELATED THEMES</span><br>
+      <br>
+      <br>
+      <div class="all-themes">
+        <% for (var theme in public.theme._data) { %><% var pref = public.theme._data %><% if (pref[theme].lang !== "ru" && pref[theme].index !== true && theme !== "neuroscience") { %><a href="../../theme/<%= theme.toLowerCase() %>"><span class="tag tag-page"><%= theme.charAt(0).toUpperCase() + theme.substring(1) %></span></a><% } %><% } %>
       </div>
-      <% } %>
     <% } %>
   <% } %>
+<% } %>

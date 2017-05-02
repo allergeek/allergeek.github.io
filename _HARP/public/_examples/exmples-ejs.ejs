@@ -6,6 +6,54 @@
 <% } %>
 
 
+<%# WORKING next link + title %>
+
+<% var data = public.post.neuroscience._data %>
+<% var posts = [] %>
+<% var titles = [] %>
+
+<% for (var url in data) { %>
+  <% var post = data[url] %>
+
+  <% if (data[url].date && data[url].lang == "en") { %>
+    <% posts.push(url) %>
+    <%= url %><br>
+    <%= posts.length %><br>
+
+
+    <% titles.push(post.title) %>
+  <% } %>
+<% } %>
+<br>
+<br>
+<% for (var i = 0; i < posts.length; i++) { %>
+  <% if (posts[i] == current.source) { %>
+    <% var next = posts[i + 1] %>
+
+    CURRENT <%= posts[i] %><br>
+    NEXT <%= next %>
+
+    <!-- renders the block on the last post page -->
+
+    <%# data[url].title %>
+
+    <% if ( i + 1 !== posts.length ) { %>
+
+    <div class="form subscribe next">
+      <a href="<%= next %>"><b>NEXT: </b>
+        <%= titles[i+1] %>
+        <%# next.title %>
+      </a>
+    </div>
+
+    <% } %>
+
+  <% } %>
+
+<% } %>
+
+
+
 <%# push json object names into an array %>
 
 <% var posts = [] %>
