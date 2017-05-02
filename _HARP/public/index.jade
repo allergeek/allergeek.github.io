@@ -1,28 +1,12 @@
-//-
-  To add a new post preview to the feed, I add a new var with 3 preview notes in feed.jade.
-  I add a title to var titles and a url to var urls (to the beginning of each array).
-  Then I need to replicate a function that generates the 3 previews, with the new var name.
-  First one in the code is the newest to show.
-
 include _feed
 
 - var counter = 0
-each note in psot.h2
-  a(href= "post/#{themes[counter]}/#{urls[counter]}").note-wrapper
-    h2= note
-      &thinsp;&thinsp;
-      span.tag.tag-title.inline-title= titles[counter]
 
-- counter += 1
-each note in mews.h2
-  a(href= "post/#{themes[counter]}/#{urls[counter]}").note-wrapper
-    h2= note
-      &thinsp;&thinsp;
-      span.tag.tag-title.inline-title= titles[counter]
-
-- counter += 1
-each note in psottoo.h2
-  a(href= "post/#{themes[counter]}/#{urls[counter]}").note-wrapper
-    h2= note
-      &thinsp;&thinsp;
-      span.tag.tag-title.inline-title= titles[counter]
+  for n in sources
+    each note in n
+      a(href= "post/#{themes[counter]}/#{urls[counter]}").note-wrapper
+        h2
+          =note
+          | &thinsp;
+          span.tag.tag-title.inline-title= titles[counter]
+    - counter += 1

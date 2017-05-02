@@ -1,0 +1,48 @@
+<% var data = public.post.neuroscience._data %>
+
+<% for (var url in data) { %>
+  <%= url %>
+  <p>this slug is the only value I can get out of _data JSON in EJS</p>
+<% } %>
+
+
+<%# push json object names into an array %>
+
+<% var posts = [] %>
+
+<% for (var url in data) { %>
+  <% if (data[url].date && data[url].lang == "en" ) { %>
+    <% posts.push(url) %>
+    <%- data[url].date %>
+    <%- data[url].lang %>
+    <%- data[url].title %><br>
+  <% } %>
+<% } %>
+<br>
+<%- posts.join(', <br>') %>
+<br>
+<br>
+<% for (var i = 0; i < posts.length; i++) { %>
+  <% var next = i + 1 %>
+  <%# posts[next] %>
+  <%= posts[i] %>
+  <br>
+<% } %>
+
+<% for (var i = 0; i < posts.length; i++) { %>
+  <% var next = posts[i + 1] %>
+  <%= i + 1 %>
+  <%= posts.length %>
+<% } %>
+
+
+<%# show next, older post %>
+
+<% if (posts[i] == current.source && (i + 1) !== posts.length ) { %>
+    <div class="form subscribe next">
+      <a href="<%= posts[i] %>"><b>CURRENT: </b><%= posts[i] %></a>
+      <a href="<%= next %>"><b>NEXT: </b><%= next %></a>
+      <br>
+    </div>
+  <% } %>
+<% } %>

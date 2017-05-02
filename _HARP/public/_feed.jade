@@ -1,7 +1,7 @@
 //-
-  To add a new post preview to the feed, I add a new var with 3 preview notes in feed.jade.
-  I add a title to var titles and a url to var urls (to the beginning of each array).
-  Then I need to go to index.jade to fix the function.
+  To add a new post preview to the feed, add 3 preview notes here, name the object.
+  Add a title to var titles and a url to var urls (to the beginning of each array).
+  Update var sources with the new notes object. Items in var sources defines the order of post previews.
 
   Only h2 headings are included there, otherwise empty blocks are created for paragraphs.
 
@@ -11,21 +11,21 @@
   var num = 2
 
   var titles = [
-    "psot title1",
-    "psot title",
-    "my first post title"
+    "How to start running",
+    "How we are programmed to be poor",
+    "How the brain is capable of growing new cells"
   ]
 
   var urls = [
-    "psot-url-1",
-    "psot-url-too",
-    "AAWWWWW"
+    "how-to-start-running",
+    "how-we-are-programmed-to-be-poor",
+    "how-the-brain-is-capable-of-growing-new-cells"
   ]
 
   var themes = [
+    "running",
     "neuroscience",
-    "neuroscience",
-    "null"
+    "neuroscience"
   ]
 
 -
@@ -52,3 +52,10 @@
       "33"
     ]
   }
+
+-
+  var sources = [
+    psot.h2,
+    mews.h2,
+    psottoo.h2
+  ]

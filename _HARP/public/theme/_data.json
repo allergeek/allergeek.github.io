@@ -12,7 +12,19 @@
     "something to distinguish from posts in English": true
   },
 
+  "nutrition": {
+    "layout": "_theme-layout"
+  },
+
+  "quitting": {
+    "layout": "_theme-layout"
+  },
+
   "running": {
+    "layout": "_theme-layout"
+  },
+
+  "sleep": {
     "layout": "_theme-layout"
   }
 }
