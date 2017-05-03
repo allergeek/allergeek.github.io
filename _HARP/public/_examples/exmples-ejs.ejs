@@ -13,43 +13,26 @@
 <% var titles = [] %>
 
 <% for (var url in data) { %>
-  <% var post = data[url] %>
-
-  <% if (data[url].date && data[url].lang == "en") { %>
-    <% posts.push(url) %>
-    <%= url %><br>
-    <%= posts.length %><br>
-
-
-    <% titles.push(post.title) %>
+  <% var pref = data[url] %>
+  <% if (pref.date && pref.lang == "en") { %>
+    <% pref.url = url %>
+    <% posts.push(pref.url) %>
+    <% titles.push(pref.title) %>
   <% } %>
 <% } %>
-<br>
-<br>
+
 <% for (var i = 0; i < posts.length; i++) { %>
   <% if (posts[i] == current.source) { %>
-    <% var next = posts[i + 1] %>
-
-    CURRENT <%= posts[i] %><br>
-    NEXT <%= next %>
-
-    <!-- renders the block on the last post page -->
-
-    <%# data[url].title %>
-
     <% if ( i + 1 !== posts.length ) { %>
-
     <div class="form subscribe next">
-      <a href="<%= next %>"><b>NEXT: </b>
-        <%= titles[i+1] %>
-        <%# next.title %>
-      </a>
+      <a href="<%= posts[i+1] %>"><b>NEXT: </b><%= titles[i+1] %></a>
     </div>
-
+    <% } else { %>
+      <div class="all-themes">
+        <% for (var theme in public.theme._data) { %><% var pref = public.theme._data %><% if (pref[theme].lang !== "ru" && pref[theme].index !== true && theme !== "neuroscience") { %><a href="../../theme/<%= theme.toLowerCase() %>"><span class="tag tag-page"><%= theme.charAt(0).toUpperCase() + theme.substring(1) %></span></a><% } %><% } %>
+      </div>
     <% } %>
-
   <% } %>
-
 <% } %>
 
 

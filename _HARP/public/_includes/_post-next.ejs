@@ -18,13 +18,22 @@
       <a href="<%= posts[i+1] %>"><b>NEXT: </b><%= titles[i+1] %></a>
     </div>
     <% } else { %>
-      <span>This is the oldest post in Neuroscience</span><br>
-      <span>BUT HERE ARE OTHER, RELATED THEMES</span><br>
-      <br>
-      <br>
+      <div class="form">
+      <p class="unit">Looks like it's the oldest post in <%= theme %>.</p>
       <div class="all-themes">
-        <% for (var theme in public.theme._data) { %><% var pref = public.theme._data %><% if (pref[theme].lang !== "ru" && pref[theme].index !== true && theme !== "neuroscience") { %><a href="../../theme/<%= theme.toLowerCase() %>"><span class="tag tag-page"><%= theme.charAt(0).toUpperCase() + theme.substring(1) %></span></a><% } %><% } %>
+        <% var data = public.theme._data %>
+        <% var themes = [] %>
+        <% var one %>
+        <% for (item in data) { %>
+          <% if (data[item].lang !== "ru" && data[item].index !== true && item.toLowerCase() !== theme.toLowerCase()) { %>
+            <% themes.push(item) %>
+          <% } %>
+        <% } %>
+        <% one = themes[Math.floor(Math.random() * themes.length)] %>
+        <a href="../../theme/<%= one %>"><span class="tag tag-page">Learn more about <%= one.charAt(0).toUpperCase() + one.substring(1) %></span></a>
+        <a href="../../theme/"><span class="tag tag-page">All themes in this blog</span></a>
       </div>
+    </div>
     <% } %>
   <% } %>
 <% } %>
