@@ -8,14 +8,27 @@
     <!-- <link rel="stylesheet" href="../../../css/pages.css"> -->
     <link rel="stylesheet" href="../../../css/less.css">
     <%- include ../../../_includes/_head -%>
+    <%- include ../../../helpers.ejs %>
   </head>
   <body>
     <div class="body-container start-margin">
       <div class="centered">
         <div class="page-body">
         <%- yield %>
-        aiice2.com/<% for (i = 0; i < current.path.length; i++) { %><%= current.path[i] + '/' %><% } %>
-        <a href="https://twitter.com/intent/tweet?hashtags=neuroscience&text=<%= body %>" class="twitter-share-button" data-show-count="false" data-size="large" target="_blank">Tweet</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <div class="all-themes">
+
+        <%- include ../../../_includes/_comment-twitter %>
+
+        <br>
+        <br>
+        <!-- <a href="/<%= parent() %>">BACK to the parent</a> -->
+        </div>
+        <div class="form contact-me">
+          <span class="section-block">Need some help? Please, speak out.</span>
+          <div class="form auth">
+            <a href="mailto:inbox@aiice2.com?subject=help%20me%20remember%20this&body=The note itself. URL alice-comment-page.html %0D%0ABreathing through the nose helps warm and humidify inspired air before it reaches the delicate lungs.%0D%0ANew%20line" class="action-btn"><span>&check;</span>Help me remember this</a>
+          </div>
         </div>
       </div>
     </div>

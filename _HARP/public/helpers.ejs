@@ -1,0 +1,27 @@
+<%
+  hello = function (name) {
+    return 'Hello, ' + name;
+  }
+%>
+
+<%
+  encoded = function () {
+    var aiice2 = "http%3A%2F%2Faiice2%2Ecom%2F";
+    return aiice2;
+  }
+%>
+
+<%
+  parent = function () {
+    var upper = current.path.length - 1;
+    var parent = [];
+    for (i = 0; i < upper; i++) {
+      if (i !== upper - 1) {
+        parent[i] = current.path[i];
+      } else {
+        parent[i] = current.path[i].slice(0,-4)
+      }
+    }
+    return parent.join('/')
+  }
+%>

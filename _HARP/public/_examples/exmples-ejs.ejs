@@ -6,6 +6,21 @@
 <% } %>
 
 
+<%# go one level up and delete -ref suffix %>
+
+<% var upper = current.path.length - 1 %>
+<% var parent = [] %>
+
+<% for (i = 0; i < upper; i++) { %>
+  <% if (i !== upper - 1) { %>
+    <% parent[i] = current.path[i] + '/'  %>
+    <%= parent[i] %>
+  <% } else { %>
+    <%= parent[i] = current.path[i].slice(0,-4) %>
+  <% } %>
+<% } %>
+
+
 <%# WORKING next link + title %>
 
 <% var data = public.post.neuroscience._data %>
