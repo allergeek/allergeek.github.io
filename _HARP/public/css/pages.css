@@ -36,6 +36,7 @@ p.introduction a:hover {
 p.unit,
 h2.unit,
 .page-body p,
+.page-body h1,
 .page-body h2 {
   font-weight: 300;
   margin: 0 0 15px;

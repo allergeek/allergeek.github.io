@@ -218,6 +218,56 @@ button.back-ctrl {
   text-align: center;
 }
 
+.page-body h1 {
+
+}
+
+.parent-card {
+  display: flex;
+  align-items: center;
+
+  border-radius: 4px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  /*right: 0;*/
+  max-width: calc(100vw - 40px);
+  min-height: 40px;
+  margin: 0 auto;
+
+  background: #dfdfdf;
+  z-index: 1;
+
+  border: solid 4px #f2f2f2;
+}
+
+.parent-card a span {
+  margin: 0 16px 0 0;
+  padding: 9px 0;
+  color: #b3b3b3;
+  /*font-size: 20px;*/
+}
+
+.parent-card:hover a span {
+  color: #7b7b7b;
+}
+
+.parent-card a {
+  padding: 9px 0;
+}
+
+.parent-card .parent-img {
+  min-width: 40px;
+  min-height: 40px;
+  height: 100%;
+  margin-right: 9px;
+  border-radius: 4px;
+  margin: 0 16px 0 0;
+
+  filter: saturate(10%);
+}
+
 .btn-wrapper button.small-ctrl {
   height: 40px;
   width: auto;

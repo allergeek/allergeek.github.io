@@ -11,29 +11,63 @@
     <%- include ../../../helpers.ejs %>
   </head>
   <body>
+    <% var path = public.post.neuroscience._data %>
     <div class="body-container start-margin">
       <div class="centered">
+        <div class="parent-card">
+          <div
+            class="parent-img"
+            style="background:
+              linear-gradient(
+                rgba(255, 255, 255, 0.5),
+                rgba(255, 255, 255, 0.5)),
+              url('../../../assets/<%= path[post()].image %>');
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            ">
+          </div>
+          <a href="/<%= parent() %>"><span><%= path[post()].title %></span></a>
+        </div>
         <div class="page-body">
         <%- yield %>
 
-        <div class="all-themes">
+        <div class=""></div>
 
         <%- include ../../../_includes/_comment-twitter %>
 
-        <br>
-        <br>
-        <!-- <a href="/<%= parent() %>">BACK to the parent</a> -->
+        <div class="form comments">
+          <div class="level-block">
+            <!-- <span class="source-title">sources</span> -->
+            <div class="comment-block answer">
+              <div class="answer-wrapper">
+                <span class="answer-ref">Breathing through the nose helps warm and humidify inspired air before it reaches the delicate lungs.</span>
+                <a href="http://www.npr.org/templates/story/story.php?storyId=99844567" class="source-link">npr.org</a>
+              </div>
 
+              <div class="answer-wrapper">
+                <span class="answer-ref">If it feels like hard, slow down! Easy means well into the aerobic zone, up to 70% of your maximum heart rate.</span>
+                <a href="https://runnersconnect.net/running-training-articles/wrong-long-run-pace/" class="source-link">runnersconnect.net</a>
+              </div>
+            </div>
+          </div>
 
+<!--
         URL <%= post() %><br>
         TITLE
         <% var path = public.post.neuroscience._data %>
         <%= path[post()].title %><br>
         THEME <%= theme() %><br>
+ -->
+ <!--
+        include a js on load
+        get every h2 tag content
+        in a certain class div
+        take first 30 chars
+        and build urls with it
+        wrap every h2 element in an anchor
+-->
 
-
-
-        </div>
         <div class="form contact-me">
           <span class="section-block">Need some help? Please, speak out.</span>
           <div class="form auth">
