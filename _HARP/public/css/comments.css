@@ -223,28 +223,25 @@ button.back-ctrl {
 }
 
 .parent-card {
-  display: flex;
-  align-items: center;
-
   border-radius: 4px;
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 30px;
+  left: 30px;
   /*right: 0;*/
-  max-width: calc(100vw - 40px);
+  max-width: calc(100vw - 60px);
   min-height: 40px;
   margin: 0 auto;
 
   background: #dfdfdf;
   z-index: 1;
 
-  border: solid 4px #f2f2f2;
+  /*border: solid 4px #f2f2f2;*/
 }
 
 .parent-card a span {
-  margin: 0 16px 0 0;
-  padding: 9px 0;
+  margin: 9px 16px 9px 0;
+  /*padding: 9px 0;*/
   color: #b3b3b3;
   /*font-size: 20px;*/
 }
@@ -254,18 +251,36 @@ button.back-ctrl {
 }
 
 .parent-card a {
-  padding: 9px 0;
+  display: flex;
+  align-items: center;
+  /*padding: 9px 0;*/
 }
 
 .parent-card .parent-img {
   min-width: 40px;
   min-height: 40px;
   height: 100%;
-  margin-right: 9px;
+  /*margin-right: 9px;*/
   border-radius: 4px;
   margin: 0 16px 0 0;
 
   filter: saturate(10%);
+}
+
+.larger {
+  min-height: 48px;
+}
+
+.larger a span {
+  font-size: 24px;
+  margin: 12px 20px 12px 0;
+}
+
+.larger .parent-img {
+  min-width: 48px;
+  min-height: 48px;
+
+  margin: 0 18px 0 0;
 }
 
 .btn-wrapper button.small-ctrl {
