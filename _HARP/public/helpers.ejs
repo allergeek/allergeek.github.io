@@ -25,3 +25,26 @@
     return parent.join('/')
   }
 %>
+
+
+<%# retrieve parent post url from comment page %>
+<%
+  post = function () {
+    var post = current.path.length - 1;
+    for (i = post - 1;;) {
+      post = current.path[i].slice(0,-4);
+      return post;
+    }
+  }
+%>
+
+<%# retrieve parent post theme from comment page %>
+<%
+  theme = function () {
+    var theme = current.path.length - 2;
+    for (i = theme - 1;;) {
+      theme = current.path[i];
+      return theme;
+    }
+  }
+%>
