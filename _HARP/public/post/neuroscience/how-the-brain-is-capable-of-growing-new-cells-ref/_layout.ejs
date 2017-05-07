@@ -16,20 +16,20 @@
     <div class="body-container start-margin">
       <div class="centered">
         <div class="parent-card larger">
-          <a href="/<%= parent() %>">
+          <a href="/<%= getParent() %>">
             <div
               class="parent-img"
               style="background:
                 linear-gradient(
                   rgba(255, 255, 255, 0.5),
                   rgba(255, 255, 255, 0.5)),
-                url('../../../assets/<%= path[post()].image %>');
+                url('../../../assets/<%= path[getPost()].image %>');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
               ">
             </div>
-            <span><%= path[post()].title %></span></a>
+            <span><%= path[getPost()].title %></span></a>
         </div>
         <div class="form auth">
           <a href="mailto:inbox@aiice2.com?subject=help%20me%20remember%20this&body=The note itself. URL alice-comment-page.html %0D%0ABreathing through the nose helps warm and humidify inspired air before it reaches the delicate lungs.%0D%0ANew%20line" class="action-btn"><span>&plus;</span>Help me remember this</a>
@@ -55,13 +55,6 @@
           </div>
         </div>
 
-<!--
-        URL <%= post() %><br>
-        TITLE
-        <% var path = public.post.neuroscience._data %>
-        <%= path[post()].title %><br>
-        THEME <%= theme() %><br>
- -->
  <!--
         include a js on load
         get every h2 tag content

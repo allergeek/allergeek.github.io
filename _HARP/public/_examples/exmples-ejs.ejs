@@ -6,6 +6,25 @@
 <% } %>
 
 
+<%# how to get post titles in a folder %>
+
+<% var folder = public.post.neuroscience._contents %>
+<% for (var i in folder) { %>
+  <% var file = folder[i] %>
+  <a href="<%= file %>"><%= file %></a>
+  <br>
+<% } %>
+
+
+%# how to get post urls and attributes from comments level
+
+URL <%= getPost() %><br>
+TITLE
+<% var path = public.post.neuroscience._data %>
+<%= path[getPost()].title %><br>
+THEME <%= getTheme() %><br>
+
+
 <%# go one level up and delete -ref suffix %>
 
 <% var upper = current.path.length - 1 %>
