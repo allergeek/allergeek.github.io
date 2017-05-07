@@ -12,7 +12,7 @@
 %>
 
 <%
-  parent = function () {
+  getParent = function () {
     var upper = current.path.length - 1;
     var parent = [];
     for (i = 0; i < upper; i++) {
@@ -29,7 +29,7 @@
 
 <%# retrieve parent post url from comment page %>
 <%
-  post = function () {
+  getPost = function () {
     var post = current.path.length - 1;
     for (i = post - 1;;) {
       post = current.path[i].slice(0,-4);
@@ -40,7 +40,7 @@
 
 <%# retrieve parent post theme from comment page %>
 <%
-  theme = function () {
+  getTheme = function () {
     var theme = current.path.length - 2;
     for (i = theme - 1;;) {
       theme = current.path[i];
