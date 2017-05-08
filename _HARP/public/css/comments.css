@@ -240,8 +240,10 @@ button.back-ctrl {
 }
 
 .parent-card a span {
-  margin: 9px 16px 9px 0;
-  /*padding: 9px 0;*/
+  /*margin: 9px 16px 9px 0;*/
+  margin: 0;
+  padding: 9px 16px 9px 0;
+
   color: #b3b3b3;
   /*font-size: 20px;*/
 }
@@ -273,14 +275,14 @@ button.back-ctrl {
 
 .larger a span {
   font-size: 24px;
-  margin: 12px 20px 12px 0;
+  /*margin: 12px 20px 12px 0;*/
 }
 
 .larger .parent-img {
   min-width: 48px;
   min-height: 48px;
 
-  margin: 0 18px 0 0;
+  /*margin: 0 18px 0 0;*/
 }
 
 .btn-wrapper button.small-ctrl {
@@ -365,4 +367,15 @@ a.action-btn {
 
 .action-btn:hover {
   color: #7b7b7b;
+}
+
+@media (max-width: 768px) {
+  .parent-card {
+    bottom: 20px;
+    left: 20px;
+    max-width: calc(100vw - 40px);
+  }
+  .larger div.parent-img {
+    margin: 9px 16px 9px 9px;
+  }
 }

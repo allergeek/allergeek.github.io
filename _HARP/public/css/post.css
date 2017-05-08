@@ -363,14 +363,58 @@ button.back-ctrl {
 /* end DUB */
 
 .print-ctrl {
-  display: flex;
-  justify-content: flex-end;
+
 }
 
 .print-btn {
   font-size: 16px;
   padding: 8px 12px;
   min-height: auto;
+}
+
+a.action-btn {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #989898;
+  background: #dfdfdf;
+  border-radius: 4px;
+  padding: 12px 20px 12px 32px;
+  font-weight: normal;
+  min-height: 28px;
+}
+
+.action-btn span {
+  position: absolute;
+  left: 0;
+  color: #b3b3b3;
+  /*font-size: 20px;*/
+  font-weight: normal;
+  padding: 0 0 0 12px;
+}
+
+.action-btn:hover {
+  /*color: white;*/
+}
+
+a.check {
+  padding-left: 36px;
+}
+
+div.remember {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 40px 0 20vh;
+
+  width: 100%;
+  border-radius: 4px;
+  /*cursor: pointer;*/
+  /*text-align: left;*/
+  /*padding: 24px;*/
+  /*margin-bottom: 20px;*/
 }
 
 @media (min-width: 768px) {

@@ -2,6 +2,6 @@
   <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><span class="muted">опубликовано в теме</span> <a href="../../theme/<%= transcript.toLowerCase() %>"><%= theme %></a></span>
 </h1>
 <p class="introduction"><b>Alice:</b> <%- intro %>
-  <a href="<%= current.source.slice(0,-3) %>" class="no-break">Также на английском</a></p>
+  <a href="<%= current.source.slice(0,-3) %>" class="no-break">Также на английском &#9872;</a></p>
 <p class="introduction tags"><b>О чём этот пост:</b></p>
 <% for (var i = 0; i < tags.length; i++) { %><span class="tag tag-similar"><%= tags[i] %></span><% } %>

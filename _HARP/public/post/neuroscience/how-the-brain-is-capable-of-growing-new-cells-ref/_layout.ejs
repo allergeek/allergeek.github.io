@@ -31,15 +31,11 @@
             </div>
             <span><%= path[getPost()].title %></span></a>
         </div>
-        <div class="form auth">
-          <a href="mailto:inbox@aiice2.com?subject=help%20me%20remember%20this&body=The note itself. URL alice-comment-page.html %0D%0ABreathing through the nose helps warm and humidify inspired air before it reaches the delicate lungs.%0D%0ANew%20line" class="action-btn"><span>&plus;</span>Help me remember this</a>
-        </div>
 
         <div class="page-body">
+
+        <%- include ../../../_includes/_comment-remember %>
         <%- yield %>
-
-        <div class=""></div>
-
         <%- include ../../../_includes/_comment-twitter %>
 
         <div class="form comments">
