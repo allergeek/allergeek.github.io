@@ -18,7 +18,7 @@
       <a href="<%= posts[i+1] %>"><b>ДАЛЕЕ: </b><%= titles[i+1] %></a>
     </div>
     <% } else { %>
-      <div class="form">
+    <div class="form last-post">
       <p class="unit">Это последний пост в теме <%= theme %>.</p>
       <div class="all-themes">
         <% var data = public.theme._data %>
@@ -31,7 +31,7 @@
         <% } %>
         <% one = themes[Math.floor(Math.random() * themes.length)] %>
         <a href="../../theme/<%= one %>"><span class="tag tag-page">Открыть тему <%= one.charAt(0).toUpperCase() + one.substring(1) %></span></a>
-        <a href="../../theme/"><span class="tag tag-page">Посмотреть все темы в блоге</span></a>
+        <a href="../../theme/"><span class="tag tag-page">Все темы в блоге</span></a>
       </div>
     </div>
     <% } %>
