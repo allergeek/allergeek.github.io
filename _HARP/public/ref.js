@@ -12,9 +12,10 @@ if (true) {
     // first throw away punctuation, to get 30 characters and empty spaces only
     // if (notesArray[i].textContent.length >= 30) {
       text += notesArray[i].textContent.substring(0,5);
+      text = text.replace(/\s/g, '-');
       // url += text[i].replace(/\s/g, '-');
     // } else {
-      // text += notesArray[i].textContent;
+      // text +s= notesArray[i].textContent;
     // }
     // console.log(notesArray[i].textContent);
   }

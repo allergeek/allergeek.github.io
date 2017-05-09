@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <%- include ../../_includes/_head -%>
+    <%- include ../../_includes/_post-css %>
+  </head>
+  <body>
+  <% if(environment !== "production") { %>
+    <div class="body-container start-margin">
+      <div class="fixed-bar">
+        <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
+      </div>
+    <div class="centered">
+      <% include ../../_includes-ru/_post-header %>
+
+      <%# If the post notes have single origin then show source card %>
+
+      <% if (origin == "single") { %>
+        <% include ../../_includes-ru/_post-card %>
+      <% } %>
+
+      <div class="page-body">
+        <%- yield %>
+      </div>
+
+      <div class="remember">
+        <a href="mailto:inbox@aiice2" class="action-btn check"><span>&check;</span>Запомнить</a>
+        <% include ../../_includes-ru/_post-print %>
+      </div>
+      <% include ../../_includes-ru/_post-next %>
+    </div>
+  <% } else { %>
+    <div class="body-container start-margin">
+      <div class="centered">
+        <h1>Personal section so far</h1>
+        <a href="/post">Here are all the public posts</a>
+      </div>
+    </div>
+  <% } %>
+  </body>
+</html>
