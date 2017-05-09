@@ -417,6 +417,15 @@ div.remember {
   /*margin-bottom: 20px;*/
 }
 
+div.form {
+  background: #eee;
+  /* overriding LESS */
+}
+
+.last-post .tag {
+  background: #e4e4e4;
+}
+
 div.next,
 div.last-post {
   margin: 60px 0 120px;
@@ -474,7 +483,11 @@ div.last-post {
     margin: 0;
   }
 
-  body {
-    margin: 25mm 25mm 25mm 30mm;
+  .body-container {
+    margin: 16mm 16mm 16mm 20mm !important;
+  }
+
+  .centered {
+    width: auto;
   }
 }
