@@ -4,6 +4,10 @@
     "index": true
   },
 
+  "alcohol": {
+    "lang": "en"
+  },
+
   "neuroscience": {
     "lang": "en"
   },

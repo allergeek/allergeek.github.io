@@ -1,0 +1,14 @@
+{
+  "withdrawal": {
+    "lang": "en",
+    "localized": false,
+    "date": "2017/05/09",
+    "title": "Withdrawal",
+    "theme": "Alcohol",
+    "intro": "Everything I know should be, at least, a bit helpful.",
+    "tags": [
+      "withdrawal", "alcohol", "health", "anxiety"
+    ],
+    "origin": "mixed"
+  }
+}

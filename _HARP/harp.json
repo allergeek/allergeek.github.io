@@ -1,8 +1,10 @@
 {
+  "basicAuth": [],
   "globals": {
     "foo": "bar",
-    "title": "Hello global title from json",
+    "title": "Hello, AIice",
     "description": "My default description",
+    "url": "http://aiice2.com",
     "navigation": [
       { "title": "all posts", "page": "/post" },
       { "title": "themes", "page": "/theme" }

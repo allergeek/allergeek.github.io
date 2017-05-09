@@ -8,7 +8,7 @@
     <% for (var i = 0; i < tags.length; i++) { %><span class="tag tag-similar"><%= tags[i] %></span><% } %>
   </div>
 <% } else { %>
-  <h1><%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><span class="muted">posted in</span> <a href="../../theme/<%= current.path[current.path.length - 2] %>"><%= current.path[current.path.length - 2] %></a></span></h1>
+  <h1><%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><a href="../../theme/<%= current.path[current.path.length - 2] %>"><%= current.path[current.path.length - 2] %></a></span></h1>
   <p class="introduction"><%- intro %>
     <% if (localized) { %><a href="<%= current.source + '-ru' %>" class="no-break lang">Also in Russian &#9872;</a><% } %></p>
   <div class="post-tags">
