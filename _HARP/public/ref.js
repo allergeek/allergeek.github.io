@@ -27,7 +27,8 @@ function clean(n) {
   // in url[i]
 })();
 
-//also - if
+// some posts don't have references
+// hence need a flag in json
 
       //  + get every h2 tag content
       //  + in a certain class div
@@ -40,3 +41,6 @@ function clean(n) {
 // span
 // class="counter"
 // title="references"
+
+// create a class for empty span, zero references, to be lighter
+// append current counter class only when > 0

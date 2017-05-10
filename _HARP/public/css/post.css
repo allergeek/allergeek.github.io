@@ -159,6 +159,7 @@ a.no-break {
 }
 
 .tag-theme a {
+  display: inline-block;
   color: #6d6d6d;
 }
 

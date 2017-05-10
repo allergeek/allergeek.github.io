@@ -9,19 +9,33 @@
     <%- include ../_includes/_post-css %>
   </head>
   <body>
+  <%# content of personal posts and at theme/personal (and theme/personal-ru) is hidden in production %>
+  <% if ((current.source === "personal" || current.source === "personal-ru") && environment === "production") { %>
+    <div class="body-container start-margin">
+      <div class="centered">
+        <h1>Personal theme posts are concealed</h1>
+        <a href="/post">Here are all the public posts</a>
+      </div>
+    </div>
+  <% } else { %>
     <div id="feed" class="start-margin">
       <div class="centered">
       <%- yield %>
-      <br>
-      <br>
-      <% var root = public.theme._data %>
-      <% for (var theme in root) { %>
-        <% if (root[theme].lang !== "ru" && root[theme].index !== true ) { %>
-        <a href="../theme/<%= theme %>">
-        <span class="tag tag-page"><%= theme %></span>
+      <% if ( typeof ru !== "undefined" || current.source === "personal-ru") { %>
+        <% for (var i = 0, l = themesRU.length; i < l; i++) { %>
+        <a href="../theme/<%= themesRUpath[i] %>">
+          <span class="tag tag-page"><%= themesRU[i] %></span>
+          </a>
+        <% } %>
+      <% } else { %>
+        <% for (var i = 0, l = themesEN.length; i < l; i++) { %>
+        <a href="../theme/<%= themesEN[i] %>">
+          <span class="tag tag-page"><%= themesEN[i] %></span>
+        </a>
         <% } %>
       <% } %>
       </div>
     </div>
+  <% } %>
   </body>
 </html>

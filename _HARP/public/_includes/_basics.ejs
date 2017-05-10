@@ -1,0 +1,23 @@
+<%
+  parent = current.path[current.path.length - 2];
+
+  themesData = public.theme._data;
+  themesRU = [];
+  themesEN = [];
+  themesRUpath = [];
+
+  for (var theme in themesData) {
+    var pref = themesData[theme];
+    if (pref.lang === "ru") {
+      themesRU.push(pref.ru);
+      themesRUpath.push(theme);
+    }
+  };
+
+  for (var theme in themesData) {
+    var pref = themesData[theme];
+    if (pref.lang !== "ru" && pref.index !== true ) {
+      themesEN.push(theme);
+    }
+  };
+%>

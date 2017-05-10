@@ -1,4 +1,4 @@
-<% if (current.path[current.path.length - 2] !== "personal") { %>
+<% if (parent !== "personal") { %>
   <h1>
     <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><span class="muted">опубликовано в теме</span> <a href="../../theme/<%= path %>"><%= theme %></a></span>
   </h1>
@@ -10,7 +10,7 @@
   </div>
 <% } else { %>
   <h1>
-    <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><a href="../../theme/<%= current.path[current.path.length - 2] %>">личное</a></span>
+    <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><a href="../../theme/<%= path %>"><%= theme %></a></span>
   </h1>
   <p class="introduction"><%- intro %>
     <a href="<%= current.source.slice(0,-3) %>" class="no-break lang">Также на английском &#9872;</a></p>
