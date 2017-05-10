@@ -1,42 +1,41 @@
-if (true) {
-  // alert('?');
-}
+if (true) {}
 
-function gen(n) {
-  n.replace(/[^a-zA-Z -]/g,'').replace(/\s{1,}/g,'-').replace(/\-{2,}/g,'-');
+function clean(n) {
+  n = n
+    .replace(/\={1,}/g,'-')
+    .replace(/[^a-zA-Z0-9 -]/g,'')
+    .replace(/\s{1,}/g,'-')
+    .replace(/\-{2,}/g,'-');
+  return n;
 }
 
 ( me = function () {
-  console.log('Doc ready');
   var notesArray = [], text = [], url = [];
-
   notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
   for (i = 0, l = notesArray.length; i < l; i++) {
-    // first throw away punctuation, to get 30 characters and empty spaces only
-    // if (notesArray[i].textContent.length >= 30) {
-      text += notesArray[i].textContent.substring(0,5);
-      text = gen(text);
-      // url += text[i].replace(/\s/g, '-');
-    // } else {
-      // text +s= notesArray[i].textContent;
-    // }
-    // console.log(notesArray[i].textContent);
+    text[i] = notesArray[i].textContent.toLowerCase();
+    text[i] = clean(text[i]).substring(0,30);
   }
-  console.log(text);
-  // console.log(url);
+  for (i = 0, l = text.length; i < l; i++) {
+    url[i] = window.location.href + '-ref' + '/' + text[i];
+    // url[i] = current.source + text[i];
+    console.log(text[i]);
+    console.log(url[i]);
+  }
+  // each h2 element
+  // wrap
+  // in url[i]
 })();
 
-// me();
+//also - if
 
-
-
-      //  get every h2 tag content
-      //  in a certain class div
-      //  take first 30 chars
+      //  + get every h2 tag content
+      //  + in a certain class div
+      //  + take first 30 chars
       //  and build urls with it
       //  wrap every h2 element in an anchor
 
-
+// add a counter after each h2 content, before the closing h2 tag
 // append
 // span
 // class="counter"
