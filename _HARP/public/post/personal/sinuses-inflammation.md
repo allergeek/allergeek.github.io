@@ -10,6 +10,8 @@ Go for a salt that contains no additives.
 
 can go with less soda
 
+use drinking water or boiled and cooled regular water
+
 opt. apple cider vinegar - 1-2 drops
 
 opt. essential oils:

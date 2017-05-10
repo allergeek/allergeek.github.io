@@ -3,7 +3,7 @@
   "globals": {
     "foo": "bar",
     "title": "Hello, AIice",
-    "description": "My default description",
+    "description": "Alice2 is a microblog which is designed for storing references. I use it as a notepad for things that may come useful later.",
     "url": "http://aiice2.com",
     "navigation": [
       { "title": "all posts", "page": "/post" },
@@ -23,6 +23,10 @@
       "page-one",
       "page-two",
       "page-three"
-    ]
+    ],
+
+    "service": {
+      "analytics": "UA-93963162-1"
+    }
   }
 }

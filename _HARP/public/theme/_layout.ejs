@@ -6,11 +6,21 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="../../css/reset.css">
     <%- include ../_includes/_head %>
+    <%- include ../_includes/_post-css %>
   </head>
   <body>
     <div id="feed" class="start-margin">
       <div class="centered">
-        <%- yield %>
+      <%- yield %>
+      <br>
+      <br>
+      <% var root = public.theme._data %>
+      <% for (var theme in root) { %>
+        <% if (root[theme].lang !== "ru" && root[theme].index !== true ) { %>
+        <a href="../theme/<%= theme %>">
+        <span class="tag tag-page"><%= theme %></span>
+        <% } %>
+      <% } %>
       </div>
     </div>
   </body>
