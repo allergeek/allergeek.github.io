@@ -1,6 +1,6 @@
 <% if (parent !== "personal") { %>
   <h1>
-    <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><span class="muted">опубликовано в теме</span> <a href="../../theme/<%= path %>"><%= theme %></a></span>
+    <%= title %>&thinsp;&thinsp;<wbr><a href="../../theme/<%= path %>" class="post-cat"><span class="tag-theme"><span class="muted">опубликовано в теме</span> <%= theme %></span></a>
   </h1>
   <p class="introduction"><b>Alice:</b> <%- intro %>
     <a href="<%= current.source.slice(0,-3) %>" class="no-break lang">Также на английском &#9872;</a></p>
@@ -10,7 +10,7 @@
   </div>
 <% } else { %>
   <h1>
-    <%= title %>&thinsp;&thinsp;<wbr><span class="tag-theme"><a href="../../theme/<%= path %>"><%= theme %></a></span>
+    <%= title %>&thinsp;&thinsp;<wbr><a href="../../theme/<%= path %>" class="post-cat"><span class="tag-theme"><%= theme %></span></a>
   </h1>
   <p class="introduction"><%- intro %>
     <a href="<%= current.source.slice(0,-3) %>" class="no-break lang">Также на английском &#9872;</a></p>
