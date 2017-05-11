@@ -22,9 +22,30 @@ function clean(n) {
     console.log(text[i]);
     console.log(url[i]);
   }
-  if () {
-    
+  // if (references) {
+  if (true) {
+    var newArray = [], textArray = [];
+    var anchor, text;
+
+    anchor = document.createElement('a');
+    text = document.createTextNode("abc");
+    anchor.appendChild(text);
+
+    myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+    for (i = 0, l = myArray.length; i < l; i++) {
+      textArray += myArray[i].innerHTML;
+      myArray[i].innerHTML = "<a>[i]</a>";
+    }
+
+
+    console.log(anchor);
+    console.log(text);
+    console.log(myArray);
+    console.log(textArray);
+
+
   }
+
   // if true
   // each h2 element
   // wrap

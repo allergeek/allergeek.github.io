@@ -2,7 +2,8 @@
   "how-we-are-programmed-to-be-poor": {
     "lang": "en",
     "localized": false,
-    "date": "2017/05/01",
+    "references": false,
+    "date": "2017-05-01 PDT",
     "title": "How we are programmed to be poor",
     "theme": "Neuroscience",
     "intro": "Environmental factors yield differences in developement of brain structures.",
@@ -20,7 +21,8 @@
   "exercise-reorganizes-the-brain-to-lower-stress": {
     "lang": "en",
     "localized": true,
-    "date": "2017/04/25",
+    "references": true,
+    "date": "2017-04-25 PDT",
     "title": "Exercise reorganizes the brain to lower stress",
     "theme": "Neuroscience",
     "intro": "Extending the title with more introductory information. The <b>title itself</b> may well be different from the original publication.",
@@ -38,7 +40,8 @@
   "exercise-reorganizes-the-brain-to-lower-stress-ru": {
     "lang": "ru",
     "layout": "../_layout-ru",
-    "date": "2017/04/27",
+    "references": false,
+    "date": "2017-04-27 PDT",
     "title": "Физические упражнения позволяют понизить уровень стресса",
     "theme": "Неврология",
     "path": "neuroscience-ru",
@@ -57,7 +60,8 @@
   "how-the-brain-is-capable-of-growing-new-cells": {
     "lang": "en",
     "localized": false,
-    "date": "2017/04/27",
+    "references": true,
+    "date": "2017-04-27 PDT",
     "title": "How the brain is capable of growing new cells",
     "theme": "Neuroscience",
     "intro": "Adults, too, can grow new neurons. Here's some practical advice on how we can help our brains better perform neurogenesis.",

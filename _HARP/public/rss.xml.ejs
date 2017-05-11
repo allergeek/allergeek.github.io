@@ -10,7 +10,7 @@
       <item>
         <title><%- post.title %></title>
         <description><![CDATA[<%- partial("../post/neuroscience/" + name) %>]]></description>
-        <pubDate><%- Date(post.date) %></pubDate>
+        <pubDate><%- new Date(post.date) %></pubDate>
         <link><%- url %>/post/neuroscience/<%- name %></link>
         <guid isPermaLink="true"><%- url %>/post/neuroscience/<%- name %></guid>
       </item>
