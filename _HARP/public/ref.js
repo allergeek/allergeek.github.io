@@ -22,6 +22,10 @@ function clean(n) {
     console.log(text[i]);
     console.log(url[i]);
   }
+  if () {
+    
+  }
+  // if true
   // each h2 element
   // wrap
   // in url[i]

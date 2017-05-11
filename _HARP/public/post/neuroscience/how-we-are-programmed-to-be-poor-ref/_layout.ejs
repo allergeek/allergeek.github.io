@@ -16,20 +16,20 @@
     <div class="body-container start-margin">
       <div class="centered">
         <div class="parent-card larger">
-          <a href="/<%= parent() %>">
+          <a href="/<%= getParent() %>">
             <div
               class="parent-img"
               style="background:
                 linear-gradient(
                   rgba(255, 255, 255, 0.5),
                   rgba(255, 255, 255, 0.5)),
-                url('../../../assets/<%= path[post()].image %>');
+                url('../../../assets/<%= path[getPost()].image %>');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
               ">
             </div>
-            <span><%= path[post()].title %></span></a>
+            <span><%= path[getPost()].title %></span></a>
         </div>
 
         <div class="page-body">
