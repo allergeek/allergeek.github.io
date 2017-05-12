@@ -136,7 +136,7 @@ h1 {
 .page-body h1,
 .page-body h2 {
   margin: 30px 0;
-  cursor: default;
+  /*cursor: default;*/
 }
 
 .source-card h2.unit {
@@ -244,12 +244,12 @@ div.next a {
 .page-body p {
   margin: 30px 0;
   color: #6d6d6d;
-  cursor: default;
+  /*cursor: default;*/
 }
 
 h1,
 p.introduction {
-  cursor: default;
+  /*cursor: default;*/
 }
 
 span.counter {
@@ -434,6 +434,8 @@ div.next,
 div.last-post {
   margin: 60px 0 120px;
 }
+
+
 
 @media (min-width: 768px) {
   .bar-wrapper,
