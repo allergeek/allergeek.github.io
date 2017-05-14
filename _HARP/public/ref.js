@@ -33,10 +33,19 @@ function clean(n) {
 
     myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
     for (i = 0, l = myArray.length; i < l; i++) {
-      myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-vali" title="references">2 references</span>`);
+      myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">2 references</span>`);
       textArray[i] = myArray[i].innerHTML;
       myArray[i].innerHTML = `${textArray[i]}`;
       // REWRITE APPENDING ? CHECK
+
+      // N references
+      // get the number
+      // if not 0 - class is counter-valid
+      // if = 0 - default class counter
+
+      // move to a separate function
+
+      // edit the flag (if this post has references)
     }
 
 
