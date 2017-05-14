@@ -254,19 +254,36 @@ p.introduction {
 
 span.counter {
   display: inline-flex;
-  background: #ddd;
+  background: #eee;
   border-radius: 20px;
   height: 30px;
-  width: 30px;
+  /*width: 30px;*/
   text-align: center;
   align-items: center;
   justify-content: center;
   font-size: 16px;
   font-weight: 400;
-  color: #777;
+  color: #dfdfdf;
+  color: #c1c1c1;
   position: absolute;
   margin: 5px 0 4px 8px;
   cursor: pointer;
+  padding: 0 12px;
+}
+
+span.counter-valid {
+  background: #ededed;
+  color: #c1c1c1;
+}
+
+.page-body h2:hover span.counter {
+  /*background: #bbb;*/
+  background: #e6e6e6;
+  color: #b4b4b4;
+}
+
+.page-body h2:hover {
+  /*color: #2a2f39;*/
 }
 
 button.back-ctrl {
