@@ -1,5 +1,5 @@
-if (true) {}
-
+// throw out any extra characters and punctuation out of the note reference url and
+// replace single spaces with hyphens
 function clean(n) {
   n = n
     .replace(/\={1,}/g,'-')
@@ -9,19 +9,40 @@ function clean(n) {
   return n;
 }
 
-( me = function () {
-  var notesArray = [], text = [], url = [];
+// generate urls out of every note
+function refs() {
+  var
+    notesArray = [],
+    text = [],
+    url = [];
+
   notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+
   for (i = 0, l = notesArray.length; i < l; i++) {
     text[i] = notesArray[i].textContent.toLowerCase();
     text[i] = clean(text[i]).substring(0,30);
   }
+
   for (i = 0, l = text.length; i < l; i++) {
     url[i] = window.location.href + '-ref' + '/' + text[i];
-    // url[i] = current.source + text[i];
+
     console.log(text[i]);
     console.log(url[i]);
   }
+}
+
+refs();
+
+( lala = function () {
+  console.log('HERE');
+})();
+
+
+( some = function () {
+
+// if a post has references
+// assign a url to each counter span
+
   // if (references) {
   if (true) {
     var newArray = [], textArray = [];
@@ -63,22 +84,29 @@ function clean(n) {
   // in url[i]
 })();
 
-function meme() {
+
+// assign an action function
+// to every h2 note
+function every() {
   var arr = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
   for (i = 0, l = arr.length; i < l; i++) {
     arr[i].onclick = mew;
   }
 }
 
+// if no text is selected
+// go to a page
 function mew(event) {
   var sel = getSelection().toString();
   var haveSel = sel.length > 0;
   if(!haveSel) {
     // location.href = "/";
-    llo();
+
+    // llo();
   }
 }
 
+// delete overlay content (when closing)
 function mww(event) {
   var element = document.getElementById("ttt");
   element.outerHTML = "";
@@ -90,16 +118,23 @@ function llo() {
   var btn = document.createElement('button');
   var large = div;
   var cc = div2;
+
   large.id = "ttt";
+
   large.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#444;paddding:100px;';
+
   cc.style.cssText = 'position:relative;width:calc(100%-100px);height:calc(100%);margin:100px;';
+
   btn.style.cssText = 'position:fixed;top:20px;left:20px;width:20px;height:20px;';
+
   large.appendChild(cc);
   large.appendChild(btn);
   cc.id = "overlay-content";
   document.body.appendChild(large);
   // console.log(large);
+
   document.getElementById("overlay-content").innerHTML='<object type="text/html" data="how-the-brain-is-capable-of-growing-new-cells-ref/the-diet-modulates-memory-and-.html" style="width: 100%;height:100%;"></object>';
+
   btn.onclick = mww;
 }
 

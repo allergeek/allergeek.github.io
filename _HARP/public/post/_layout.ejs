@@ -6,7 +6,7 @@
     <%- include ../_includes/_head -%>
     <%- include ../_includes/_post-css %>
   </head>
-  <body onload="meme();">
+  <body>
     <div class="body-container start-margin">
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
@@ -34,7 +34,12 @@
       <% include ../_includes/_post-next %>
       <% include ../_includes/_post-outro %>
       <% include ../_includes/_post-chimp %>
-      <script src="../../ref.js"></script>
+
+
+      <% if (references) { %>
+        <script src="../../ref.js"></script>
+        <% console.log('yes!!') %>
+      <% } %>
     </div>
   </body>
 </html>
