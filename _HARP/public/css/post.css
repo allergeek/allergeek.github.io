@@ -252,6 +252,11 @@ p.introduction {
   /*cursor: default;*/
 }
 
+h2 a.counter {
+  height: 30px;
+  position: relative;
+}
+
 span.counter {
   display: inline-flex;
   background: #eee;

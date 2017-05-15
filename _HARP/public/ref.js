@@ -9,12 +9,14 @@ function clean(n) {
   return n;
 }
 
+// extract text without stylistic tags and
 // generate urls out of every note
 function refs() {
   var
     notesArray = [],
-    text = [],
-    url = [];
+    text = [];
+
+  urls = [];
 
   notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
 
@@ -24,39 +26,67 @@ function refs() {
   }
 
   for (i = 0, l = text.length; i < l; i++) {
-    url[i] = window.location.href + '-ref' + '/' + text[i];
+    urls[i] = window.location.href.split(/\?|#/)[0] + '-ref' + '/' + text[i];
 
     console.log(text[i]);
-    console.log(url[i]);
+    console.log(urls[i]);
   }
 }
 
 refs();
 
+
+
 ( lala = function () {
   console.log('HERE');
+  return false
 })();
 
 
 ( some = function () {
 
-// if a post has references
-// assign a url to each counter span
+  function referenceNumber() {
+    // var n = "N references";
+    var n = "0";
+    return n
+  }
+
+  function insertBlock() {
+    var myArray = [];
+    myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+
+    for (i = 0, l = myArray.length; i < l; i++) {
+      myArray[i].insertAdjacentHTML(
+        'beforeend',`<a href="${urls[i]}" class="counter" onclick="return void[0]"><span class="counter" title="references">${referenceNumber()}</span></a>`
+      );
+
+      // assign class  counter-valid - if valid, i.e. 1 and more refs
+    }
+  }
+
+  insertBlock();
+
+  // if a post has references
+  // assign a url to each counter span
 
   // if (references) {
-  if (true) {
-    var newArray = [], textArray = [];
-    var anchor, text;
+  // if (true) {
+    // var myArray = [];
 
-    anchor = document.createElement('a');
-    text = document.createTextNode("abc");
-    anchor.appendChild(text);
+    // var textArray = [];
+    // var anchor, text;
 
-    myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
-    for (i = 0, l = myArray.length; i < l; i++) {
-      myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">2 references</span>`);
-      textArray[i] = myArray[i].innerHTML;
-      myArray[i].innerHTML = `${textArray[i]}`;
+    // anchor = document.createElement('a');
+    // text = document.createTextNode("abc");
+    // anchor.appendChild(text);
+
+    // myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+
+    // for (i = 0, l = myArray.length; i < l; i++) {
+      // myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">${referenceNumber()}</span>`);
+
+      // textArray[i] = myArray[i].innerHTML;
+      // myArray[i].innerHTML = `${textArray[i]}`;
       // REWRITE APPENDING ? CHECK
 
       // N references
@@ -65,23 +95,15 @@ refs();
       // if = 0 - default class counter
 
       // move to a separate function
-
-      // edit the flag (if this post has references)
-    }
+    // }
 
 
-    console.log(anchor);
-    console.log(text);
-    console.log(myArray);
-    console.log(textArray);
+    // console.log(anchor);
+    // console.log(text);
+    // console.log(myArray);
+    // console.log(textArray);
 
-
-  }
-
-  // if true
-  // each h2 element
-  // wrap
-  // in url[i]
+  // }
 })();
 
 
@@ -101,18 +123,18 @@ function mew(event) {
   var haveSel = sel.length > 0;
   if(!haveSel) {
     // location.href = "/";
-
-    // llo();
+    // openOverlay();
   }
 }
 
 // delete overlay content (when closing)
-function mww(event) {
+function closeLayer(event) {
   var element = document.getElementById("ttt");
   element.outerHTML = "";
 }
 
-function llo() {
+// open overlay
+function openOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
   var btn = document.createElement('button');
@@ -135,25 +157,16 @@ function llo() {
 
   document.getElementById("overlay-content").innerHTML='<object type="text/html" data="how-the-brain-is-capable-of-growing-new-cells-ref/the-diet-modulates-memory-and-.html" style="width: 100%;height:100%;"></object>';
 
-  btn.onclick = mww;
+  btn.onclick = closeLayer;
 }
 
-// llo();
 
-// some posts don't have references
-// hence need a flag in json
 
       //  + get every h2 tag content
       //  + in a certain class div
       //  + take first 30 chars
-      //  and build urls with it
+      //  + and build urls with it
       //  wrap every h2 element in an anchor
-
-// add a counter after each h2 content, before the closing h2 tag
-// append
-// span
-// class="counter"
-// title="references"
 
 // create a class for empty span, zero references, to be lighter
 // append current counter class only when > 0
