@@ -1,4 +1,4 @@
-<!-- theme HTML template -->
+<!-- all posts HTML template -->
 
 <!DOCTYPE html>
 <html>
@@ -9,36 +9,24 @@
     <%- include ../_includes/_post-css %>
   </head>
   <body>
-  <%# content of personal posts and at theme/personal (and theme/personal-ru) is hidden in production %>
-  <% if ((current.source === "personal" || current.source === "personal-ru") && environment === "production") { %>
-    <div class="body-container start-margin">
-      <div class="centered">
-        <h1>Personal theme posts are concealed</h1>
-        <a href="/post">Here are all the public posts</a>
-      </div>
-    </div>
-  <% } else { %>
-  <%# else show a list of themes %>
     <div id="feed" class="start-margin">
       <div class="centered">
       <%- yield %>
-      <% if ( typeof ru !== "undefined" || current.source === "personal-ru" || current.source === "ru") { %>
+      <% if (current.source === "ru") { %>
         <% for (var i = 0, l = themesRU.length; i < l; i++) { %>
         <a href="../theme/<%= themesRUpath[i] %>">
           <span class="tag tag-page"><%= themesRU[i] %></span>
           </a>
         <% } %>
-        <h2><a href="<%= '/' + parent %>" class="">На английском &#9872;</a></h2>
       <% } else { %>
         <% for (var i = 0, l = themesEN.length; i < l; i++) { %>
         <a href="../theme/<%= themesEN[i] %>">
           <span class="tag tag-page"><%= themesEN[i] %></span>
         </a>
         <% } %>
-        <h2><a href="ru" class="">Also in Russian &#9872;</a></h2>
+        <h2><a href="<%= parentURL() + '/ru' %>" class="">Also in Russian &#9872;</a></h2>
       <% } %>
       </div>
     </div>
-  <% } %>
   </body>
 </html>

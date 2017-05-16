@@ -1,6 +1,8 @@
 {
   "index": {
-    "layout": false,
-    "^ this is /all-posts directive. need to": "fix to a specific layout"
+    "layout": "_post"
+  },
+  "ru": {
+    "layout": "_post"
   }
 }

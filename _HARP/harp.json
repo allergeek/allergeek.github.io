@@ -10,8 +10,8 @@
       { "title": "themes", "page": "/theme" }
     ],
     "navigationru": [
-      { "title": "все посты", "page": "/post" },
-      { "title": "темы", "page": "/theme" }
+      { "title": "все посты", "page": "/post/ru" },
+      { "title": "темы", "page": "/theme/ru" }
     ],
 
     "pageTitles": [

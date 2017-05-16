@@ -4,6 +4,7 @@
   }
 %>
 
+<%# get the ASCII-encoded blog url %>
 <%
   encoded = function () {
     var aiice2 = "http%3A%2F%2Faiice2%2Ecom%2F";
@@ -11,6 +12,10 @@
   }
 %>
 
+<%#
+  return full path to parent directory for comments (removes -ref suffix)
+  use parentURL() for other needs 
+%>
 <%
   getParent = function () {
     var upper = current.path.length - 1;
@@ -26,7 +31,7 @@
   }
 %>
 
-<%# retrieve parent post url from comment page %>
+<%# retrieve parent post url (slug) from comment page %>
 <%
   getPost = function () {
     var post = current.path.length - 1;
