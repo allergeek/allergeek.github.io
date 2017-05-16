@@ -255,31 +255,29 @@ p.introduction {
 h2 a.counter {
   height: 30px;
   position: relative;
+  display: inline-block;
 }
 
 span.counter {
-  display: inline-flex;
   background: #eee;
   border-radius: 20px;
   height: 30px;
   width: 30px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
   font-size: 16px;
   font-weight: 400;
   color: #dfdfdf;
-  position: absolute;
-  margin: 5px 0 4px 8px;
-  cursor: pointer;
-  /*padding: 0 12px;*/
+  /*margin: 5px 0 4px 8px;*/
+  padding: 6px 11px;
 }
 
 span.counter-valid {
   background: #ededed;
   color: #c1c1c1;
-  padding: 0 12px;
+  padding: 6px 11px;
   width: auto;
+  /*cursor: pointer;*/
+  /*text-align: left;*/
+  /*display: inline;*/
 }
 
 .page-body h2:hover span.counter-valid {

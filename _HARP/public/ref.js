@@ -16,7 +16,7 @@ function refs() {
     notesArray = [],
     text = [];
 
-  urls = [];
+  urls = [], numerals = [];
 
   notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
 
@@ -46,19 +46,30 @@ refs();
 ( some = function () {
 
   function referenceNumber() {
-    // var n = "N references";
-    var n = "0";
+    var n = "3 references";
+    // var n = "0";
     return n
+
+    // create an array for that
   }
 
   function insertBlock() {
     var myArray = [];
     myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+    // find span in h2 in page-body
+    // add a &thinsp; before the span
+    // assign a class - counter
+    // assign title references
+    // and wrap the span in a href link
+
+    // where span cointains a number > than 0,
+    // replace it with number + 'references' (+ a case for 1 reference)
+    // assign a class counter-valid to such spans
 
     for (i = 0, l = myArray.length; i < l; i++) {
-      myArray[i].insertAdjacentHTML(
-        'beforeend',`<a href="${urls[i]}" class="counter" onclick="return void[0]"><span class="counter" title="references">${referenceNumber()}</span></a>`
-      );
+      // myArray[i].insertAdjacentHTML(
+      //   'beforeend',`&thinsp;<a href="${urls[i]}" class="counter" onclick="return void[0]"><span class="counter counter-valid" title="references">${numerals[i]}</span></a>`
+      // );
 
       // assign class  counter-valid - if valid, i.e. 1 and more refs
     }
