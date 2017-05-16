@@ -1,5 +1,8 @@
 {
   "rss.xml": {
     "layout": false
+  },
+  "404": {
+    "layout": false
   }
 }

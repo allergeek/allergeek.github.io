@@ -1,0 +1,173 @@
+@import url("basics.css");
+
+.body-container {
+    padding: 0 0 20vh 0;
+}
+
+div.form {
+  width: 100%;
+  margin: 40px 0 40px;
+  padding: 40px;
+  border-radius: 4px;
+}
+
+p.introduction a {
+  color: rgb(77, 77, 77);
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
+p.introduction a:hover {
+  color: royalblue;
+  border-color: royalblue;
+}
+
+.tag {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.unit-card {
+  border-radius: 4px;
+  margin: 30px 0;
+}
+
+p.unit,
+h2.unit,
+.page-body p,
+.page-body h1,
+.page-body h2 {
+  font-weight: 300;
+  margin: 0 0 15px;
+}
+
+.unit-card h2.entry-title {
+  display: inline;
+  font-weight: 400;
+  cursor: pointer;
+  border-bottom: 2px solid rgb(77, 77, 77);
+}
+
+.unit-card > span {
+  display: inline-block;
+  padding: 0 0 20px;
+}
+
+span.tag-page,
+span.entry-tag {
+  display: inline-block;
+  margin: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+span.entry-tag {
+  color: #b3b3b3;
+}
+
+a.relink {
+  color: royalblue;
+  border-bottom: solid 2px royalblue;
+}
+
+.loader {
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.form button {
+    border: 0;
+    min-height: 54px;
+    min-width: 40vw;
+    padding: 0 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0;
+    width: 100%;
+}
+
+.new-draft {
+  /*min-width: calc(100% - 200px);*/
+  /*max-width: calc(100% - 240px);*/
+  right: 0;
+  left: 0;
+  width: calc(60%);
+  max-width: 400px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  padding: 12px 24px 0;
+  position: fixed;
+  margin: 0 auto;
+  bottom: -24px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-draft span {
+  font-size: 24px;
+  display: none;
+}
+
+.unit-card .draft-theme {
+  padding: 0;
+}
+
+.unit-card h2.draft-title {
+  color: #7b7b7b;
+  margin-right: 8px;
+  border-color: #7b7b7b;
+}
+
+.draft-theme,
+.draft-theme a {
+  color: #b3b3b3;
+}
+
+.draft-list .unit-card:first-of-type {
+  margin-top: 0;
+}
+
+.draft-list {
+  margin-top: 30px;
+}
+
+div.form {
+  width: 100%;
+  margin: 40px 0 40px;
+  padding: 40px;
+  border-radius: 4px;
+}
+
+div.form-mobile {
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.all-themes span.tag-page {
+  padding: 16px 24px;
+}
+
+@media (min-width: 768px) {
+  .new-draft {
+    max-width: 400px;
+    min-height: 72px;
+    bottom: 40px;
+    padding: 0 24px;
+  }
+
+  .new-draft span {
+    font-size: 24px;
+    display: inline;
+  }
+
+  div.form-mobile {
+    margin: 40px 0 0;
+  }
+}
