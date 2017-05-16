@@ -22,6 +22,15 @@ nav {
   margin: 20px 0 0;
 }
 
+nav .menu-item {
+  border-radius: 4px;
+  font-variant: small-caps;
+  margin: 0 0px 10px 0;
+  display: inline-block;
+  padding: 3px 12px 6px;
+  /* COMPENSATING FOR SMALL-CAPS */
+}
+
 h2 {
   font-weight: 400;
 }

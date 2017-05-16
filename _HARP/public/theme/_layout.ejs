@@ -19,23 +19,32 @@
     </div>
   <% } else { %>
   <%# else show a list of themes %>
-    <div id="feed" class="start-margin">
+    <div class="body-container start-margin">
       <div class="centered">
+      <% if (typeof ru !== "undefined" || current.source === "ru") { %>
+        <%- include ../_includes-ru/_nav %>
+      <% } else { %>
+        <%- include ../_includes/_nav %>
+      <% } %>
       <%- yield %>
-      <% if ( typeof ru !== "undefined" || current.source === "personal-ru" || current.source === "ru") { %>
+      <% if (typeof ru !== "undefined" || current.source === "personal-ru" || current.source === "ru") { %>
         <% for (var i = 0, l = themesRU.length; i < l; i++) { %>
         <a href="../theme/<%= themesRUpath[i] %>">
           <span class="tag tag-page"><%= themesRU[i] %></span>
           </a>
         <% } %>
+        <% if (current.source === "ru") { %>
         <h2><a href="<%= '/' + parent %>" class="">На английском &#9872;</a></h2>
+        <% } %>
       <% } else { %>
         <% for (var i = 0, l = themesEN.length; i < l; i++) { %>
         <a href="../theme/<%= themesEN[i] %>">
           <span class="tag tag-page"><%= themesEN[i] %></span>
         </a>
         <% } %>
+        <% if (current.source === "index") { %>
         <h2><a href="ru" class="">Also in Russian &#9872;</a></h2>
+        <% } %>
       <% } %>
       </div>
     </div>
