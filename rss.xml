@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hello, AIice2</title>
-    <link>http://aiice2.com</link>
+    <link>http://aiice2.com/</link>
     <description>Alice2 is a microblog which is designed for storing references. I use it as a notepad for things that may come useful later.</description>
-    <atom:link href="http://aiice2.com/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://aiice2.com//rss.xml" rel="self" type="application/rss+xml" />
     
     
       <item>
         <title>How we are programmed to be poor</title>
         <description><![CDATA[]]></description>
         <pubDate>Mon May 01 2017 00:00:00 GMT-0700 (PDT)</pubDate>
-        <link>http://aiice2.com/post/neuroscience/how-we-are-programmed-to-be-poor</link>
-        <guid isPermaLink="true">http://aiice2.com/post/neuroscience/how-we-are-programmed-to-be-poor</guid>
+        <link>http://aiice2.com//post/neuroscience/how-we-are-programmed-to-be-poor</link>
+        <guid isPermaLink="true">http://aiice2.com//post/neuroscience/how-we-are-programmed-to-be-poor</guid>
       </item>
     
     
@@ -20,8 +20,8 @@
         <title>Exercise reorganizes the brain to lower stress</title>
         <description><![CDATA[]]></description>
         <pubDate>Tue Apr 25 2017 00:00:00 GMT-0700 (PDT)</pubDate>
-        <link>http://aiice2.com/post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress</link>
-        <guid isPermaLink="true">http://aiice2.com/post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress</guid>
+        <link>http://aiice2.com//post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress</link>
+        <guid isPermaLink="true">http://aiice2.com//post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress</guid>
       </item>
     
     
@@ -29,8 +29,8 @@
         <title>Физические упражнения позволяют понизить уровень стресса</title>
         <description><![CDATA[]]></description>
         <pubDate>Thu Apr 27 2017 00:00:00 GMT-0700 (PDT)</pubDate>
-        <link>http://aiice2.com/post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress-ru</link>
-        <guid isPermaLink="true">http://aiice2.com/post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress-ru</guid>
+        <link>http://aiice2.com//post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress-ru</link>
+        <guid isPermaLink="true">http://aiice2.com//post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress-ru</guid>
       </item>
     
     
@@ -38,8 +38,8 @@
         <title>How the brain is capable of growing new cells</title>
         <description><![CDATA[]]></description>
         <pubDate>Thu Apr 27 2017 00:00:00 GMT-0700 (PDT)</pubDate>
-        <link>http://aiice2.com/post/neuroscience/how-the-brain-is-capable-of-growing-new-cells</link>
-        <guid isPermaLink="true">http://aiice2.com/post/neuroscience/how-the-brain-is-capable-of-growing-new-cells</guid>
+        <link>http://aiice2.com//post/neuroscience/how-the-brain-is-capable-of-growing-new-cells</link>
+        <guid isPermaLink="true">http://aiice2.com//post/neuroscience/how-the-brain-is-capable-of-growing-new-cells</guid>
       </item>
     
   </channel>

@@ -12,9 +12,27 @@
   }
 %>
 
+<%
+  getURL = function (url) {
+    var upper = current.path.length;
+    url = [];
+    for (i = 0; i < upper; i++) {
+      url[i] = current.path[i];
+    }
+    return url.join('/')
+  }
+%>
+
+<%
+  fullURL = function (n) {
+    n = url + getURL();
+    return n
+  }
+%>
+
 <%#
   return full path to parent directory for comments (removes -ref suffix)
-  use parentURL() for other needs 
+  use parentURL() for other needs
 %>
 <%
   getParent = function () {
