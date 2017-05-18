@@ -1,12 +1,11 @@
 <% if (current.path[current.path.length - 2] !== "personal") { %>
   <h1><%= title %>&thinsp;&thinsp;<wbr><a href="../../theme/<%= theme.toLowerCase() %>" class="post-cat"><span class="tag-theme"><span class="muted">posted in</span> <%= theme %></span></a></h1>
-  <p class="introduction">
-    <b>Alice:</b> <%- intro %>
-    <% if (localized) { %><a href="<%= current.source + '-ru' %>" class="no-break lang">Also in Russian &#9872;</a><% } %></p>
-  <div class="post-tags">
+  <% if (intro !== "") { %><p class="introduction">
+    <b>Alice:</b> <%- intro %><% } %><% if (localized) { %><a href="<%= current.source + '-ru' %>" class="no-break lang">Also in Russian &#9872;</a></p><% } %>
+  <% if (tags[0] !== undefined) { %><div class="post-tags">
     <p class="introduction tags"><b>This set is about:</b></p>
     <% for (var i = 0; i < tags.length; i++) { %><span class="tag tag-similar"><%= tags[i] %></span><% } %>
-  </div>
+  </div><% } %>
 <% } else { %>
   <h1><%= title %>&thinsp;&thinsp;<wbr><a href="../../theme/<%= current.path[current.path.length - 2] %>" class="post-cat"><span class="tag-theme"><%= current.path[current.path.length - 2] %></span></a></h1>
   <p class="introduction"><%- intro %>
