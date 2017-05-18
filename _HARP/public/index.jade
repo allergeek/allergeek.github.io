@@ -1,3 +1,22 @@
+- function excerpt(content) {
+  - if(content.indexOf("<!-- more -->") == -1) return content;
+  - else return content.split("<!-- more -->")[0];
+- }
+
+// for a post in list
+// create a div to refer to
+// include text content
+// get all h2 in a certain div
+// with client-side js
+// inside each div
+// delete par
+// assign anchor and a title to each h2
+
+// this only gets
+
+div#how-to-start-running
+  != excerpt(partial('how-to-start-running'))
+
 include _feed
 
 - var counter = 0

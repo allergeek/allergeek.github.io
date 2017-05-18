@@ -1,33 +1,9 @@
 {
-  "basics-1": {
-    "lang": "en",
-    "localized": false,
-    "date": "2017/05/17",
-    "title": "Nutrition Basics 1",
-    "theme": "Nutrition",
-    "intro": "",
-    "tags": [
-      "", ""
-    ],
-    "origin": "mixed"
-  },
-  "basics-2": {
-    "lang": "en",
-    "localized": false,
-    "date": "2017/05/17",
-    "title": "Nutrition Basics 2",
-    "theme": "Nutrition",
-    "intro": "",
-    "tags": [
-      "", ""
-    ],
-    "origin": "mixed"
-  },
   "storage-basics": {
     "lang": "en",
     "localized": false,
     "date": "2017/05/17",
-    "title": "Storage Basics",
+    "title": "Produce storage basics",
     "theme": "Nutrition",
     "intro": "",
     "tags": [],
