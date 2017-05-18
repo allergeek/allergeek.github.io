@@ -1,21 +1,26 @@
-- function excerpt(content) {
-  - if(content.indexOf("<!-- more -->") == -1) return content;
-  - else return content.split("<!-- more -->")[0];
-- }
+-
+  function excerpt(content) {
+    if(content.indexOf("<!-- preview -->") == -1) return content;
+    else return content.split("<!-- preview -->")[0];
+  }
 
-// for a post in list
+// for a post in a list of posts
 // create a div to refer to
 // include text content
 // get all h2 in a certain div
 // with client-side js
 // inside each div
-// delete par
-// assign anchor and a title to each h2
+// delete paragraphs.break
+// assign proper anchor and title to each h2
+// need to extract theme from post url (done before)
 
-// this only gets
+// this only gets first N h2 headings
 
-div#how-to-start-running
-  != excerpt(partial('how-to-start-running'))
+// to update, only need to add a post to the list
+
+//
+  div#how-to-start-running
+    != excerpt(partial('how-to-start-running'))
 
 include _feed
 

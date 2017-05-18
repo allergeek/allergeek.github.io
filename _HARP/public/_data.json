@@ -4,5 +4,11 @@
   },
   "404": {
     "layout": false
+  },
+  "sitemap": {
+    "layout": false
+  },
+  "sitemap.xml": {
+    "layout": false
   }
 }
