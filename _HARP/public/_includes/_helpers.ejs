@@ -4,10 +4,31 @@
   }
 %>
 
+<%
+  mailtoStr = function (n) {
+    n = "mailto:"
+    n += inbox + "?subject="
+    n += "help me remember this"+ "&body="
+    n += encodeURIComponent("Hi Alice,\n" + "help me remember this:\n\n")
+    n += fullURL()
+    return n
+  }
+%>
+
+<%
+  helloStr = function (n) {
+    n = "mailto:"
+    n += inbox + "?subject="
+    n += "hello Alice"+ "&body="
+    n += encodeURIComponent("Hi,\n")
+    return n
+  }
+%>
+
 <%# get the ASCII-encoded blog url %>
 <%
   encoded = function () {
-    var aiice2 = "http%3A%2F%2Faiice2%2Ecom%2F";
+    var aiice2 = encodeURIComponent("http://aiice2.com/");
     return aiice2;
   }
 %>

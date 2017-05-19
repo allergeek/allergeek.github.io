@@ -5,6 +5,7 @@
     "title": "Hello, AIice2",
     "description": "Alice2 is a microblog which is designed for storing references. I use it as a notepad for things that may come useful later.",
     "url": "http://aiice2.com/",
+    "inbox": "inbox@aiice2.com",
     "navigation": [
       { "title": "all posts", "page": "/post" },
       { "title": "themes", "page": "/theme" }
