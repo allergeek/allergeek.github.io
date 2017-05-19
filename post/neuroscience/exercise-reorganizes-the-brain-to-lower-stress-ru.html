@@ -40,6 +40,10 @@
 
 
 
+
+
+
+
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../css/post.css" /><link rel="stylesheet" href="../../css/less.css" />
@@ -100,7 +104,7 @@
       
 
       <div class="remember">
-        <a href="mailto:inbox@aiice2.com?subject=help%20me%20remember%20this&body=Hi%20Alice,%0D%0Ahelp%20me%20remember%20this%3A%0D%0Ahttp://aiice2.com/post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress-ru" class="action-btn check"><span>&check;</span>Запомнить</a>
+        <a href="mailto:inbox@aiice2.com?subject=help me remember this&body=Hi%20Alice%2C%0Ahelp%20me%20remember%20this%3A%0A%0Ahttp://aiice2.com/post/neuroscience/exercise-reorganizes-the-brain-to-lower-stress-ru" class="action-btn check"><span>&check;</span>Запомнить</a>
         <div class="print-ctrl">
   <a href="#1print" onclick="window.print(); return false;">
     <input type="submit" value="распечатать заметки" class="button chimp-input print-btn">
@@ -164,7 +168,7 @@
           
         
         
-        <a href="../../theme/неврология"><span class="tag tag-page">Открыть тему Неврология</span></a>
+        <a href="../../theme/бег"><span class="tag tag-page">Открыть тему Бег</span></a>
         <a href="../../theme/"><span class="tag tag-page">Все темы в блоге</span></a>
       </div>
     </div>
@@ -175,7 +179,13 @@
       <div id="about-alice" class="outro">
   <p><b>Про Alice</b></p>
   <p>Этот блог содержит много коротких заметок, которые помогают мне запоминать то, что я изучаю. AIice2 &mdash; это моя вторая память.</p>
-  <p>Если у вас есть вопрос, <a href="mailto:inbox@aiice2.com?subject=hello%20Alice&body=Hi%20Alice,%0D%0A" class="no-wrap">напишите мне</a>.</p>
+  <p>Если у вас есть вопрос, <a href="function (n) {
+    n = "mailto:"
+    n += inbox + "?subject="
+    n += "hello Alice"+ "&body="
+    n += encodeURIComponent("Hi,\n")
+    return n
+  }" class="no-wrap">напишите мне</a>.</p>
 </div>
 
       <div id="mailchimp">
