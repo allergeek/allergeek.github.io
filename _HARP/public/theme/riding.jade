@@ -1,0 +1,8 @@
+p This is a Riding theme page.
+
+for any, key in public.post.riding._data
+  - var language = any.lang
+  if language == "en"
+    a(href='../post/riding/' + [key])
+      h2= any.title
+    br

@@ -31,7 +31,7 @@
       "theme": "Neuroscience",
       "intro": "Extending the title with more introductory information. The title itself may well be different from the original publication.",
       "tags": [
-        "exercise", "running", "sports", "health", "anxiety", "health", "neuroscience", "popular science"
+        "exercise","running","sports","health","anxiety","health","neuroscience","popular science"
       ],
       "origin": "single",
       "originTitle": "Exercise reorganizes the brain to be more resilient to stress",
@@ -53,7 +53,7 @@
     "title": "post title",
     "theme": "post theme",
     "tags": [
-      "exercise", "running", "sports", "writing long tag names", "cardio exercise", "health", "routines", "staying active"
+      "exercise","running","sports","writing long tag names","cardio exercise","health","routines","staying active"
     ],
     "origin": "single"
   },

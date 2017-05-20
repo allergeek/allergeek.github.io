@@ -8,7 +8,7 @@
     "theme": "Neuroscience",
     "intro": "Environmental factors yield differences in developement of brain structures.",
     "tags": [
-      "health", "poverty", "education", "mental heath", "stress", "anxiety", "how the brain works", "neuroscience", "popular science"
+      "health","poverty","education","mental heath","stress","anxiety","how the brain works","neuroscience","popular science"
     ],
     "origin": "single",
     "image": "how-we-are-programmed-to-be-poor.gif",
@@ -27,7 +27,7 @@
     "theme": "Neuroscience",
     "intro": "Extending the title with more introductory information. The <b>title itself</b> may well be different from the original publication.",
     "tags": [
-      "exercise", "running", "sports", "health", "stress", "anxiety", "neuroscience", "popular science"
+      "exercise","running","sports","health","stress","anxiety","neuroscience","popular science"
     ],
     "origin": "single",
     "image": "exercise-reorganizes-the-brain-to-lower-stress.jpg",
@@ -47,7 +47,7 @@
     "path": "neuroscience-ru",
     "intro": "Физические нагрузки помогают уменьшить реакцию мозга на стресс.",
     "tags": [
-      "упражнения", "бег", "спорт", "здоровье", "стресс", "тревожность", "неврология", "популярная наука"
+      "упражнения","бег","спорт","здоровье","стресс","тревожность","неврология","популярная наука"
     ],
     "origin": "single",
     "image": "exercise-reorganizes-the-brain-to-lower-stress.jpg",
@@ -66,7 +66,7 @@
     "theme": "Neuroscience",
     "intro": "Adults, too, can grow new neurons. Here's some practical advice on how we can help our brains better perform neurogenesis.",
     "tags": [
-      "neuroscience", "how the brain works", "popular science", "nutrition"
+      "neuroscience","how the brain works","popular science","nutrition"
     ],
     "origin": "single",
     "image": "how-the-brain-is-capable-of-growing-new-cells.jpeg",

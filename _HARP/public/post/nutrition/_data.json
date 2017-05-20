@@ -9,11 +9,11 @@
     "tags": ["digestion","soaking foods","nutrition basics"],
     "origin": "mixed"
   },
-  "basics-2": {
+  "cooking-basics": {
     "lang": "en",
     "localized": false,
     "date": "2017/05/19",
-    "title": "Nutrition basics: soaking",
+    "title": "Nutrition basics: cooking",
     "theme": "Nutrition",
     "intro": "",
     "tags": ["nutrition basics"],
@@ -23,7 +23,7 @@
     "lang": "en",
     "localized": false,
     "date": "2017/05/17",
-    "title": "Produce storage basics",
+    "title": "Nutrition basics: produce storage",
     "theme": "Nutrition",
     "intro": "",
     "tags": ["food storage","nutrition basics"],
@@ -33,7 +33,7 @@
     "lang": "en",
     "localized": false,
     "date": "2017/05/17",
-    "title": "Nutrition Basics",
+    "title": "Nutrition basics",
     "theme": "Nutrition",
     "intro": "",
     "tags": ["nutrition basics"],
