@@ -3,11 +3,23 @@
     "lang": "en",
     "localized": false,
     "date": "2017/05/20",
+    "title": "The chemistry that supports the smoking habit",
+    "theme": "Quitting",
+    "intro": "",
+    "tags": [
+      "health","habits","smoking","chemistry","tobacco","quitting"
+    ],
+    "origin": "mixed"
+  },
+  "what-to-expect-when-you-quit-smoking": {
+    "lang": "en",
+    "localized": false,
+    "date": "2017/04/19",
     "title": "What to expect when you quit smoking",
     "theme": "Quitting",
     "intro": "What is this set about? This is a set introduction.",
     "tags": [
-      "health","habits","smoking","chemistry","tobacco","quitting"
+      "health","habits","smoking","tobacco","quitting"
     ],
     "origin": "mixed"
   }

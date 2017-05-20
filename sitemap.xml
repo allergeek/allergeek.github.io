@@ -2,22 +2,22 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
     <loc>http://aiice2.com/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.533Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.272Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/sitemap</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.533Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.272Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/post/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.534Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.272Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/post/ru</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.534Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.272Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/post/alcohol/withdrawal</loc>
@@ -47,15 +47,15 @@
 <url>
     <loc>http://aiice2.com/post/neuroscience/how-the-brain-is-capable-of-growing-new-cells-ref/the-diet-modulates-memory-and-</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.535Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/post/neuroscience/how-we-are-programmed-to-be-poor-ref/during-a-brain-scan-called-fun</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.535Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
-    <loc>http://aiice2.com/post/nutrition/basics-2</loc>
+    <loc>http://aiice2.com/post/nutrition/cooking-basics</loc>
     <changefreq>daily</changefreq>
     <lastmod>2017-05-19T07:00:00.000Z</lastmod>
 </url>
@@ -85,9 +85,19 @@
     <lastmod>2017-05-08T07:00:00.000Z</lastmod>
 </url>
 <url>
+    <loc>http://aiice2.com/post/quitting/chemistry-behind-smoking</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2017-05-20T07:00:00.000Z</lastmod>
+</url>
+<url>
     <loc>http://aiice2.com/post/quitting/what-to-expect-when-you-quit-smoking</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-04-30T07:00:00.000Z</lastmod>
+    <lastmod>2017-04-19T07:00:00.000Z</lastmod>
+</url>
+<url>
+    <loc>http://aiice2.com/post/riding/basics</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2017-05-19T07:00:00.000Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/post/running/how-to-start-running</loc>
@@ -97,76 +107,81 @@
 <url>
     <loc>http://aiice2.com/ru/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/tag/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/tag/my-tag</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/alcohol</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/neuroscience-ru</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/neuroscience</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/nutrition</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/personal-ru</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/personal</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/quitting</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
+</url>
+<url>
+    <loc>http://aiice2.com/theme/riding</loc>
+    <changefreq>daily</changefreq>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/ru</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/running-ru</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/running</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 <url>
     <loc>http://aiice2.com/theme/sleep</loc>
     <changefreq>daily</changefreq>
-    <lastmod>2017-05-19T22:55:16.536Z</lastmod>
+    <lastmod>2017-05-20T01:02:53.273Z</lastmod>
 </url>
 </urlset>
