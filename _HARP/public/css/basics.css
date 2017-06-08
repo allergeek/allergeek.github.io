@@ -18,6 +18,32 @@ header {
   top: 0;
 }
 
+.title-box {
+  position: relative;
+  padding: 20px;
+}
+
+.title-box a {
+  display: inline-block;
+}
+
+.title-box a span {
+  cursor: pointer;
+  margin: 0 6px 0 0;
+}
+
+span.title {
+  font-variant: small-caps;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: default;
+  display: inline-block;
+}
+
+.title-box.post-css {
+  padding: calc(28px + 12px) 20px 12px;
+}
+
 nav {
   margin: 20px 0 0;
 }
@@ -90,5 +116,23 @@ b {
 
   .start-margin {
     margin-top: 30vh !important;
+  }
+
+  .title-box {
+    position: fixed;
+    padding: 1.75vw;
+    top: 0;
+    left: 0;
+  }
+
+  .title-box a {
+    display: block;
+  }
+
+  span.title {
+    display: block;
+    font-weight: 600;
+    /* compensating for Safari rendering */
+    /* of fixed elements, setting a colored background didn't work */
   }
 }

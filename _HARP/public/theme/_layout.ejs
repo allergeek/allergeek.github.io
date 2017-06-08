@@ -9,6 +9,7 @@
     <%- include ../_includes/_post-css %>
   </head>
   <body>
+  <% include ../_includes/_titles %>
   <%# content of personal posts and at theme/personal (and theme/personal-ru) is hidden in production %>
   <% if ((current.source === "personal" || current.source === "personal-ru") && environment === "production") { %>
     <div class="body-container start-margin">
