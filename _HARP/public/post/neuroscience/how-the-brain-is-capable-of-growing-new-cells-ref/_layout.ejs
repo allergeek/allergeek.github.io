@@ -37,15 +37,16 @@
         <%- yield %>
         <%- include ../../../_includes/_comment-twitter %>
 
-        <div class="form comments">
-          <div class="level-block">
-            <div class="comment-block answer">
-            <% for (var i = 0; i < sources.length; i++) { %>
-              <div class="answer-wrapper">
-                <span class="answer-ref"><%= sources[i].text %></span>
-                <a href="<%= sources[i].url %>" class="source-link" target="_blank"><%= sources[i].title %></a>
+          <div class="form comments">
+            <div class="level-block">
+              <div class="comment-block answer">
+              <% for (var i = 0; i < sources.length; i++) { %>
+                <div class="answer-wrapper">
+                  <span class="answer-ref"><%= sources[i].text %></span>
+                  <a href="<%= sources[i].url %>" class="source-link" target="_blank"><%= sources[i].title %></a>
+                </div>
+              <% } %>
               </div>
-            <% } %>
             </div>
           </div>
         </div>

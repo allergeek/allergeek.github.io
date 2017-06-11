@@ -16,9 +16,9 @@
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
       </div>
-    <div class="centered">
+      <div class="centered">
       <% include ../_includes-ru/_post-header %>
-      
+
       <% if (typeof draft !== "undefined" && draft) { %>
         <% include ../_includes/_post-draft %>
       <% } %>
@@ -30,20 +30,21 @@
       <% } %>
 
       <%# if(environment == "production") { %>
-      <div class="page-body">
-        <%- yield %>
-      </div>
+        <div class="page-body">
+          <%- yield %>
+        </div>
       <%# } %>
 
-      <div class="remember">
-        <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Запомнить</a>
-        <% include ../_includes-ru/_post-print %>
-      </div>
+        <div class="remember">
+          <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Запомнить</a>
+          <% include ../_includes-ru/_post-print %>
+        </div>
 
-      <% include ../_includes-ru/_post-next %>
-      <% include ../_includes-ru/_post-outro %>
-      <% include ../_includes-ru/_post-chimp %>
-      <script src="../../ref.js"></script>
+        <% include ../_includes-ru/_post-next %>
+        <% include ../_includes-ru/_post-outro %>
+        <% include ../_includes-ru/_post-chimp %>
+        <script src="../../ref.js"></script>
+      </div>
     </div>
   </body>
 </html>

@@ -12,7 +12,7 @@
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
       </div>
-    <div class="centered">
+      <div class="centered">
       <% include ../_includes/_post-header %>
 
       <%# If the post is marked as a draft then show a draft card %>
@@ -21,10 +21,7 @@
         <% include ../_includes/_post-draft %>
       <% } %>
 
-      <div class="remember">
-        <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Help me remember this</a>
-        <% include ../_includes/_post-print %>
-      </div>
+
 
       <%# If the post notes have single origin then show source card %>
 
@@ -33,15 +30,15 @@
       <% } %>
 
       <%# if(environment == "production") { %>
-      <div class="page-body">
-        <%- yield %>
-      </div>
+        <div class="page-body">
+          <%- yield %>
+        </div>
       <%# } %>
 
-      <div class="remember">
-        <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Help me remember this</a>
-        <% include ../_includes/_post-print %>
-      </div>
+        <div class="remember">
+          <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Help me remember this</a>
+          <% include ../_includes/_post-print %>
+        </div>
 
       <% include ../_includes/_post-next %>
       <% include ../_includes/_post-outro %>
@@ -61,6 +58,7 @@
           <%  %>
         <% } %>
       <% } %>
+      </div>
     </div>
   </body>
 </html>
