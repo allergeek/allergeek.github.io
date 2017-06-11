@@ -30,6 +30,15 @@ header {
 .title-box a span {
   cursor: pointer;
   margin: 0 6px 0 0;
+  color: #999;
+}
+
+.title-box:hover a span {
+  color: #4d4d4d;
+}
+
+.title-box a:hover span {
+  color: royalblue;
 }
 
 span.title {

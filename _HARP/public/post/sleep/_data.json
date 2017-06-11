@@ -1,5 +1,6 @@
 {
   "sample-post": {
+    "draft": true,
     "lang": "en",
     "localized": false,
     "date": "2017/04/29",

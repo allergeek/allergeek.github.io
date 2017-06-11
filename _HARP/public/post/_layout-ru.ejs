@@ -18,6 +18,10 @@
       </div>
     <div class="centered">
       <% include ../_includes-ru/_post-header %>
+      
+      <% if (typeof draft !== "undefined" && draft) { %>
+        <% include ../_includes/_post-draft %>
+      <% } %>
 
       <%# If the post notes have single origin then show source card %>
 

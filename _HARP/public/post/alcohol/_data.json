@@ -1,5 +1,6 @@
 {
   "withdrawal": {
+    "draft": true,
     "lang": "en",
     "localized": false,
     "date": "2017/05/09",

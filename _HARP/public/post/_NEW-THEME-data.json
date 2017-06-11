@@ -17,6 +17,7 @@
   },
 
   "exercise-reorganizes-the-brain-to-lower-stress-ru": {
+    "draft": true,
     "lang": "ru",
     "layout": "../_layout-ru",
     "date": "2017/04/27",
@@ -34,6 +35,7 @@
   },
 
   "path": {
+    "draft": true,
     "lang": "en",
     "localized": false,
     "date": "year/m/d",

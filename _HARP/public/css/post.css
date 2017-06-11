@@ -227,7 +227,8 @@ div.action input::input-placeholder {
   font-weight: 300;
 }
 
-div.next a {
+div.next a,
+div.draft p {
   display: block;
   border: 0;
   min-height: 54px;
@@ -241,6 +242,14 @@ div.next a {
   font-size: 30px;
   background: #dfdfdf;
   line-height: 37.5px;
+}
+
+div.draft {
+  margin: 30px 0 40px;
+}
+
+div.draft p {
+  background: #e4e4e4;
 }
 
 .page-body p {
@@ -452,8 +461,6 @@ div.next,
 div.last-post {
   margin: 60px 0 120px;
 }
-
-
 
 @media (min-width: 768px) {
   .bar-wrapper,
