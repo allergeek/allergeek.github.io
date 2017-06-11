@@ -1,0 +1,41 @@
+<% if (current.path.length === 1) { %>
+  <div class="title-box">
+    <span class="title">aiice2</span><%-
+  %><a href="/post"><span class="title">posts</span></a><%-
+  %><a href="/theme"><span class="title">themes</span></a>
+  </div>
+<% } else if (current.path[0] === "post" && (current.path[1] === "index" || current.path[1] === "ru")) { %>
+  <% if (current.path[1] === "ru") { %>
+    <div class="title-box post-css"><%-
+    %><a href="/"><span class="title">aiice2</span></a><%-
+    %><span class="title">посты</span><%-
+    %><a href="/theme"><span class="title">темы</span></a>
+    </div>
+  <% } else { %>
+    <div class="title-box post-css"><%-
+    %><a href="/"><span class="title">aiice2</span></a><%-
+    %><span class="title">posts</span><%-
+    %><a href="/theme"><span class="title">themes</span></a>
+    </div>
+  <% } %>
+<% } else if (current.path[0] === "theme" && (current.path[1] === "index" || current.path[1] === "ru")) { %>
+  <% if (current.path[1] === "ru") { %>
+    <div class="title-box post-css"><%-
+    %><a href="/"><span class="title">aiice2</span></a><%-
+    %><a href="/post"><span class="title">посты</span></a><%-
+    %><span class="title">темы</span>
+    </div>
+  <% } else { %>
+    <div class="title-box post-css"><%-
+    %><a href="/"><span class="title">aiice2</span></a><%-
+    %><a href="/post"><span class="title">posts</span></a><%-
+    %><span class="title">themes</span>
+    </div>
+  <% } %>
+<% } else { %>
+  <div class="title-box post-css"><%-
+  %><a href="/"><span class="title">aiice2</span></a><%-
+  %><a href="/post"><span class="title">posts</span></a><%-
+  %><a href="/theme"><span class="title">themes</span></a>
+  </div>
+<% } %>

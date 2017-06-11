@@ -9,7 +9,7 @@
     <%- include ../_includes/_post-css %>
   </head>
   <body>
-    <% include ../_includes/_titles %>
+    <% include ../_includes/_menu %>
     <div class="body-container start-margin">
       <div class="centered">
       <% if (current.source === "ru") { %>
@@ -19,18 +19,18 @@
       <% } %>
       <%- yield %>
       <% if (current.source === "ru") { %>
-        <% for (var i = 0, l = themesRU.length; i < l; i++) { %>
-        <a href="../theme/<%= themesRUpath[i] %>">
-          <span class="tag tag-page"><%= themesRU[i] %></span>
-          </a>
-        <% } %>
+        <% for (var i = 0, l = themesRU.length; i < l; i++) { %><%
+      %><a href="../theme/<%= themesRUpath[i] %>"><%
+        %><span class="tag tag-page"><%= themesRU[i] %></span><%
+      %></a><%
+      %><% } %>
         <h2><a href="<%= '/' + parent %>" class="">На английском &#9872;</a></h2>
       <% } else { %>
-        <% for (var i = 0, l = themesEN.length; i < l; i++) { %>
-        <a href="../theme/<%= themesEN[i] %>">
-          <span class="tag tag-page"><%= themesEN[i] %></span>
-        </a>
-        <% } %>
+      <% for (var i = 0, l = themesEN.length; i < l; i++) { %><%
+      %><a href="../theme/<%= themesEN[i] %>"><%
+        %><span class="tag tag-page"><%= themesEN[i] %></span><%
+      %></a><%
+    %><% } %>
         <h2><a href="ru" class="">Also in Russian &#9872;</a></h2>
       <% } %>
       </div>
