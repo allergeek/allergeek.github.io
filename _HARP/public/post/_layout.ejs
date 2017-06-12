@@ -8,32 +8,35 @@
   </head>
   <body>
     <% include ../_includes/_menu %>
-    <div class="body-container start-margin">
+    <div class="body-container start-margin post-margin">
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
       </div>
       <div class="centered">
-      <% include ../_includes/_post-header %>
+        <div class="remember before-post">
+          <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Help me remember this</a>
+          <% include ../_includes/_post-print %>
+        </div>
+        <% include ../_includes/_post-header %>
+        <%# If the post is marked as a draft then show a draft card %>
 
-      <%# If the post is marked as a draft then show a draft card %>
-
-      <% if (typeof draft !== "undefined" && draft) { %>
-        <% include ../_includes/_post-draft %>
-      <% } %>
+        <% if (typeof draft !== "undefined" && draft) { %>
+          <% include ../_includes/_post-draft %>
+        <% } %>
 
 
 
-      <%# If the post notes have single origin then show source card %>
+        <%# If the post notes have single origin then show source card %>
 
-      <% if (origin == "single") { %>
-        <% include ../_includes/_post-card %>
-      <% } %>
+        <% if (origin == "single") { %>
+          <% include ../_includes/_post-card %>
+        <% } %>
 
-      <%# if(environment == "production") { %>
+        <%# if(environment == "production") { %>
         <div class="page-body">
           <%- yield %>
         </div>
-      <%# } %>
+        <%# } %>
 
         <div class="remember">
           <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Help me remember this</a>
