@@ -41,7 +41,7 @@
     "date": "year/m/d",
     "title": "Example title",
     "theme": "Theme",
-    "intro": "Extending the title with more introductory information.",
+    "intro": "Extending the title with more introductory information. The title itself may well be different from the original publication.",
     "tags": [
       "one","two"
     ],

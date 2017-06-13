@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>some title</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="../css/comments.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/less.css">
+    <%- include ../_includes/_head %>
+  </head>
+  <body>
+    <%# EDIT THE THEME %>
+    <% var path = public.post.neuroscience._data %>
+    <div class="body-container start-margin">
+      <div class="centered">
+        <div class="parent-card larger hidden">
+          <a href="/<%= getParent() %>">
+            <div
+              class="parent-img"
+              style="background:
+                linear-gradient(
+                  rgba(255, 255, 255, 0.5),
+                  rgba(255, 255, 255, 0.5)),
+                url('');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+              ">
+            </div>
+            <span>title</span></a>
+        </div>
+
+        <div class="page-body">
+
+        <!-- <%- include ../_includes/_comment-remember %> -->
+
+          <div class="card-wrapper">
+            <div class="card">
+              <%- yield %>
+            </div>
+
+        <!-- <%- include ../_includes/_comment-twitter %> -->
+            <br>
+            <br>
+            <span>Parent set title - How the brain is capable of growing new cells</span>
+            <br>
+            <span>Theme - Neuroscience</span>
+          </div>
+
+          <div class="form comments">
+            <div class="level-block">
+              <div class="comment-block answer">
+              <%# for (var i = 0; i < sources.length; i++) { %>
+                <div class="answer-wrapper">
+                  <span class="answer-ref"></span>
+                  <a href="" class="source-link" target="_blank"></a>
+                </div>
+              <%# } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <% if (typeof references !== "undefined" && references) { %> -->
+      <!-- <script src="../../ref.js"></script> -->
+      <script>
+        console.log('yep')
+      </script>
+      <%# console.log('yes!!') %>
+      <% for (slug in public) { %>
+        <%  %>
+      <% } %>
+      <% for (i = 0; i < 0 ; i++) { %>
+        <%  %>
+      <% } %>
+    <!-- <% } %> -->
+  </body>
+</html>

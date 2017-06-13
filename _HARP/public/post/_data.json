@@ -4,5 +4,8 @@
   },
   "ru": {
     "layout": "_post"
+  },
+  "card": {
+    "layout": "_card"
   }
 }

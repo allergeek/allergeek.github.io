@@ -1,0 +1,20 @@
+.card-wrapper {
+  padding: 20px;
+  background: white;
+}
+
+.card {
+  border: solid 1px #ddd;
+  border-color: #ddd;
+  border-radius: 8px;
+  padding: 20px 30px 30px;
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card h1 {
+  margin: 0;
+  /*padding: 0 0 20px;*/
+}

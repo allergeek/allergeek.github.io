@@ -19,13 +19,14 @@
   },
 
   "exercise-reorganizes-the-brain-to-lower-stress": {
+    "draft": true,
     "lang": "en",
     "localized": true,
     "references": true,
     "date": "2017-04-25 PDT",
     "title": "Exercise reorganizes the brain to lower stress",
     "theme": "Neuroscience",
-    "intro": "Extending the title with more introductory information. The <b>title itself</b> may well be different from the original publication.",
+    "intro": "Exercise affects our response to stressful events.",
     "tags": [
       "exercise","running","sports","health","stress","anxiety","neuroscience","popular science"
     ],

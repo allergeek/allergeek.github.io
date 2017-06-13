@@ -14,44 +14,34 @@ function clean(n) {
 function refs() {
   var
     notesArray = [],
-    text = [];
+    textArray = [];
 
   urls = [], numerals = [];
 
   notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
 
   for (i = 0, l = notesArray.length; i < l; i++) {
-    text[i] = notesArray[i].textContent.toLowerCase();
-    text[i] = clean(text[i]).substring(0,30);
+    textArray[i] = notesArray[i].textContent.toLowerCase();
+    textArray[i] = clean(textArray[i]).substring(0,30);
   }
 
-  for (i = 0, l = text.length; i < l; i++) {
-    urls[i] = window.location.href.split(/\?|#/)[0] + '-ref' + '/' + text[i];
+  for (i = 0, l = textArray.length; i < l; i++) {
+    urls[i] = window.location.href.split(/\?|#/)[0] + '-ref' + '/' + textArray[i];
 
-    console.log(text[i]);
-    console.log(urls[i]);
+    console.log(textArray[i]);
+    // console.log(urls[i]);
   }
 }
 
 refs();
 
-
-
-( lala = function () {
-  console.log('HERE');
-  return false
-})();
+// ( lala = function () {
+//   console.log('HERE');
+//   return false
+// })();
 
 
 ( some = function () {
-
-  function referenceNumber() {
-    var n = "3 references";
-    // var n = "0";
-    return n
-
-    // create an array for that
-  }
 
   function insertBlock() {
     var myArray = [];
@@ -63,38 +53,53 @@ refs();
     // and wrap the span in a href link
 
     // where span cointains a number > than 0,
-    // replace it with number + 'references' (+ a case for 1 reference)
+    // replace it with number + 'references' (+ a case for 1 referencE)
     // assign a class counter-valid to such spans
 
-    for (i = 0, l = myArray.length; i < l; i++) {
-      // myArray[i].insertAdjacentHTML(
-      //   'beforeend',`&thinsp;<a href="${urls[i]}" class="counter" onclick="return void[0]"><span class="counter counter-valid" title="references">${numerals[i]}</span></a>`
-      // );
+
+    // just for demo
+
+    // numerals = [0,0,2,0]
+    //
+    // for (i = 0, l = myArray.length; i < l; i++) {
+    //   myArray[i].insertAdjacentHTML(
+    //     'beforeend',`&thinsp;<a href="${urls[i]}" class="counter" onclick="return void[0]"><span class="counter counter-valid" title="references">${numerals[i]}</span></a>`
+    //   );
 
       // assign class  counter-valid - if valid, i.e. 1 and more refs
-    }
+    // }
   }
 
   insertBlock();
 
+  function referenceNumber() {
+    var n = "3 whatever references";
+    // var n = "0";
+    return n
+
+    // create an array for that, collect h2 span values in it
+  }
+
   // if a post has references
-  // assign a url to each counter span
+  // assign a url to each h2 (counter) span
 
   // if (references) {
-  // if (true) {
-    // var myArray = [];
+  if (true) {
+    var
+      myArray = [],
+      textArray = [];
 
-    // var textArray = [];
     // var anchor, text;
 
     // anchor = document.createElement('a');
     // text = document.createTextNode("abc");
     // anchor.appendChild(text);
 
-    // myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+    myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
+    // REWRITE for all h2
 
-    // for (i = 0, l = myArray.length; i < l; i++) {
-      // myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">${referenceNumber()}</span>`);
+    for (i = 0, l = myArray.length; i < l; i++) {
+      myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">${referenceNumber()}</span>`);
 
       // textArray[i] = myArray[i].innerHTML;
       // myArray[i].innerHTML = `${textArray[i]}`;
@@ -106,15 +111,14 @@ refs();
       // if = 0 - default class counter
 
       // move to a separate function
-    // }
+    }
 
 
     // console.log(anchor);
-    // console.log(text);
     // console.log(myArray);
     // console.log(textArray);
 
-  // }
+  }
 })();
 
 
