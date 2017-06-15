@@ -23,21 +23,23 @@
     <% var path = public.post.neuroscience._data %>
     <div class="body-container start-margin">
       <div class="centered">
-        <div class="parent-card larger hidden">
-          <a href="/<%= getParent() %>">
-            <div
-              class="parent-img"
-              style="background:
-                linear-gradient(
-                  rgba(255, 255, 255, 0.5),
-                  rgba(255, 255, 255, 0.5)),
-                url('');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-              ">
-            </div>
-            <span>title</span></a>
+        <div class="fixed-wrapper">
+          <div class="parent-card-rel larger">
+            <a href="#0">
+              <div
+                class="parent-img"
+                style="background:
+                  linear-gradient(
+                    rgba(255, 255, 255, 0.5),
+                    rgba(255, 255, 255, 0.5)),
+                  url('../assets/how-the-brain-is-capable-of-growing-new-cells.jpeg');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-position: center;
+                ">
+              </div>
+              <span>How the brain is capable of growing new cells</span></a>
+          </div>
         </div>
 
         <div class="page-body">
@@ -49,7 +51,7 @@
               <%- yield %>
             </div>
             <div class="card-actions">
-              <div>
+              <div class="social-actions">
                 <!-- <a href="#0" class="">Share</a> -->
                 <div class="fb-share-button" data-href="https://aiice2.com" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faiice2.com%2F&amp;src=sdkpreparse">Share</a></div>
                 <%-
@@ -64,9 +66,10 @@
         <!-- <%- include ../_includes/_comment-twitter %> -->
             <br>
             <br>
-            <span>Parent set title - How the brain is capable of growing new cells</span>
+
+            <!-- <span>Parent set title - How the brain is capable of growing new cells</span> -->
             <br>
-            <span>Theme - Neuroscience</span>
+            <span class="tag  ">Theme - Neuroscience</span>
           </div>
 
           <div class="form comments">
