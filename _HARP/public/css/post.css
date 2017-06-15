@@ -460,6 +460,21 @@ div.remember {
   margin: 20px 0 0;
 }
 
+.remember a.action-btn:hover::after {
+  content: attr(data-descr);
+  background: #ddd;
+  display: block;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  color: #7b7b7b;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 4px;
+
+  width: 200%;
+}
+
 div.form {
   background: #eee;
   /* overriding LESS */
