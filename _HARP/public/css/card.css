@@ -24,7 +24,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
 
   margin: 30px 0;
 
@@ -33,7 +33,7 @@
 }
 
 .card-actions .social-actions * {
-  display: inline-block;
+  display: inline-flex;
 }
 
 .card-actions a.action-btn::after {
@@ -122,6 +122,14 @@
 .larger .parent-img {
   min-width: 48px;
   min-height: 48px;
+}
+
+.theme-label {
+  padding: 16px 24px;
+  display: inline-block;
+  margin: 0 4px 4px 0;
+  color: #b3b3b3;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
