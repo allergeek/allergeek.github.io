@@ -149,6 +149,24 @@ h2,
   margin: 0 0 20px;
 }
 
+.post-list {
+  width: inherit;
+}
+
+.post-list a h2 {
+  margin: 0 0 20px;
+  /*border-bottom: 2px solid #4d4d4d;*/
+}
+
+.post-list a:last-of-type h2  {
+  /*background: #ddd;*/
+  margin: 0 0 40px;
+  /*float: left;*/
+}
+.post-list a {
+  display: table;
+}
+
 p.tags {
   margin: 15px 0 10px;
 }

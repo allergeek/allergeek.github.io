@@ -8,6 +8,7 @@
   </head>
   <body>
   <% if(environment !== "production") { %>
+    <% include ../../_includes/_menu %>
     <div class="body-container start-margin">
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
@@ -26,7 +27,7 @@
         </div>
 
         <div class="remember">
-          <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Help me remember this</a>
+          <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Memorize the stuff by getting a short note sent to your inbox. It's something I use myself, opt out any time."><span>&check;</span>Help me remember this</a>
           <% include ../../_includes/_post-print %>
         </div>
         <% include ../../_includes/_post-next %>

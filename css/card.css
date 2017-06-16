@@ -75,6 +75,33 @@
   /*background: grey;*/
 }
 
+.card-nav {
+  display: flex;
+  /*background: grey;*/
+}
+
+.card-nav {
+  justify-content: flex-start;
+  padding-bottom: 12px;
+}
+
+.card-nav a,
+.card-nav a:visited {
+  display: block;
+  padding: 6px 9px 6px 0;
+  font-size: 21px;
+  color: #989898;
+  /*background: #ddd;*/
+}
+
+.card-nav a:last-of-type {
+  padding: 6px 0 6px 9px;
+}
+
+.card-nav a:hover {
+  color: royalblue;
+}
+
 .parent-card-rel {
   position: relative;
   display: inline-block;
@@ -158,6 +185,10 @@
     right: 20px;
     width: calc(100vw - 40px);
     max-width: calc(100vw - 40px);
+  }
+
+  .card-nav {
+    justify-content: space-between;
   }
 
   .parent-card-rel a {

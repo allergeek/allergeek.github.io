@@ -1,9 +1,11 @@
+<%# if site index %>
 <% if (current.path.length === 1) { %>
   <div class="title-box">
     <span class="title">aiice2</span><%-
   %><a href="/post"><span class="title">posts</span></a><%-
   %><a href="/theme"><span class="title">themes</span></a>
   </div>
+<%# else for /post (/index) and /post/ru pages %>
 <% } else if (current.path[0] === "post" && (current.path[1] === "index" || current.path[1] === "ru")) { %>
   <% if (current.path[1] === "ru") { %>
     <div class="title-box"><%-
@@ -18,6 +20,7 @@
     %><a href="/theme"><span class="title">themes</span></a>
     </div>
   <% } %>
+<%# else for /theme and theme/ru pages %>
 <% } else if (current.path[0] === "theme" && (current.path[1] === "index" || current.path[1] === "ru")) { %>
   <% if (current.path[1] === "ru") { %>
     <div class="title-box"><%-
@@ -32,14 +35,32 @@
     %><span class="title">themes</span>
     </div>
   <% } %>
+<%# else for specific theme pages and post pages %>
 <% } else { %>
-  <% if (current.path[0] === "theme") { %>
-  <div class="title-box">
+  <%# for a specific theme page in Russian %>
+  <% if (current.path[0] === "theme" && current.source.split("-").pop() === "ru") { %>
+    <div class="title-box"><%-
+    %><a href="/"><span class="title">aiice2</span></a><%-
+    %><a href="/post"><span class="title">посты</span></a><%-
+    %><a href="/theme"><span class="title">темы</span></a>
+    </div>
+  <%# for any post page in Russian, incl. personal posts %>
+  <% } else if (typeof lang !== "undefined" && lang === "ru") { %>
+    <div class="title-box post-css"><%-
+    %><a href="/"><span class="title">aiice2</span></a><%-
+    %><a href="/post"><span class="title">посты</span></a><%-
+    %><a href="/theme"><span class="title">темы</span></a>
+    </div>
   <% } else { %>
-  <div class="title-box post-css">
+    <%# check if a post in /post directory or a theme %>
+    <% if (current.path[0] === "theme") { %>
+      <div class="title-box">
+    <% } else { %>
+      <div class="title-box post-css">
+    <% } %>
+    <a href="/"><span class="title">aiice2</span></a><%-
+    %><a href="/post"><span class="title">posts</span></a><%-
+    %><a href="/theme"><span class="title">themes</span></a>
+    </div>
   <% } %>
-  <a href="/"><span class="title">aiice2</span></a><%-
-  %><a href="/post"><span class="title">posts</span></a><%-
-  %><a href="/theme"><span class="title">themes</span></a>
-  </div>
 <% } %>

@@ -27,24 +27,60 @@
       <% } else { %>
         <%- include ../_includes/_nav %>
       <% } %>
-      <%- yield %>
+
+      <div class="post-list">
+        <%- yield %>
+      </div>
+
       <% if (typeof ru !== "undefined" || current.source === "personal-ru" || current.source === "ru") { %>
+
+        <%# show themes that have posts in Russian %>
         <% for (var i = 0, l = themesRU.length; i < l; i++) { %><%-
       %><a href="../theme/<%= themesRUpath[i] %>"><%-
         %><span class="tag tag-page"><%= themesRU[i] %></span><%-
       %></a><%-
       %><% } %>
+
         <% if (current.source === "ru") { %>
         <h2><a href="<%= '/' + parent %>" class="">На английском &#9872;</a></h2>
+
+        <% } else if (typeof ru !== "undefined") { %>
+        <h2><a href="<%= current.source.slice(0,-3) %>" class="">На английском &#9872;</a></h2>
+        <% } else if (current.source === "personal-ru") { %>
+        <h2><a href="<%= current.source.slice(0,-3) %>" class="">На английском &#9872;</a></h2>
         <% } %>
+
+      <%# else show themes that have posts in English %>
       <% } else { %>
+
         <% for (var i = 0, l = themesEN.length; i < l; i++) { %><%-
       %><a href="../theme/<%= themesEN[i] %>"><%-
         %><span class="tag tag-page"><%= themesEN[i] %></span><%-
       %></a><%-
       %><% } %>
+
         <% if (current.source === "index") { %>
         <h2><a href="ru" class="">Also in Russian &#9872;</a></h2>
+
+        <% } else { %>
+
+          <%# adding a translation link to personal theme page %>
+
+          <% if (current.source === "personal") { %>
+            <% var title = current.source + '-ru' %>
+            <h2><a href="<%= title %>" class="">Also in Russian &#9872;</a></h2>
+          <% } %>
+
+          <%# adding a link to Russian translation for single theme pages. If there is current.source + 'ru' in the /theme json, show a link to a theme page in Russian. That way some pages in English won't have a translation link and some would %>
+
+          <% var data = public.theme._data %>
+          <% for (var item in data) { %>
+            <% var title = current.source + '-ru' %>
+            <% if (item === title) { %>
+              <h2><a href="<%= title %>" class="">Also in Russian &#9872;</a></h2>
+            <% } %>
+          <% } %>
+
         <% } %>
       <% } %>
       </div>
