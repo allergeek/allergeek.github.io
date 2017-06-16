@@ -7,33 +7,33 @@
     <%- include ../_includes/_post-css %>
   </head>
   <body>
-    <div class="title-box post-css">
-      <span class="title">aiice2</span>
-      <span class="title">posts</span>
-      <span class="title">themes</span>
-    </div>
-    <div class="body-container start-margin">
+    <% include ../_includes/_menu %>
+    <div class="body-container start-margin post-margin">
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
       </div>
       <div class="centered">
-      <% include ../_includes-ru/_post-header %>
+        <div class="remember before-post">
+          <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Подпишитесь на еженедельные напоминания, чтобы лучше запомнить важные факты."><span>&check;</span>Запомнить</a>
+          <% include ../_includes-ru/_post-print %>
+        </div>
+        <% include ../_includes-ru/_post-header %>
 
-      <% if (typeof draft !== "undefined" && draft) { %>
-        <% include ../_includes/_post-draft %>
-      <% } %>
+        <% if (typeof draft !== "undefined" && draft) { %>
+          <% include ../_includes/_post-draft %>
+        <% } %>
 
-      <%# If the post notes have single origin then show source card %>
+        <%# If the post notes have single origin then show source card %>
 
-      <% if (origin == "single") { %>
-        <% include ../_includes-ru/_post-card %>
-      <% } %>
+        <% if (origin == "single") { %>
+          <% include ../_includes-ru/_post-card %>
+        <% } %>
 
-      <%# if(environment == "production") { %>
+        <%# if(environment == "production") { %>
         <div class="page-body">
           <%- yield %>
         </div>
-      <%# } %>
+        <%# } %>
 
         <div class="remember">
           <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Запомнить</a>

@@ -232,7 +232,7 @@ div.action input::input-placeholder {
 }
 
 div.next a,
-div.draft p {
+.draft p {
   display: block;
   border: 0;
   min-height: 54px;
@@ -248,11 +248,11 @@ div.draft p {
   line-height: 37.5px;
 }
 
-div.draft {
+.draft {
   margin: 30px 0 40px;
 }
 
-div.draft p {
+.draft p {
   background: #e4e4e4;
 }
 
@@ -437,7 +437,7 @@ a.check {
   padding-left: 36px;
 }
 
-div.remember {
+.remember {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -520,11 +520,13 @@ div.last-post {
     color: #4d4d4d !important;
   }
   .fixed-bar,
+  .title-box,
   .tag-theme,
   .lang,
   .post-tags,
+  .draft,
   .source-card-wrapper,
-  div.remember,
+  .remember,
   .next,
   .last-post,
   .outro,
@@ -532,8 +534,8 @@ div.last-post {
     display: none;
   }
 
-  .start-margin {
-    margin: 0 !important;
+  .start-margin.post-margin {
+    margin-top: 0 !important;
   }
 
   @page {
