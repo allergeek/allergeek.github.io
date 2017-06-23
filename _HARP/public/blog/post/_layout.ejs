@@ -3,11 +3,11 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="../../css/reset.css">
-    <%- include ../_includes/_head %>
-    <%- include ../_includes/_post-css %>
+    <%- include /blog/_includes/_head %>
+    <%- include /blog/_includes/_post-css %>
   </head>
   <body>
-    <% include ../_includes/_menu %>
+    <% include /blog/_includes/_menu %>
     <div class="body-container start-margin post-margin">
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
@@ -15,19 +15,19 @@
       <div class="centered">
         <div class="remember before-post">
           <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Memorize the stuff by getting a short note sent to your inbox. It's something I use myself, opt out any time."><span>&check;</span>Help me remember this</a>
-          <% include ../_includes/_post-print %>
+          <% include /blog/_includes/_post-print %>
         </div>
-        <% include ../_includes/_post-header %>
+        <% include /blog/_includes/_post-header %>
         <%# If the post is marked as a draft then show a draft card %>
 
         <% if (typeof draft !== "undefined" && draft) { %>
-          <% include ../_includes/_post-draft %>
+          <% include /blog/_includes/_post-draft %>
         <% } %>
 
         <%# If the post notes have single origin then show source card %>
 
         <% if (origin == "single") { %>
-          <% include ../_includes/_post-card %>
+          <% include /blog/_includes/_post-card %>
         <% } %>
 
         <%# if(environment == "production") { %>
@@ -41,9 +41,9 @@
           <% include ../_includes/_post-print %>
         </div>
 
-      <% include ../_includes/_post-next %>
-      <% include ../_includes/_post-outro %>
-      <% include ../_includes/_post-chimp %>
+      <% include /blog/_includes/_post-next %>
+      <% include /blog/_includes/_post-outro %>
+      <% include /blog/_includes/_post-chimp %>
 
 
       <% if (typeof references !== "undefined" && references) { %>

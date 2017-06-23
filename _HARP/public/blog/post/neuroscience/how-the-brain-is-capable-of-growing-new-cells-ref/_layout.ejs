@@ -2,12 +2,12 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/post.css">
-    <link rel="stylesheet" href="../../../css/comments.css">
-    <!-- <link rel="stylesheet" href="../../../css/pages.css"> -->
-    <link rel="stylesheet" href="../../../css/less.css">
-    <%- include ../../../_includes/_head %>
+    <link rel="stylesheet" href="/blog/css/reset.css">
+    <link rel="stylesheet" href="/blog/css/post.css">
+    <link rel="stylesheet" href="/blog/css/comments.css">
+    <!-- <link rel="stylesheet" href="/blog/css/pages.css"> -->
+    <link rel="stylesheet" href="/blog/css/less.css">
+    <%- include /blog/_includes/_head %>
   </head>
   <body>
     <%# EDIT THE THEME %>
@@ -22,7 +22,7 @@
                 linear-gradient(
                   rgba(255, 255, 255, 0.5),
                   rgba(255, 255, 255, 0.5)),
-                url('../../../assets/<%= path[getPost()].image %>');
+                url('/blog/assets/<%= path[getPost()].image %>');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -33,9 +33,9 @@
 
         <div class="page-body">
 
-        <%- include ../../../_includes/_comment-remember %>
+        <%- include /blog/_includes/_comment-remember %>
         <%- yield %>
-        <%- include ../../../_includes/_comment-twitter %>
+        <%- include /blog/_includes/_comment-twitter %>
 
           <div class="form comments">
             <div class="level-block">
