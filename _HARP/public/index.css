@@ -1,14 +1,38 @@
 body {
-  font-family: 'Helvetica', sans-serif;
-  background: #ddd;
+  font-family: 'Roboto','Helvetica', sans-serif;
+  background: #eee;
   color: #555;
+  color: #333;
 }
 
-h1 {
+h1, h2 {
   font-size: 68px;
-  font-weight: 600;
+  font-weight: 400;
   max-width: 60vw;
   display: block;
+  font-family: 'Roboto Slab';
+  margin-bottom: 42px;
+}
+
+.heading::before {
+  content: "";
+  background: linear-gradient(-120deg, coral, #dd5486);
+  /*background-repeat: no-repeat;*/
+  z-index: 1;
+  width: 2vh;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+sup {
+  vertical-align: top;
+  font-size: 24px;
 }
 
 h2 {
@@ -26,31 +50,75 @@ h1 span {
 #logo {
   display: block;
   position: fixed;
-  top: 0vw;
-  left: 24px;
+  top: 12px;
+  left: 4vh;
   color: #777;
+  cursor: default;
+  z-index: 2;
 }
 
  #logo span {
-   font-family: Georgia, serif;
+   font-family: 'Roboto Slab', serif;
    font-weight: 600;
    font-size: 72px;
  }
 
+.heading {
+  padding-top: 20vh;
+}
+
+.parent-wrapper {
+  width: 100%;
+  min-height: 80vh;
+  background: grey;
+  content: "";
+  background: linear-gradient(0deg, #ddd, #eee);
+  /*overflow: hidden;*/
+  position: relative;
+}
+
 .wrapper {
-  height: 100vh;
+  /*height: 100vh;*/
   max-width: 75vw;
   margin: 0 auto;
-  margin-top: 20vh;
 }
 
-p.intro,
+p.extend,
 p.call {
-  font-family: Georgia, serif;
-  font-size: 54px;
-  padding: 4vh 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  padding: 0 0 60px;
 }
 
-p.intro {
-  
+p.extend {
+  margin-bottom: 10vh;
+  max-width: 50vw;
+  min-width: 420px;
+}
+
+p.call a {
+  color: inherit;
+  /*font-weight: 600;*/
+  text-decoration: none;
+  border-bottom: solid 3px #333;
+}
+
+button.book {
+  background: grey;
+  color: #eee;
+  font-size: 36px;
+  font-weight: 600;
+  padding: 42px;
+  font-family: 'Roboto Slab', serif;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button.book:hover {
+  color: white;
+}
+
+button.book:active {
+  color: #eee;
 }
