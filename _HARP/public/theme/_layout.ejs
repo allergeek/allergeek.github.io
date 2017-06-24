@@ -4,12 +4,12 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/blog/css/reset.css">
-    <%- include /blog/_includes/_head %>
-    <%- include /blog/_includes/_post-css %>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <%- include ../_includes/_head %>
+    <%- include ../_includes/_post-css %>
   </head>
   <body>
-  <% include /blog/_includes/_menu %>
+  <% include ../_includes/_menu %>
   <%# content of personal posts and at theme/personal (and theme/personal-ru) is hidden in production %>
   <% if ((current.source === "personal" || current.source === "personal-ru") && environment === "production") { %>
     <div class="body-container start-margin">
@@ -23,9 +23,9 @@
     <div class="body-container start-margin">
       <div class="centered">
       <% if (typeof ru !== "undefined" || current.source === "ru") { %>
-        <%- include /blog/_includes-ru/_nav %>
+        <%- include ../_includes-ru/_nav %>
       <% } else { %>
-        <%- include /blog/_includes/_nav %>
+        <%- include ../_includes/_nav %>
       <% } %>
 
       <div class="post-list">
@@ -36,7 +36,7 @@
 
         <%# show themes that have posts in Russian %>
         <% for (var i = 0, l = themesRU.length; i < l; i++) { %><%-
-      %><a href="/blog/theme/<%= themesRUpath[i] %>"><%-
+      %><a href="../theme/<%= themesRUpath[i] %>"><%-
         %><span class="tag tag-page"><%= themesRU[i] %></span><%-
       %></a><%-
       %><% } %>
@@ -54,7 +54,7 @@
       <% } else { %>
 
         <% for (var i = 0, l = themesEN.length; i < l; i++) { %><%-
-      %><a href="/blog/theme/<%= themesEN[i] %>"><%-
+      %><a href="../theme/<%= themesEN[i] %>"><%-
         %><span class="tag tag-page"><%= themesEN[i] %></span><%-
       %></a><%-
       %><% } %>

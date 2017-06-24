@@ -6,17 +6,17 @@
     <meta name="google-site-verification" content="SNCMSXtYoSqKAlyxoRRHK-cUb4dYJJd8pgZsxBRajPU" />
 
     <title><%= title %></title>
-    <%- include /blog/_includes/_head %>
+    <%- include ../_includes/_head %>
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/less.css" />
   </head>
   <body>
-    <% include /blog/_includes/_menu %>
+    <% include ../_includes/_menu %>
     <div id="feed" class="start-margin">
       <div class="centered">
-        <%- include /blog/_includes-ru/_nav %>
-        <%- include /blog/_includes-ru/_intro %>
+        <%- include ../_includes-ru/_nav %>
+        <%- include ../_includes-ru/_intro %>
         <%- yield %>
       </div>
     </div>

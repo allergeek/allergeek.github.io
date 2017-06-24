@@ -4,30 +4,30 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/blog/css/reset.css">
-    <%- include /blog/_includes/_head %>
-    <%- include /blog/_includes/_post-css %>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <%- include ../_includes/_head %>
+    <%- include ../_includes/_post-css %>
   </head>
   <body>
-    <% include /blog/_includes/_menu %>
+    <% include ../_includes/_menu %>
     <div class="body-container start-margin">
       <div class="centered">
       <% if (current.source === "ru") { %>
-        <%- include /blog/_includes-ru/_nav %>
+        <%- include ../_includes-ru/_nav %>
       <% } else { %>
-        <%- include /blog/_includes/_nav %>
+        <%- include ../_includes/_nav %>
       <% } %>
       <%- yield %>
       <% if (current.source === "ru") { %>
         <% for (var i = 0, l = themesRU.length; i < l; i++) { %><%
-      %><a href="/blog/theme/<%= themesRUpath[i] %>"><%
+      %><a href="../theme/<%= themesRUpath[i] %>"><%
         %><span class="tag tag-page"><%= themesRU[i] %></span><%
       %></a><%
       %><% } %>
         <h2><a href="<%= '/' + parent %>" class="">На английском &#9872;</a></h2>
       <% } else { %>
       <% for (var i = 0, l = themesEN.length; i < l; i++) { %><%
-      %><a href="/blog/theme/<%= themesEN[i] %>"><%
+      %><a href="../theme/<%= themesEN[i] %>"><%
         %><span class="tag tag-page"><%= themesEN[i] %></span><%
       %></a><%
     %><% } %>

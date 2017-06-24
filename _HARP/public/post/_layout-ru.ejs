@@ -2,12 +2,12 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/blog/css/reset.css">
-    <%- include /blog/_includes/_head %>
-    <%- include /blog/_includes/_post-css %>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <%- include ../_includes/_head %>
+    <%- include ../_includes/_post-css %>
   </head>
   <body>
-    <% include /blog/_includes/_menu %>
+    <% include ../_includes/_menu %>
     <div class="body-container start-margin post-margin">
       <div class="fixed-bar">
         <a href="#top"><div class="bar-wrapper"><span class="title-bar"><%= title %></span><span class="top-icon">&#10141;</span></div></a>
@@ -15,18 +15,18 @@
       <div class="centered">
         <div class="remember before-post">
           <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Подпишитесь на еженедельные напоминания, чтобы лучше запомнить важные факты."><span>&check;</span>Запомнить</a>
-          <% include /blog/_includes-ru/_post-print %>
+          <% include ../_includes-ru/_post-print %>
         </div>
-        <% include /blog/_includes-ru/_post-header %>
+        <% include ../_includes-ru/_post-header %>
 
         <% if (typeof draft !== "undefined" && draft) { %>
-          <% include /blog/_includes/_post-draft %>
+          <% include ../_includes/_post-draft %>
         <% } %>
 
         <%# If the post notes have single origin then show source card %>
 
         <% if (origin == "single") { %>
-          <% include /blog/_includes-ru/_post-card %>
+          <% include ../_includes-ru/_post-card %>
         <% } %>
 
         <%# if(environment == "production") { %>
@@ -36,14 +36,14 @@
         <%# } %>
 
         <div class="remember">
-          <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Подпишитесь на еженедельные напоминания, чтобы лучше запомнить важные факты."><span>&check;</span>Запомнить</a>
-          <% include /blog/_includes-ru/_post-print %>
+          <a href="<%- mailtoStr() %>" class="action-btn check"><span>&check;</span>Запомнить</a>
+          <% include ../_includes-ru/_post-print %>
         </div>
 
-        <% include /blog/_includes-ru/_post-next %>
-        <% include /blog/_includes-ru/_post-outro %>
-        <% include /blog/_includes-ru/_post-chimp %>
-        <script src="/blog/ref.js"></script>
+        <% include ../_includes-ru/_post-next %>
+        <% include ../_includes-ru/_post-outro %>
+        <% include ../_includes-ru/_post-chimp %>
+        <script src="../../ref.js"></script>
       </div>
     </div>
   </body>
