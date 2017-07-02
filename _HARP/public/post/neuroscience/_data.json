@@ -1,4 +1,23 @@
 {
+  "nutrition-neurogenesis-and-mental-health": {
+    "draft": true,
+    "lang": "en",
+    "localized": false,
+    "references": false,
+    "date": "2017-07-01 PDT",
+    "title": "Nutrition's impact on mental heath",
+    "theme": "Neuroscience",
+    "intro": "In the recent years, studies have established that learning and memory abilities as well as mood are influenced by diet. These facts are from a research paper by Muhammad S. A. Zainuddin  and Sandrine Thuret.",
+    "tags": [
+      "health","nutrition","diet","neurogenesis","mental heath","anxiety","how the brain works","neuroscience","popular science"
+    ],
+    "origin": "single",
+    "image": "",
+    "video": false,
+    "originTitle": "Nutrition, adult hippocampal neurogenesis and mental health",
+    "originDomain": "academic.oup.com",
+    "originURL": "https://academic.oup.com/bmb/article-lookup/doi/10.1093/bmb/lds021"
+  },
   "how-we-are-programmed-to-be-poor": {
     "lang": "en",
     "localized": false,
