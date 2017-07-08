@@ -1,4 +1,15 @@
 {
+  "dirty-dozen": {
+    "draft": true,
+    "lang": "en",
+    "localized": false,
+    "date": "2017/07/07",
+    "title": "Dirty dozen 2017",
+    "theme": "Nutrition",
+    "intro": "These fruits and vegetables contain most pesticide residue.",
+    "tags": ["pesticides","organic","produce"],
+    "origin": "mixed"
+  },
   "nutrition-basics-soaking": {
     "draft": true,
     "lang": "en",
