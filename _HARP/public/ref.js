@@ -28,7 +28,7 @@ function refs() {
   for (i = 0, l = textArray.length; i < l; i++) {
     urls[i] = window.location.href.split(/\?|#/)[0] + '-ref' + '/' + textArray[i];
 
-    console.log(textArray[i]);
+    // console.log(textArray[i]);
     // console.log(urls[i]);
   }
 }
@@ -44,17 +44,68 @@ refs();
 ( some = function () {
 
   function insertBlock() {
-    var myArray = [];
-    myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
-    // find span in h2 in page-body
-    // add a &thinsp; before the span
-    // assign a class - counter
-    // assign title references
-    // and wrap the span in a href link
+    var
+      myArray = [],
+      values = [];
 
-    // where span cointains a number > than 0,
-    // replace it with number + 'references' (+ a case for 1 referencE)
-    // assign a class counter-valid to such spans
+    myArray = document
+      .getElementsByClassName("page-body")[0]
+      .getElementsByTagName('h2');
+
+    function val() {
+      values = document
+        .getElementsByClassName("page-body")[0]
+        .querySelectorAll('h2 > span');
+
+      // return values;
+    }
+
+
+    val();
+
+    // gets out the seqence, 0 0 2 0
+    // values[i] contains the whole span tag
+    for (i = 0, l = values.length; i < l; i++) {
+      var val;
+      console.log(values[i].innerHTML);
+      val = parseInt(values[i].innerHTML);
+      values[i].className = "counter ";
+      // console.log(val);
+
+      values[i].insertAdjacentHTML(
+        'beforebegin','&thinsp;'
+      );
+
+      if (val > 0) {
+        // console.log(val + ' is larger than 0');
+        if (val === 1) {
+          // console.log(val + ' reference');
+          values[i].innerHTML = val + ' reference';
+        } else {
+          // console.log(val + ' references');
+          values[i].innerHTML = val + ' references';
+        }
+
+        values[i].className += "counter-valid";
+      }
+    }
+
+    // console.log(val());
+    console.log(values);
+    // console.log(myArray);
+
+    // + where span cointains a number > than 0,
+    // + replace it with number + 'references' (+ a case for 1 referencE)
+    // + assign a class counter-valid to such spans
+
+
+    // > generating the block to swap with current content
+    // + find span in h2 in page-body
+    // + add a &thinsp; before the span
+    // + assign a class - counter
+    // + assign title references
+
+    // and wrap the span in an anchor href
 
 
     // just for demo
@@ -99,7 +150,7 @@ refs();
     // REWRITE for all h2
 
     for (i = 0, l = myArray.length; i < l; i++) {
-      myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">${referenceNumber()}</span>`);
+      // myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">${referenceNumber()}</span>`);
 
       // textArray[i] = myArray[i].innerHTML;
       // myArray[i].innerHTML = `${textArray[i]}`;
@@ -183,5 +234,5 @@ function openOverlay() {
       //  + and build urls with it
       //  wrap every h2 element in an anchor
 
-// create a class for empty span, zero references, to be lighter
-// append current counter class only when > 0
+      // + create a class for empty span, zero references, to be lighter
+      // append current counter class only when > 0
