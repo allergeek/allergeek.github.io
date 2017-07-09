@@ -48,10 +48,12 @@ refs();
       myArray = [],
       values = [];
 
+    // store all H2 headings
     myArray = document
       .getElementsByClassName("page-body")[0]
       .getElementsByTagName('h2');
 
+    // store all spans inside H2 headings
     function val() {
       values = document
         .getElementsByClassName("page-body")[0]
@@ -60,35 +62,53 @@ refs();
       // return values;
     }
 
-
     val();
 
     // gets out the seqence, 0 0 2 0
     // values[i] contains the whole span tag
-    for (i = 0, l = values.length; i < l; i++) {
-      var val;
-      console.log(values[i].innerHTML);
-      val = parseInt(values[i].innerHTML);
-      values[i].className = "counter ";
-      // console.log(val);
+    function second() {
+      var
+        val,
+        anchor;
 
-      values[i].insertAdjacentHTML(
-        'beforebegin','&thinsp;'
-      );
+      for (i = 0, l = values.length; i < l; i++) {
 
-      if (val > 0) {
-        // console.log(val + ' is larger than 0');
-        if (val === 1) {
-          // console.log(val + ' reference');
-          values[i].innerHTML = val + ' reference';
-        } else {
-          // console.log(val + ' references');
-          values[i].innerHTML = val + ' references';
+        anchor = document.createElement('a');
+
+        me = function() {
+          text = "abc";
+          anchor.appendChild(text);
         }
 
-        values[i].className += "counter-valid";
+        // anchor.appendChild(values[i]);
+
+        // console.log(anchor);
+
+        val = parseInt(values[i].innerHTML);
+        values[i].className = "counter" + " ";
+        // console.log(val);
+
+        values[i].insertAdjacentHTML(
+          'beforebegin','&thinsp;'
+        );
+
+        if (val > 0) {
+          // console.log(val + ' is larger than 0');
+          if (val === 1) {
+            // console.log(val + ' reference');
+            values[i].innerHTML = val + " reference";
+          } else {
+            // console.log(val + ' references');
+            values[i].innerHTML = val + ' references';
+          }
+          values[i].className += "counter-valid";
+        } else if (val === 0) {
+          values[i].className += "hidden";
+        }
       }
     }
+
+    second();
 
     // console.log(val());
     console.log(values);
@@ -105,7 +125,9 @@ refs();
     // + assign a class - counter
     // + assign title references
 
-    // and wrap the span in an anchor href
+    //  wrap every h2 element in an anchor
+
+    // > now, what do I need to show?
 
 
     // just for demo
@@ -116,20 +138,11 @@ refs();
     //   myArray[i].insertAdjacentHTML(
     //     'beforeend',`&thinsp;<a href="${urls[i]}" class="counter" onclick="return void[0]"><span class="counter counter-valid" title="references">${numerals[i]}</span></a>`
     //   );
-
-      // assign class  counter-valid - if valid, i.e. 1 and more refs
     // }
   }
 
   insertBlock();
 
-  function referenceNumber() {
-    var n = "3 whatever references";
-    // var n = "0";
-    return n
-
-    // create an array for that, collect h2 span values in it
-  }
 
   // if a post has references
   // assign a url to each h2 (counter) span
@@ -140,28 +153,20 @@ refs();
       myArray = [],
       textArray = [];
 
-    // var anchor, text;
+    var anchor, text;
 
-    // anchor = document.createElement('a');
-    // text = document.createTextNode("abc");
-    // anchor.appendChild(text);
+    anchor = document.createElement('a');
+    text = document.createTextNode("abc");
+    anchor.appendChild(text);
 
-    myArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
-    // REWRITE for all h2
+    myArray = document.getElementsByClassName("page-body")[0].querySelectorAll('h2 > span');
 
     for (i = 0, l = myArray.length; i < l; i++) {
-      // myArray[i].insertAdjacentHTML('beforeend',`<span class="counter counter-valid" title="references">${referenceNumber()}</span>`);
+      myArray[i].insertAdjacentHTML('beforeend',` zzz`);
 
-      // textArray[i] = myArray[i].innerHTML;
-      // myArray[i].innerHTML = `${textArray[i]}`;
-      // REWRITE APPENDING ? CHECK
+      textArray[i] = myArray[i].innerHTML;
+      myArray[i].innerHTML = `${textArray[i]}`;
 
-      // N references
-      // get the number
-      // if not 0 - class is counter-valid
-      // if = 0 - default class counter
-
-      // move to a separate function
     }
 
 
@@ -225,14 +230,3 @@ function openOverlay() {
 
   btn.onclick = closeLayer;
 }
-
-
-
-      //  + get every h2 tag content
-      //  + in a certain class div
-      //  + take first 30 chars
-      //  + and build urls with it
-      //  wrap every h2 element in an anchor
-
-      // + create a class for empty span, zero references, to be lighter
-      // append current counter class only when > 0
