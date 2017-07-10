@@ -291,6 +291,14 @@ h2 a.counter {
   display: inline-block;
 }
 
+h2 a.counter-wrapper {
+  /*height: 30px;*/
+  /*display: inline;*/
+  /*border-radius: 20px;*/
+  /*background: pink;*/
+  /*padding: 0;*/
+}
+
 span.counter {
   background: #eee;
   border-radius: 20px;
