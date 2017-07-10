@@ -10,6 +10,8 @@ function clean(n) {
 }
 
 // NEED TO disable scroll for original content layer
+// how to NOT TO REDRAW the object each time?
+// ALSO, why the a href - need to make it open in bg with cmd
 
 textArray = [],
 urls = [], values = [];
@@ -32,7 +34,8 @@ function refs() {
 // delete overlay content (when closing)
 function closeLayer(event) {
   var element = document.getElementById("ttt");
-  element.outerHTML = "";
+  element.className = "hidden";
+  // element.outerHTML = "";
 }
 
 // store all spans inside H2 headings
@@ -45,6 +48,7 @@ function val() {
 }
 
 var that;
+var large;
 
 // extract text without stylistic tags and
 // generate urls out of every note
@@ -58,18 +62,17 @@ function refs() {
   }
 }
 
-// open overlay
-function openOverlay(event) {
-  event.preventDefault();
+function createOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
   var btn = document.createElement('button');
-  var large = div;
+  large = div;
   var cc = div2;
 
   large.id = "ttt";
+  large.className = "hidden";
 
-  large.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#444;paddding:0;';
+  large.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#f2f2f2;paddding:0;';
 
   cc.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
 
@@ -79,12 +82,19 @@ function openOverlay(event) {
   large.appendChild(cc);
   large.appendChild(btn);
   cc.id = "overlay-content";
+
+  cc.innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
   document.body.appendChild(large);
-  // console.log(large);
-
-  document.getElementById("overlay-content").innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
-
   btn.onclick = closeLayer;
+}
+
+createOverlay();
+
+// open overlay
+function openOverlay(event) {
+  event.preventDefault();
+
+  large.className = "";
 
   // (function p(){
   //   mw();
@@ -92,16 +102,22 @@ function openOverlay(event) {
   // })();
   that = document.getElementById("overlay-content").getElementsByTagName('object');
   console.log(that);
-  console.log(that.length); // 1
+  // console.log(that.length); // 1
 
   return false;
 }
 
+function som(event) {
+  event.preventDefault();
+  console.log('shown');
+  large.className = "";
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
-  refs();
+  refs(); // get the urls
   ( some = function () {
     function insertBlock() {
-      val();
+      val(); // gets all spans
 
       // gets out the seqence, 0 0 2 0
       // values[i] contains the whole span tag
@@ -120,53 +136,45 @@ document.addEventListener("DOMContentLoaded", function(event) {
           val = parseInt(valueBox);
           values[i].className += "hidden";
 
+
+
           if (val > 0) {
             if (val === 1) {
-              console.log(valueBox);
+              // console.log(valueBox);
 
               values[i].insertAdjacentHTML(
                 'beforebegin',
-                `<a href="${urls[i]}" onclick="return openOverlay(event)"><span class="counter counter-valid">${valueBox}
+                `<a href="${urls[i]}" id="a${[i]}" onclick="return som(event)"><span class="counter counter-valid">${valueBox}
                 reference</span></a>`
               );
 
-              // document.addEventListener('click', function(event) {
-              //   var lol = document.getElementById("overlay-content").getElementsByTagName('object')[0];
-              //   lol.data = curr;
+              // document.getElementById('a' + i).addEventListener('click', function() {
+                that = document.getElementById("overlay-content").getElementsByTagName('object');
+                that[0].setAttribute('data',urls[i]);
+                // console.log(that.length + ' that');
               // });
+
+              // console.log(urls[i]+ ' urls');
+              console.log(curr);
 
             } else {
 
               values[i].insertAdjacentHTML(
                 'beforebegin',
-                `&thinsp;<a href="#0" id="pp" onclick="return openOverlay(event)"><span class="counter counter-valid">${valueBox}
+                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return som(event)"><span class="counter counter-valid">${valueBox}
                 references</span></a>`
               );
 
+              that = document.getElementById("overlay-content").getElementsByTagName('object');
+              that[0].setAttribute('data',urls[i]);
+
               valueBox = val + ' references';
 
+              // console.log(urls[i]+ ' urls');
+              console.log(curr);
 
 
-              // HOW TO load data attribute
-              // when object tag is already created
-              // after an onclick event?
-
-              // that[0].setAttribute('data',urls[i]);
-
-
-              mw = function() {
-              //   // // openOverlay(event);
-              //
-                // var me = document.getElementById("ttt");
-                // var meme = document.getElementById("ttt").getElementsByTagName('object')[0];
-                // if (!document.getElementById("ttt").length > 0) {
-                //
-                // } else {
-
-                  // var meme = document.getElementById("overlay-content").getElementsByTagName('object');
-                  // that.setAttribute('data',urls[i]);
-                // }
-              }
+              // if (!document.getElementById("ttt").length > 0) {}
             }
           }
         }
