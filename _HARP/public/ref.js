@@ -26,11 +26,11 @@ notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagNam
 // extract text without stylistic tags and
 // generate urls out of every note
 function refs() {
-  for (i = 0, l = notesArray.length; i < l; i++) {
+  for (var i = 0, l = notesArray.length; i < l; i++) {
     textArray[i] = notesArray[i].textContent.toLowerCase();
     textArray[i] = clean(textArray[i]).substring(0,30);
   }
-  for (i = 0, l = textArray.length; i < l; i++) {
+  for (var i = 0, l = textArray.length; i < l; i++) {
     urls[i] = window.location.href.split(/\?|#/)[0] + '-ref' + '/' + textArray[i];
   }
 }
@@ -55,18 +55,6 @@ var
   that,
   curr,
   large;
-
-// extract text without stylistic tags and
-// generate urls out of every note
-function refs() {
-  for (i = 0, l = notesArray.length; i < l; i++) {
-    textArray[i] = notesArray[i].textContent.toLowerCase();
-    textArray[i] = clean(textArray[i]).substring(0,30);
-  }
-  for (i = 0, l = textArray.length; i < l; i++) {
-    urls[i] = window.location.href.split(/\?|#/)[0] + '-ref' + '/' + textArray[i];
-  }
-}
 
 function createOverlay() {
   var div = document.createElement('div');
@@ -106,8 +94,8 @@ function openOverlay(event) {
   //   mw();
     // setTimeout(p, 3000);
   // })();
-  that = document.getElementById("overlay-content").getElementsByTagName('object');
-  console.log(that);
+  // that = document.getElementById("overlay-content").getElementsByTagName('object');
+  // console.log(that);
   // console.log(that.length); // 1
 
   return false;
@@ -120,18 +108,20 @@ function som(event) {
 }
 
 function mev() {
-  console.log('here!');
+  // console.log('here!');
+  that = document.getElementById("overlay-content").getElementsByTagName('object')[0];
 
-  for (i = 0, l = values.length; i < l; i++) {
-    curr = urls[i];
+
+  for (var i = 0, l = values.length; i < l; i++) {
+    // curr = urls[i];
     // document.getElementById('a' + i).addEventListener('click', function() {
 
-      that = document.getElementById("overlay-content").getElementsByTagName('object')[0];
-      // that.setAttribute('data',urls[i]);
+
+      // that.setAttribute('data',urls[1]); // TEMP
       // console.log(urls[i]); // works
-      console.log(curr); // works
+      // console.log(curr); // works
       // console.log(i); // works
-      console.log('test');
+      // console.log('test');
     // });
   }
 }
@@ -152,7 +142,7 @@ function all() {
 
         // console.log(values);
 
-        for (i = 0, l = values.length; i < l; i++) {
+        for (var i = 0, l = values.length; i < l; i++) {
 
           valueBox = values[i].innerHTML;
           val = parseInt(valueBox);
@@ -210,7 +200,7 @@ function all() {
 
     function geta() {
       anchors = document.getElementsByClassName('counter-wrapper');
-      console.log(anchors[0] + ' geta');
+      // console.log(anchors[0] + ' geta');
     }
 
     geta();
@@ -231,15 +221,17 @@ function all() {
       // }
     });
 
-    console.log(anchors.length);
+    // console.log(anchors.length);
+
+    mev(); // get the object
 
     // gets each anchor's id
     for (var i = 0, l = anchors.length; i < l; i++) {
       var molly = function(index) {
         anchors[index].addEventListener("click", function() {
-          alert ("You clicked par #: " + anchors[index].id);
+          // alert ("You clicked par #: " + anchors[index].id);
           ids[index] = anchors[index].id; // works
-          console.log(ids);
+          // console.log(ids);
           // var result = ids.map(function(x) {
             // console.log('me');
             // return parseInt(x, 10);
@@ -248,7 +240,11 @@ function all() {
 
           // console.log(result);
           // console.log(parseInt(ids[index]),10);
-          console.log(ids[index].substring(1)); // works !
+          // console.log(ids[index].substring(1)); // works !
+
+          // console.log(that);
+          that.data = anchors[index].href;
+
         });
       }(i);
     }
