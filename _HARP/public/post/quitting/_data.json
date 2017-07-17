@@ -1,4 +1,17 @@
 {
+  "21-facts-about-smoking": {
+    "draft": true,
+    "lang": "en",
+    "localized": false,
+    "date": "2017/07/16",
+    "title": "21 facts about smoking",
+    "theme": "Quitting",
+    "intro": "",
+    "tags": [
+      "health","habits","smoking","chemistry","tobacco","quitting"
+    ],
+    "origin": "mixed"
+  },
   "chemistry-behind-smoking": {
     "draft": true,
     "lang": "en",
