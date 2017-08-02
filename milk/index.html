@@ -5,19 +5,88 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../reset.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <style>
-      body { background: #f4f2eb; padding: 20px; font-family: 'Lato', sans-serif; font-size: 20px; color: #5e6773; }
+      body { background: #f4f2eb; padding: 10px; font-family: 'Lato', sans-serif; font-size: 20px; color: #5e6773; }
       img { width: 100px; }
       section { margin: 0 20px 40px 0; min-width: 240px; }
-      h1 { font-size: 36px; margin: 0 0 20px; font-weight: 700;}
+      h1 { font-size: 36px; margin: 0 0 10px; font-weight: 700; }
       h2 { font-size: 24px; background: lightgrey; padding: 3px 0; font-weight: 700; color: #777; margin: 20px 0 10px}
       p { margin: 20px 0 }
-      .tags { margin: 0 0 20px; }
-      .tags span { display: inline-block; background: lightgrey; background: #eee; padding: 5px 12px; border-radius: 100px; margin: 0 10px 10px 0; font-size: 24px; border: solid 1px #358cf2; color: ; }
+      .bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 40px;
+        box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+        width: 100%;
+        background: #ededed;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .circle-icon {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+
+        height: 40px;
+        width: 40px;
+        background: #ddd;
+        border-radius: 40px;
+      }
+      .content {
+        /*padding-top: 40px;*/
+      }
+      .tags {
+        /*margin: 0 0 10px;*/
+      }
+      .tags span { display: inline-block; background: lightgrey; background: #eee; border-radius: 100px; margin: 0 1px 1px 0; font-size: 24px; border: solid 1px #358cf2; color: ; }
+      .product-manufacturer {
+        color: #747f8e;
+      }
+      .product-title {
+        white-space: nowrap;
+      }
+      .product.tags {
+        margin: 20px 0 20px 0;
+      }
       span.allergies { border: solid 1px #f76d6d; background-color: ; }
-      .primary.tags span { font-weight: 700; }
-      .product.tags span { font-weight: 400; background: #738dff; color: #fafafa; font-size: ; padding: 10px 18px 10px; text-shadow: 0px 1px 1px rgba(0,0,0,0.2); box-shadow: inset 0 -1px rgba(0,0,0,0.2), 0 0px 1px rgba(0,0,0,0.6); border: solid 0px #ddd; }
+      .primary.tags span {
+        font-weight: 700;
+        margin: 0 4px 0 0;
+        padding: 5px 12px;
+      }
+      .product.tags span {
+        font-weight: 400;
+        /* background: #738dff;
+        color: #fafafa;
+
+        background: #ededed;
+        color: #738dff; */
+
+        background: #738dff;
+        background: #6b7df6;
+        color: #f1f1f1;
+
+        font-size: ;
+        padding: 10px 18px 10px;
+        /*text-shadow: 0px 1px 1px rgba(0,0,0,0.2);*/
+        /*box-shadow: inset 0 -1px rgba(0,0,0,0.2), 0 0px 1px rgba(255,255,255,0.6); */
+        /*border: solid 0px #738dff;*/
+        border: none;
+      }
+      .product.tags span.alert {
+        background: #f76d6d;
+        color: #fff;
+      }
+      .product.tags span.more {
+        background: #ededed;
+        color: #747f8e;
+        border: solid 1px rgba(0,0,0,0.2);
+        font-weight: 700;
+        box-sizing: border-box;
+        padding: 9px 17px 9px;
+      }
       button { border: none; border-radius: 100px; margin: 20px 0; font-size: 36px; font-weight: 700; background: #f76d6d; color: #fff; padding: 30px 48px; text-shadow: 0px 1px 1px rgba(0,0,0,0.2); box-shadow: inset 0 -1px rgba(0,0,0,0.2); }
       button.circle { width: 102px; height: 102px; padding: 0;}
       button.outlined { background: none; border: solid 1px #f76d6d; color: #f76d6d; text-shadow: 0px 1px 1px rgba(255,255,255,0.9);}
@@ -37,18 +106,45 @@
         width: 100px;
         background: lightgrey;
       }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 30px;
+          line-height: 32px;
+        }
+        .images { height: 60px; }
+        .images img, .images .slug { width: 60px; }
+        .product.tags {
+        }
+        .primary.tags span {
+          font-size: 15px;
+          padding: 3px 8px 4px;
+        }
+        .product.tags span {
+          font-size: 18px;
+          padding: 4px 12px 6px;
+        }
+        .product.tags span.more {
+          padding: 3px 9px 5px; /* compensating the border */
+        }
+        button { font-size: 30px; }
+      }
     </style>
   </head>
   <body>
-    <div class="">
-      <h1><span>Dahlicious [Brand]</span><br>
-      <span>Plain Lassi [Product]</span></h1>
+    <!-- <div class="bar"> -->
+      <div class="circle-icon"></div>
+      <!-- find a product -->
+    <!-- </div> -->
+    <div class="content">
+      <h1><span class="product-manufacturer">Dahlicious</span><!-- Brand -->
+      <span class="product-title">Plain Lassi</span></h1><!-- Product -->
       <div class="primary tags">
         <span>+ certified organic</span><!--
      --><span class="allergies">! contains milk</span>
       </div>
       <div class="product tags">
-        <span>organic</span><span>grass-fed</span><span>whole milk</span><span>non-homogenized</span><span>non-gmo </span><span>growth hormone free</span>
+        <span class="alert">xilytol</span><span>organic</span><span>grass-fed</span><span>whole milk</span><span>non-homogenized</span><span>non-gmo</span><span>probiotic</span><span>growth hormone free</span><span>fermented</span><span class="more">+ 2 more</span>
       </div>
       <div class="images">
         <img src="img/lassi-1.jpg">
