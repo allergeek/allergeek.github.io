@@ -7,12 +7,45 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <style>
-      body { background: #f4f2eb; padding: 10px; font-family: 'Lato', sans-serif; font-size: 20px; color: #5e6773; }
-      img { width: 100px; }
-      section { margin: 0 20px 40px 0; min-width: 240px; }
-      h1 { font-size: 36px; margin: 0 0 10px; font-weight: 700; }
-      h2 { font-size: 24px; background: lightgrey; padding: 3px 0; font-weight: 700; color: #777; margin: 20px 0 10px}
-      p { margin: 20px 0 }
+      body { background: #f4f2eb;
+        padding: 10px;
+        font-family: 'Lato', sans-serif; font-size: 20px; color: #5e6773; }
+      .images .image {
+        width: 100px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        background: #ededed;
+        height: 100px;
+      }
+      .images .slug {
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+      }
+      .images .image img {
+        width: 200%;
+      }
+      section {
+        padding: 0 0 18px;
+        box-shadow: 0 1px #747f8e;
+      }
+      h1 { font-size: 36px; margin: 0 0 10px; font-weight: 700;
+      }
+      h2 { font-size: 16px;
+        /*background: lightgrey;*/
+        padding: 3px 0; font-weight: 400; color: #777; margin: 20px 0 10px;
+        text-transform: uppercase;
+
+      }
+      p {
+        /*margin: 20px 0;*/
+      }
+      b {
+        font-weight: 700;
+      }
       .bar {
         position: fixed;
         top: 0;
@@ -31,8 +64,14 @@
 
         height: 40px;
         width: 40px;
+
         background: #ddd;
         border-radius: 40px;
+        -webkit-border-radius: 40px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .content {
         /*padding-top: 40px;*/
@@ -40,12 +79,19 @@
       .tags {
         /*margin: 0 0 10px;*/
       }
-      .tags span { display: inline-block; background: lightgrey; background: #eee; border-radius: 100px; margin: 0 1px 1px 0; font-size: 24px; border: solid 1px #358cf2; color: ; }
+      .tags span { display: inline-block; background: lightgrey; background: #eee;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        margin: 0 1px 1px 0; font-size: 24px; border: solid 1px #358cf2; color: ; }
       .product-manufacturer {
         color: #747f8e;
       }
       .product-title {
+        display: inline-block;
+        width: 100%;
         white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
       .product.tags {
         margin: 20px 0 20px 0;
@@ -74,6 +120,7 @@
         /*box-shadow: inset 0 -1px rgba(0,0,0,0.2), 0 0px 1px rgba(255,255,255,0.6); */
         /*border: solid 0px #738dff;*/
         border: none;
+        cursor: pointer;
       }
       .product.tags span.alert {
         background: #f76d6d;
@@ -87,17 +134,49 @@
         box-sizing: border-box;
         padding: 9px 17px 9px;
       }
-      button { border: none; border-radius: 100px; margin: 20px 0; font-size: 36px; font-weight: 700; background: #f76d6d; color: #fff; padding: 30px 48px; text-shadow: 0px 1px 1px rgba(0,0,0,0.2); box-shadow: inset 0 -1px rgba(0,0,0,0.2); }
-      button.circle { width: 102px; height: 102px; padding: 0;}
-      button.outlined { background: none; border: solid 1px #f76d6d; color: #f76d6d; text-shadow: 0px 1px 1px rgba(255,255,255,0.9);}
-      .tag { display: inline-block; border-radius: 100px; background: lightgrey; padding: 3px 9px; }
+      button { border: none;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        margin: 20px 0; font-size: 36px; font-weight: 700; background: #f76d6d; color: #fff; padding: 30px 48px; text-shadow: 0px 1px 1px rgba(0,0,0,0.2); box-shadow: inset 0 -1px rgba(0,0,0,0.2); }
+      button.circle {
+        width: 102px; height: 102px; padding: 0;
+        position: fixed;
+        right: -20px;
+        bottom: -20px;
+        margin: 0;
+        cursor: pointer;
+        background: url('img/photo.png')center center no-repeat #f76d6d;
+        background-size: 30%;
+      }
+      button.outlined {
+        font-size: 18px;
+        padding: 0 30px;
+        text-align: left;
+        height: 62px;
+        position: fixed;
+        bottom: 0px;
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 120px);
+        background: none;
+        background: #fff;
+        border: solid 1px #f76d6d; color: #f76d6d; text-shadow: 0px 1px 1px rgba(255,255,255,0.9);
+        border: solid 1px #f76d6d; color: #f76d6d; text-shadow: 0px 1px 1px rgba(255,255,255,0.9);
+      }
+      .tag { display: inline-block;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        background: lightgrey;
+        margin: 0 0 1px 0;
+        padding: 3px 9px;
+      }
       .images {
         height: 100px;
         overflow: hidden;
         display: flex;
         align-items: center;
       }
-      .images img {
+      .images .image {
         margin: 0 4px 0 0;
         cursor: pointer;
       }
@@ -107,13 +186,45 @@
         background: lightgrey;
       }
 
+      .ingredients {
+        /*font-family: serif;*/
+        color: #444;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      .ingredients ul li {
+        padding: 6px 8px;
+      }
+
+      .ingredients ul li:nth-child(2n+2) {
+        background: lightgrey;
+      }
+
+      .organic {
+        /*color: green;*/
+        font-weight: 700;
+      }
+
       @media (max-width: 600px) {
         h1 {
           font-size: 30px;
           line-height: 32px;
         }
         .images { height: 60px; }
-        .images img, .images .slug { width: 60px; }
+        .images .image {
+          width: 60px;
+          height: 60px;
+        }
+        .images .slug {
+          width: 60px;
+          height: 60px;
+          /*border-radius: 4px;*/
+        }
         .product.tags {
         }
         .primary.tags span {
@@ -133,12 +244,14 @@
   </head>
   <body>
     <!-- <div class="bar"> -->
-      <div class="circle-icon"></div>
+      <div class="circle-icon">+</div>
       <!-- find a product -->
     <!-- </div> -->
     <div class="content">
-      <h1><span class="product-manufacturer">Dahlicious</span><!-- Brand -->
-      <span class="product-title">Plain Lassi</span></h1><!-- Product -->
+      <!-- <h1><span class="product-manufacturer">Dahlicious</span> -->
+      <!-- Brand -->
+      <h1><span class="product-manufacturer">Manufacturer</span>
+      <span class="product-title">Plain Yohurt</span></h1><!-- Product -->
       <div class="primary tags">
         <span>+ certified organic</span><!--
      --><span class="allergies">! contains milk</span>
@@ -147,32 +260,46 @@
         <span class="alert">xilytol</span><span>organic</span><span>grass-fed</span><span>whole milk</span><span>non-homogenized</span><span>non-gmo</span><span>probiotic</span><span>growth hormone free</span><span>fermented</span><span class="more">+ 2 more</span>
       </div>
       <div class="images">
-        <img src="img/lassi-1.jpg">
-        <img src="img/lassi-2.jpg">
+        <div class="image"><img src="img/lassi-1.jpg"></div>
+        <div class="image"><img src="img/lassi-2.jpg"></div>
         <span class="slug"></span>
       </div>
-      <h2>ingredients - 2</h2>
-      <p>organic pasteurized non-homogenized whole milk
-      <br>
-      active cultures</p>
-      <h2>production process</h2>
-      <span class="tag">fermentation</span>
-      <p>low heat, for 12 hours
-      </p>
-      <h2>sources</h2>
-      <p>Vermont ? New England
-      </p>
-      <h2>certifier</h2>
-      <p>Baystate Organic Certifiers</p>
-      <h2>other varieties</h2>
-      <p>
-        <a href="">Strawberry Lassi</a><br>
-        <a href="">Mint and Cucumber Lassi</a></p>
+      <section>
+        <h2>ingredients - 2</h2>
+        <div class="ingredients">
+          <ul>
+            <li><span class="organic">organic</span> pasteurized non-homogenized whole <b>milk</b></li>
+            <li><b>active cultures</b> - 4 ></li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2>production process</h2>
+        <span class="tag">pasteurization</span>
+        <span class="tag">fermentation</span>
+        <p>low heat, for 12 hours
+        </p>
+      </section>
+      <section>
+        <h2>sources</h2>
+        <p>Vermont ? New England
+        </p>
+      </section>
+      <section>
+        <h2>certifier</h2>
+        <p>Baystate Organic Certifiers</p>
+      </section>
+      <section>
+        <h2>other varieties</h2>
+        <p>
+          <a href="">Strawberry Lassi</a><br>
+          <a href="">Mint and Cucumber Lassi</a></p>
+      </section>
       <p>milk products [ category ] > sour milk products [ category ]</p>
       <p></p>
-      <button>Hello, useful button</button>
-      <button class="outlined">Hello, useful button</button>
-      <button class="circle">+</button>
+      <!-- <button>Hello, useful button</button> -->
+      <button class="outlined">Search for a product or ingredient</button>
+      <button class="circle"></button>
       <br>
       <span>Wiki articles</span>
       <h4><a href="">What is whole milk</a></h4>
