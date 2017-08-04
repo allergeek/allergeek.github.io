@@ -22,8 +22,12 @@
         height: 100px;
       }
       .images .slug {
+        background: url("img/add.png") center no-repeat #ededed;
+        background-size: 40%;
+        border: solid 1px #738dff;
         border-radius: 4px;
         -webkit-border-radius: 4px;
+        cursor: pointer;
       }
       .images .image img {
         width: 200%;
@@ -32,6 +36,9 @@
         padding: 0 0 18px;
         box-shadow: 0 1px #747f8e;
       }
+      section:last-of-type {
+        box-shadow: none;
+      }
       h1 { font-size: 36px; margin: 0 0 10px; font-weight: 700;
       }
       h2 { font-size: 16px;
@@ -39,6 +46,9 @@
         padding: 3px 0; font-weight: 400; color: #777; margin: 20px 0 10px;
         text-transform: uppercase;
 
+      }
+      h1 span:last-of-type {
+        padding-bottom: 4px;
       }
       p {
         /*margin: 20px 0;*/
@@ -59,13 +69,17 @@
       }
       .circle-icon {
         position: fixed;
-        top: 10px;
-        right: 10px;
+        top: 9px;
+        right: 9px;
 
         height: 40px;
         width: 40px;
 
-        background: #ddd;
+        z-index: 2;
+
+        background: url("img/pencil.png") 15px center no-repeat #5e6773;
+        background-size: 40%;
+        border: solid 1px #f4f2eb;
         border-radius: 40px;
         -webkit-border-radius: 40px;
         cursor: pointer;
@@ -147,28 +161,52 @@
         cursor: pointer;
         background: url('img/photo.png')center center no-repeat #f76d6d;
         background-size: 30%;
+        z-index: 2;
       }
-      button.outlined {
-        font-size: 18px;
-        padding: 0 30px;
+
+      .outlined {
+        font-size: 15px;
+        padding: 0 20px;
         text-align: left;
-        height: 62px;
+        height: 42px;
         position: fixed;
         bottom: 0px;
         left: 20px;
-        right: 20px;
-        width: calc(100% - 120px);
+        /*right: 20px;*/
+        /*width: calc(100% - 120px);*/
+        width: auto;
+        display: inline-block;
         background: none;
         background: #fff;
         border: solid 1px #f76d6d; color: #f76d6d; text-shadow: 0px 1px 1px rgba(255,255,255,0.9);
         border: solid 1px #f76d6d; color: #f76d6d; text-shadow: 0px 1px 1px rgba(255,255,255,0.9);
       }
+
+      input.search {
+        display: block;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 40px auto 20px;
+        /*border: none;*/
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+
+        /*margin: 20px 0;*/
+        font-weight: 700;
+        width: 60vw;
+      }
+
       .tag { display: inline-block;
         border-radius: 100px;
         -webkit-border-radius: 100px;
         background: lightgrey;
         margin: 0 0 1px 0;
         padding: 3px 9px;
+      }
+      .flagged {
+        background: #f76d6d;
+        color: #fff;
       }
       .images {
         height: 100px;
@@ -177,18 +215,22 @@
         align-items: center;
       }
       .images .image {
-        margin: 0 4px 0 0;
+        margin: 0 2px 0 0;
         cursor: pointer;
       }
       .images .slug {
-        height: 100px;
-        width: 100px;
-        background: lightgrey;
+        height: 98px;
+        width: 98px;
+        /*background: lightgrey;*/
       }
 
       .ingredients {
         /*font-family: serif;*/
+        background: #ededed;
         color: #444;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        overflow: hidden;
       }
 
       ul {
@@ -198,11 +240,65 @@
       }
 
       .ingredients ul li {
-        padding: 6px 8px;
+        /*padding: 6px 8px;*/
+        display: flex;
+        justify-content: space-between;
+        /*overflow: hidden;*/
+      }
+
+      .ingredients span.counter {
+        position: absolute;
+        top: -3px;
+        right: -4px;
+        font-weight: 700;
+        background: #738dff;
+        /*-webkit-border-radius: 0 4px 0 0;*/
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 4px 8px;
+        /*overflow: hidden;*/
+        /*display: block;*/
+      }
+
+      .ingredients ul li p {
+        margin-right: 20px;
+        max-width: 80%;
+      }
+      .ingredients ul li:first-of-type {
+        padding: 0;
+      }
+
+      .rel {
+        /*padding: 6px 8px;*/
+        position: relative;
+        margin-right: 0;
+        width: 100%;
+      }
+
+      .flag {
+        position: absolute;
+        background: url("img/flag.png") 75% 150% no-repeat;
+        background-size: 18px;
+        height: 24px;
+        width: 24px;
+        right: 0;
+        top: 0;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        cursor: pointer;
       }
 
       .ingredients ul li:nth-child(2n+2) {
-        background: lightgrey;
+        background: #ddd;
+      }
+
+      .ingredients ul li:first-of-type {
+        background: #5e6773;
+        color: #fff;
+      }
+
+      .ingredients ul li:nth-child(n+1) {
+        padding: 10px 12px 12px;
       }
 
       .organic {
@@ -210,10 +306,26 @@
         font-weight: 700;
       }
 
+      .cats {
+        display: flex;
+      }
+
+      .cat {
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        overflow: hidden;
+        background: lightgrey;
+        height: 82px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+
       @media (max-width: 600px) {
         h1 {
           font-size: 30px;
           line-height: 32px;
+          /*background: grey;*/
         }
         .images { height: 60px; }
         .images .image {
@@ -221,8 +333,8 @@
           height: 60px;
         }
         .images .slug {
-          width: 60px;
-          height: 60px;
+          width: 58px;
+          height: 58px;
           /*border-radius: 4px;*/
         }
         .product.tags {
@@ -244,14 +356,14 @@
   </head>
   <body>
     <!-- <div class="bar"> -->
-      <div class="circle-icon">+</div>
+    <div class="circle-icon"></div>
       <!-- find a product -->
     <!-- </div> -->
     <div class="content">
       <!-- <h1><span class="product-manufacturer">Dahlicious</span> -->
       <!-- Brand -->
       <h1><span class="product-manufacturer">Manufacturer</span>
-      <span class="product-title">Plain Yohurt</span></h1><!-- Product -->
+      <span class="product-title">Plain Yogurt</span></h1><!-- Product -->
       <div class="primary tags">
         <span>+ certified organic</span><!--
      --><span class="allergies">! contains milk</span>
@@ -265,19 +377,30 @@
         <span class="slug"></span>
       </div>
       <section>
-        <h2>ingredients - 2</h2>
+        <br>
+        <!-- <br> -->
+        <!-- <h2>ingredients - 2</h2> -->
         <div class="ingredients">
           <ul>
-            <li><span class="organic">organic</span> pasteurized non-homogenized whole <b>milk</b></li>
-            <li><b>active cultures</b> - 4 ></li>
+            <li>
+              <div class="rel"><span><b>Ingredients:</b></span><span class="counter">4</span></div>
+            </li>
+            <li><div class="rel"><p><span class="organic">organic</span> pasteurized non-homogenized whole <b>milk</b></p><div class="flag"></div></div></li>
+            <li><div class="rel"><p><b>organic palm oil</b></p><div class="flag"></div></li>
+            <li><div class="rel"><div class="rel"><p><b>organic cane sugar</b></p><div class="flag"></div></div></li>
+            <li><div class="rel"><p><b>active cultures</b> - <a href="">4 ></a></p></div></li>
           </ul>
         </div>
+      <h2>follow manufacturer - - - fav product</h2>
       </section>
       <section>
         <h2>production process</h2>
         <span class="tag">pasteurization</span>
         <span class="tag">fermentation</span>
-        <p>low heat, for 12 hours
+        <span class="flagged tag">! hydrogenation</span>
+        <br>
+        <br>
+        <p>low heat fermenation, for 12 hours
         </p>
       </section>
       <section>
@@ -295,11 +418,14 @@
           <a href="">Strawberry Lassi</a><br>
           <a href="">Mint and Cucumber Lassi</a></p>
       </section>
-      <p>milk products [ category ] > sour milk products [ category ]</p>
+      <div class="cats">
+        <div class="cat">milk products [category]</div>
+        <div class="cat">sour milk products [category]</div>
+      </div>
       <p></p>
       <!-- <button>Hello, useful button</button> -->
-      <button class="outlined">Search for a product or ingredient</button>
       <button class="circle"></button>
+      <input class="outlined search" value="Search" type="text">
       <br>
       <span>Wiki articles</span>
       <h4><a href="">What is whole milk</a></h4>
