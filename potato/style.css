@@ -1,0 +1,68 @@
+body {
+  font-family: sans-serif;
+}
+
+span.str {
+  text-decoration: line-through;
+}
+
+span.muted {
+  opacity: 0.5;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.box {
+  padding: 10px 10px;
+  overflow: scroll;
+}
+
+.box label {
+  margin: 0 0 0 10px;
+  background: #ddd;
+  color: #444;
+  padding: 20px 30px;
+  border-radius: 5px;
+  font-weight: bolder;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+
+.box label:first-of-type {
+  margin-left: 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label {
+  background: royalblue;
+  color: white;
+}
+
+input[type="text"] {
+  margin: 0 10px 10px;
+  /*background: #ddd;*/
+  border: solid 2px #ddd;
+  color: #444;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  width: 100%;
+}
