@@ -23,4 +23,87 @@
   };
 %>
 
+<%
+  postsRU = [];
+  postsEN = [];
+
+  slug = [];
+  root;
+
+
+  for (var i = 0, l = themesEN.length; i < l; i++) {
+    var source;
+    source = "public.post." + themesEN[i] + "._data";
+    slug.push(source);
+  }
+
+  <!-- for (var i = 0, l = slug.length; i < l; i++) { -->
+
+    root = public.post.alcohol._data;
+    for (var post in root) {
+    <!-- for (var post in public.post.nutrition._data) { -->
+      <!-- if (root[post].lang !== "ru") { -->
+        postsEN.push(root[post].title);
+      <!-- } -->
+    };
+
+    root = public.post.neuroscience._data;
+    for (var post in root) {
+      if (root[post].lang !== "ru") {
+        postsEN.push(root[post].title);
+      }
+    };
+
+    root = public.post.nutrition._data;
+    for (var post in root) {
+      if (root[post].lang !== "ru") {
+        postsEN.push(root[post].title);
+      }
+    };
+
+    root = public.post.quitting._data;
+    for (var post in root) {
+      if (root[post].lang !== "ru") {
+        postsEN.push(root[post].title);
+      }
+    };
+
+    root = public.post.riding._data;
+    for (var post in root) {
+      if (root[post].lang !== "ru") {
+        postsEN.push(root[post].title);
+      }
+    };
+
+    root = public.post.running._data;
+    for (var post in root) {
+      if (root[post].lang !== "ru") {
+        postsEN.push(root[post].title);
+      }
+    };
+
+    root = public.post.sleep._data;
+    for (var post in root) {
+      if (root[post].lang !== "ru") {
+        postsEN.push(root[post].title);
+      }
+    };
+
+  <!-- }; -->
+
+  root = public.post.neuroscience._data;
+  for (var post in root) {
+    if (root[post].lang === "ru") {
+      postsRU.push(root[post].title);
+    }
+  };
+
+  root = public.post.running._data;
+  for (var post in root) {
+    if (root[post].lang === "ru") {
+      postsRU.push(root[post].title);
+    }
+  };
+%>
+
 <%- include _helpers %>
