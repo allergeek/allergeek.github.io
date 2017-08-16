@@ -24,11 +24,15 @@
 %>
 
 <%
-  postsRU = [];
   postsEN = [];
+  postsRU = [];
+  postsENpath = [];
+  postsRUpath = [];
+  postsENthemes = [];
+  postsRUthemes = [];
 
   slug = [];
-  root;
+  loot = 0;
 
 
   for (var i = 0, l = themesEN.length; i < l; i++) {
@@ -37,71 +41,86 @@
     slug.push(source);
   }
 
-  <!-- for (var i = 0, l = slug.length; i < l; i++) { -->
-
-    root = public.post.alcohol._data;
-    for (var post in root) {
-    <!-- for (var post in public.post.nutrition._data) { -->
-      <!-- if (root[post].lang !== "ru") { -->
-        postsEN.push(root[post].title);
-      <!-- } -->
-    };
-
-    root = public.post.neuroscience._data;
-    for (var post in root) {
-      if (root[post].lang !== "ru") {
-        postsEN.push(root[post].title);
+    loot = public.post.alcohol._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
       }
     };
 
-    root = public.post.nutrition._data;
-    for (var post in root) {
-      if (root[post].lang !== "ru") {
-        postsEN.push(root[post].title);
+    loot = public.post.neuroscience._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
       }
     };
 
-    root = public.post.quitting._data;
-    for (var post in root) {
-      if (root[post].lang !== "ru") {
-        postsEN.push(root[post].title);
+    loot = public.post.nutrition._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
       }
     };
 
-    root = public.post.riding._data;
-    for (var post in root) {
-      if (root[post].lang !== "ru") {
-        postsEN.push(root[post].title);
+    loot = public.post.quitting._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
       }
     };
 
-    root = public.post.running._data;
-    for (var post in root) {
-      if (root[post].lang !== "ru") {
-        postsEN.push(root[post].title);
+    loot = public.post.riding._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
       }
     };
 
-    root = public.post.sleep._data;
-    for (var post in root) {
-      if (root[post].lang !== "ru") {
-        postsEN.push(root[post].title);
+    loot = public.post.running._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
       }
     };
 
-  <!-- }; -->
+    loot = public.post.sleep._data;
+    for (var post in loot) {
+      if (loot[post].lang !== "ru") {
+        postsEN.push(loot[post].title);
+        postsENpath.push(post);
+        postsENthemes.push(loot[post].theme.toLowerCase());
+      }
+    };
 
-  root = public.post.neuroscience._data;
-  for (var post in root) {
-    if (root[post].lang === "ru") {
-      postsRU.push(root[post].title);
+
+
+  loot = public.post.neuroscience._data;
+  for (var post in loot) {
+    if (loot[post].lang === "ru") {
+      postsRU.push(loot[post].title);
+      postsRUpath.push(post);
+      postsRUthemes.push(loot[post].path.slice(0,-3));
     }
   };
 
-  root = public.post.running._data;
-  for (var post in root) {
-    if (root[post].lang === "ru") {
-      postsRU.push(root[post].title);
+  loot = public.post.running._data;
+  for (var post in loot) {
+    if (loot[post].lang === "ru") {
+      postsRU.push(loot[post].title);
+      postsRUpath.push(post);
+      postsRUthemes.push(loot[post].path.slice(0,-3));
     }
   };
 %>

@@ -19,13 +19,19 @@
       <% } %>
       <%- yield %>
 
-  
-
-        <% for (var i = 0, l = postsEN.length; i < l; i++) { %><%-
-      %><a href="../post/<%= postsEN[i] %>"><%-
+      <% if (current.source === "ru") { %>
+        <% for (var i = 0, l = postsRU.length; i < l; i++) { %>
+          <a href="../post/<%= postsRUthemes[i] %>/<%= postsRUpath[i] %>"><%-
+        %><h2><%= postsRU[i] %></h2><%-
+        %></a>
+        <% } %>
+      <% } else { %>
+        <% for (var i = 0, l = postsEN.length; i < l; i++) { %>
+          <a href="../post/<%= postsENthemes[i] %>/<%= postsENpath[i] %>"><%-
         %><h2><%= postsEN[i] %></h2><%-
-      %></a><%-
-      %><% } %>
+        %></a>
+        <% } %>
+      <% } %>
 
 
       <% if (current.source === "ru") { %>

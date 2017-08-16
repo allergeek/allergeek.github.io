@@ -1,8 +1,22 @@
 {
+  "how-to-start-running-ru": {
+    "draft": true,
+    "lang": "ru",
+    "layout": "../_layout-ru",
+    "path": "running-ru",
+    "date": "2017/08/16",
+    "title": "Как начать бегать",
+    "theme": "Бег",
+    "intro": "Несколько простых советов для тех, кто только начинает бегать.",
+    "tags": [
+      "упражнения","бег","спорт","здоровье"
+    ],
+    "origin": "mixed"
+  },
   "how-to-start-running": {
     "draft": false,
     "lang": "en",
-    "localized": false,
+    "localized": true,
     "date": "2017/04/29",
     "title": "How to start running",
     "theme": "Running",
