@@ -7,22 +7,62 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="flex fixed">
-      <input type="text" value="" placeholder="anything specific?">
-    </div>
-    <div class="box flex" id="food-box">
-      <input type="checkbox" id="potato">
-      <label for="potato">potato</label>
-      <input type="checkbox" id="broccoli">
-      <label for="broccoli">broccoli</label>
-      <input type="checkbox" id="avocado">
-      <label for="avocado">avocado</label>
-      <input type="checkbox" id="chicken-liver">
-      <label for="chicken-liver">chicken liver</label>
-      <input type="checkbox" id="deglet-dates">
-      <label for="deglet-dates">deglet dates</label>
-    </div>
-    <div class="flex">
+    <div class="container">
+      <div class="fixed">
+        <input type="text" value="" placeholder="anything specific?">
+      </div>
+      <section>
+        <div class="flex header padding">
+          <span class="title">Tracking: Calcium, Iron, protein</span>
+          <span class="title">Settings</span>
+        </div>
+      </section>
+      <section>
+        <span class="title">Top foods</span>
+        <div class="box flex padding" id="food-box">
+          <input type="checkbox" id="potato" checked>
+          <label for="potato">potato</label>
+          <input type="checkbox" id="broccoli">
+          <label for="broccoli">broccoli</label>
+          <input type="checkbox" id="avocado" checked>
+          <label for="avocado">avocado</label>
+          <input type="checkbox" id="chicken-liver">
+          <label for="chicken-liver">chicken liver</label>
+          <input type="checkbox" id="deglet-dates">
+          <label for="deglet-dates">deglet dates</label>
+          <input type="checkbox" id="tuna">
+          <label for="tuna">tuna</label>
+          <input type="checkbox" id="lamb">
+          <label for="lamb">lamb</label>
+        </div>
+      </section>
+      <section>
+        <span class="title">Pairing</span>
+        <div class="">
+          <ul>
+            <!-- <li><input type="checkbox" id="parsley"><label for="parsley">Parsley</label></li> -->
+            <li>Parsley</li>
+            <li>Olive oil</li>
+            <li class="check">Sardines</li>
+            <li>Button mushrooms</li>
+            <li class="more">show more</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="flex header padding">
+          <span class="title">Shopping list</span>
+          <span class="title">copy</span>
+        </div>
+        <div class="list">
+          <ul>
+            <li>Potato</li>
+            <li>Avocado</li>
+            <li>Sardines</li>
+            <li><a href="">open</a></li>
+          </ul>
+        </div>
+      </section>
     </div>
   </body>
 </html>

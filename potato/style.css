@@ -14,20 +14,72 @@ span.muted {
   display: flex;
 }
 
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-between span.title {
+  display: inline-block;
+}
+
+.padding {
+  padding: 10px 10px;
+}
+
+.controls {
+  padding: 0 30px 10px 20px;
+}
+
 .hidden {
   display: none;
 }
 
-.flex.fixed {
+.fixed {
+  display: flex;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
+a, a:visited {
+  color: royalblue;
+}
+
 .box {
-  padding: 10px 10px;
   overflow: scroll;
+}
+
+section ul {
+  padding: 10px 0;
+}
+
+section ul li {
+  padding: 0 10px 0 16px;
+  background: #ddd;
+  color: #777;
+
+  height: 60px;
+  font-size: 20px;
+  box-shadow: inset 0 -1px #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+ul li.more {
+  background: royalblue;
+  color: #eee;
+
+  background: #eee;
+  color: royalblue;
+  font-size: 16px;
+  font-weight: bold;
+  /*justify-content: center;*/
 }
 
 .box label {
@@ -46,6 +98,16 @@ span.muted {
   margin-left: 0;
 }
 
+span.title,
+section span.title {
+  text-transform: uppercase;
+  padding: 10px 10px 0;
+  font-weight: bolder;
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+}
+
 input[type="checkbox"] {
   display: none;
 }
@@ -55,8 +117,35 @@ input[type="checkbox"]:checked + label {
   color: white;
 }
 
+ul li input[type="checkbox"]:checked + label {
+  /*background: transparent;*/
+  /*color: royalblue;*/
+}
+
+ul li input[type="checkbox"]:checked + label::after {
+  /*content: "\2714";*/
+  /*color: #777;*/
+}
+
+ul li.check {
+  background: royalblue;
+  color: #eee;
+}
+
+.list ul li {
+  height: auto;
+  font-size: 16px;
+  display: inline-block;
+  background: transparent;
+  color: #333;
+}
+
+.list ul li:not(:first-of-type) {
+  padding: 0 10px;
+}
+
 input[type="text"] {
-  margin: 0 10px 10px;
+  margin: 10px 10px 10px;
   /*background: #ddd;*/
   border: solid 2px #ddd;
   color: #444;
@@ -64,5 +153,105 @@ input[type="text"] {
   padding: 10px;
   border-radius: 5px;
   white-space: nowrap;
+  display: block;
+  /*width: 100%;*/
+}
+
+.header {
+  font-weight: normal;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.header span.title,
+span.text,
+section span.text {
+  font-weight: normal;
+}
+
+section span.text a,
+span.text a {
+  text-transform: none;
+}
+
+span.item {
+  margin: 10px 0 0 10px;
+  background: #ddd;
+  color: #444;
+  background: royalblue;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 5px;
+  font-weight: bolder;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.totals {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 0 20px;
+  background: #f9f9f9;
+}
+
+.portion {
+  background: #ddd;
+  min-height: 45px;
+  width: calc(100% - 2*10px);
+  /*width: calc(50% - 2*10px);*/
+  margin: 10px;
+  border-radius: 5px;
+  /*padding: 4px 0;*/
+}
+
+.portion .bar {
+  background: royalblue;
+  height: 45px;
+  width: 75%;
+  border-radius: 5px;
+}
+
+.nutrient {
+  background: #ddd;
+  min-height: 5px;
+  width: calc(100% - 2*10px);
+  margin: 10px;
+  border-radius: 5px;
+  /*padding: 4px 0;*/
+}
+
+.nutrient .bar {
+  background: royalblue;
+  height: 5px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.nutrient .bar.dozen {
+  width: 12%;
+}
+.nutrient .bar.top {
   width: 100%;
+}
+
+.suggested {
+  /*background: #eee;*/
+}
+
+.counter {
+  background: royalblue;
+  height: 45px;
+  width: 30px;
+  border-radius: 5px;
+  margin: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  /*display: inline-block;*/
 }
