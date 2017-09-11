@@ -384,6 +384,10 @@ a.action-btn {
   width: 200%;
 }
 
+.height-box {
+  height: 26px;
+}
+
 @media (max-width: 768px) {
   .parent-card {
     bottom: 20px;

@@ -9,11 +9,12 @@ function clean(n) {
   return n;
 }
 
-// got anchor id's, need to tie id with click event - to assign 'data' to <object>
-
 // NEED TO disable scroll for original content layer
 // how to NOT TO REDRAW the object each time?
 // ALSO, why the a href - need to make it open in bg with cmd
+
+// close the overlay with esc key
+// navigate through article references with keyboard arrows
 
 textArray = [], anchors = [],
 urls = [], values = [];
@@ -24,7 +25,7 @@ notesArray = []; // store all H2 headings
 notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
 
 // extract text without stylistic tags and
-// generate urls out of every note
+// generate urls out of every H2 note
 function refs() {
   for (var i = 0, l = notesArray.length; i < l; i++) {
     textArray[i] = notesArray[i].textContent.toLowerCase();
@@ -37,7 +38,7 @@ function refs() {
 
 // delete overlay content (when closing)
 function closeLayer(event) {
-  var element = document.getElementById("ttt");
+  var element = document.getElementById("box");
   element.className = "hidden";
   // element.outerHTML = "";
 }
@@ -47,38 +48,37 @@ function val() {
   values = document
     .getElementsByClassName("page-body")[0]
     .querySelectorAll('h2 > span');
-
-  // return values;
+  return values;
 }
 
 var
-  that,
-  curr,
-  large;
+  myObject,
+  // curr,
+  box;
 
 function createOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
   var btn = document.createElement('button');
-  large = div;
-  var cc = div2;
+  box = div;
+  var innerBox = div2;
 
-  large.id = "ttt";
-  large.className = "hidden";
+  box.id = "box";
+  box.className = "hidden";
 
-  large.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#f2f2f2;paddding:0;';
+  box.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#f2f2f2;paddding:0;';
 
-  cc.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
+  innerBox.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
 
   btn.textContent = "close and go back";
-  btn.style.cssText = 'position:fixed;top:40px;left:30px;width:120px;height:40px;';
+  btn.style.cssText = 'position:fixed;top:40px;right:30px;width:120px;height:40px;cursor:pointer;';
 
-  large.appendChild(cc);
-  large.appendChild(btn);
-  cc.id = "overlay-content";
+  box.appendChild(innerBox);
+  box.appendChild(btn);
+  innerBox.id = "overlay-content";
 
-  cc.innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
-  document.body.appendChild(large);
+  innerBox.innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
+  document.body.appendChild(box);
   btn.onclick = closeLayer;
 }
 
@@ -88,15 +88,15 @@ createOverlay();
 function openOverlay(event) {
   event.preventDefault();
 
-  large.className = "";
+  box.className = "";
 
   // (function p(){
   //   mw();
     // setTimeout(p, 3000);
   // })();
-  // that = document.getElementById("overlay-content").getElementsByTagName('object');
-  // console.log(that);
-  // console.log(that.length); // 1
+  // myObject = document.getElementById("overlay-content").getElementsByTagName('object');
+  // console.log(myObject);
+  // console.log(myObject.length); // 1
 
   return false;
 }
@@ -104,12 +104,12 @@ function openOverlay(event) {
 function som(event) {
   event.preventDefault();
   // console.log('shown');
-  large.className = "";
+  box.className = "";
 }
 
 function mev() {
-  // console.log('here!');
-  that = document.getElementById("overlay-content").getElementsByTagName('object')[0];
+  // get the object
+  myObject = document.getElementById("overlay-content").getElementsByTagName('object')[0];
 
 
   for (var i = 0, l = values.length; i < l; i++) {
@@ -117,7 +117,7 @@ function mev() {
     // document.getElementById('a' + i).addEventListener('click', function() {
 
 
-      // that.setAttribute('data',urls[1]); // TEMP
+      // myObject.setAttribute('data',urls[1]); // TEMP
       // console.log(urls[i]); // works
       // console.log(curr); // works
       // console.log(i); // works
@@ -174,8 +174,8 @@ function all() {
                 references</span></a>`
               );
 
-              // that = document.getElementById("overlay-content").getElementsByTagName('object');
-              // that[0].setAttribute('data',urls[i]);
+              // myObject = document.getElementById("overlay-content").getElementsByTagName('object');
+              // myObject[0].setAttribute('data',urls[i]);
 
               valueBox = val + ' references';
 
@@ -183,7 +183,7 @@ function all() {
               // console.log(i);
 
 
-              // if (!document.getElementById("ttt").length > 0) {}
+              // if (!document.getElementById("box").length > 0) {}
             }
           }
         }
@@ -242,8 +242,8 @@ function all() {
           // console.log(parseInt(ids[index]),10);
           // console.log(ids[index].substring(1)); // works !
 
-          // console.log(that);
-          that.data = anchors[index].href;
+          // console.log(myObject);
+          myObject.data = anchors[index].href;
 
         });
       }(i);
@@ -285,4 +285,3 @@ if (document.readyState === 'complete') {
 
 
   // if this span (document.getElementById('a${[i]}') is clicked assign url with this [i] value)
-  // get the links into an array
