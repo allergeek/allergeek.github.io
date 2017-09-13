@@ -21,7 +21,8 @@ urls = [], values = [];
 
 var ids = [];
 
-notesArray = []; // store all H2 headings
+// store all H2 headings
+notesArray = [];
 notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
 
 // extract text without stylistic tags and
@@ -40,7 +41,6 @@ function refs() {
 function closeLayer(event) {
   var element = document.getElementById("box");
   element.className = "hidden";
-  // element.outerHTML = "";
 }
 
 // store all spans inside H2 headings
@@ -53,7 +53,6 @@ function val() {
 
 var
   myObject,
-  // curr,
   box;
 
 function createOverlay() {
@@ -87,43 +86,13 @@ createOverlay();
 // open overlay
 function openOverlay(event) {
   event.preventDefault();
-
-  box.className = "";
-
-  // (function p(){
-  //   mw();
-    // setTimeout(p, 3000);
-  // })();
-  // myObject = document.getElementById("overlay-content").getElementsByTagName('object');
-  // console.log(myObject);
-  // console.log(myObject.length); // 1
-
-  return false;
-}
-
-function som(event) {
-  event.preventDefault();
   // console.log('shown');
   box.className = "";
 }
 
-function mev() {
+function getObject() {
   // get the object
   myObject = document.getElementById("overlay-content").getElementsByTagName('object')[0];
-
-
-  for (var i = 0, l = values.length; i < l; i++) {
-    // curr = urls[i];
-    // document.getElementById('a' + i).addEventListener('click', function() {
-
-
-      // myObject.setAttribute('data',urls[1]); // TEMP
-      // console.log(urls[i]); // works
-      // console.log(curr); // works
-      // console.log(i); // works
-      // console.log('test');
-    // });
-  }
 }
 
 function all() {
@@ -140,50 +109,30 @@ function all() {
           anchor,
           valueBox;
 
-        // console.log(values);
-
         for (var i = 0, l = values.length; i < l; i++) {
 
           valueBox = values[i].innerHTML;
           val = parseInt(valueBox);
           values[i].className += "hidden";
 
-          // console.log(i);
-          // console.log(urls);
-
           if (val > 0) {
             if (val === 1) {
-              // console.log(valueBox);
-              // console.log(i);
-
 
               values[i].insertAdjacentHTML(
                 'beforebegin',
-                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return som(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
+                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return openOverlay(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
                 reference</span></a>`
               );
-
-              // console.log(urls[i]+ ' urls');
-              // console.log(i);
 
             } else {
 
               values[i].insertAdjacentHTML(
                 'beforebegin',
-                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return som(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
+                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return openOverlay(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
                 references</span></a>`
               );
 
-              // myObject = document.getElementById("overlay-content").getElementsByTagName('object');
-              // myObject[0].setAttribute('data',urls[i]);
-
               valueBox = val + ' references';
-
-              // console.log(urls[i]+ ' urls');
-              // console.log(i);
-
-
-              // if (!document.getElementById("box").length > 0) {}
             }
           }
         }
@@ -192,73 +141,28 @@ function all() {
     }
     insertBlock();
   })();
-  // anchors = document.getElementsByClassName('counter-wrapper');
-
 
   // prototype
   function again() {
 
     function geta() {
       anchors = document.getElementsByClassName('counter-wrapper');
-      // console.log(anchors[0] + ' geta');
     }
 
     geta();
 
-    // console.log(anchors[0]);
-    // console.log(anchors.length);
-    // console.log(anchors);
-
-    var a = ['a', 'b', 'c'];
-
-    a.forEach(function(el) {
-      // console.log(el); // works
-      // console.log('lala'); // works
-      // var roar = function() {
-      //   each.addEventListener('click', function() {
-          // mev();
-      //   });
-      // }
-    });
-
-    // console.log(anchors.length);
-
-    mev(); // get the object
+    // get the object
+    getObject();
 
     // gets each anchor's id
     for (var i = 0, l = anchors.length; i < l; i++) {
       var molly = function(index) {
         anchors[index].addEventListener("click", function() {
-          // alert ("You clicked par #: " + anchors[index].id);
-          ids[index] = anchors[index].id; // works
-          // console.log(ids);
-          // var result = ids.map(function(x) {
-            // console.log('me');
-            // return parseInt(x, 10);
-
-          // });
-
-          // console.log(result);
-          // console.log(parseInt(ids[index]),10);
-          // console.log(ids[index].substring(1)); // works !
-
-          // console.log(myObject);
+          ids[index] = anchors[index].id;
           myObject.data = anchors[index].href;
-
         });
       }(i);
     }
-
-
-    // console.log('lolo'); // works
-
-    // a.forEach(function(el) {
-      // console.log(el);
-
-      // el.addEventListener('click', function() {
-        // mev();
-      // });
-    // });
   }
 
   again();
@@ -271,17 +175,3 @@ if (document.readyState === 'complete') {
     all();
   });
 }
-
-
-  // if no text is selected
-  // go to a page
-  // function mew(event) {
-  //   var sel = getSelection().toString();
-  //   var haveSel = sel.length > 0;
-  //   if(!haveSel) {
-  //     location.href = "/";
-  //   }
-  // }
-
-
-  // if this span (document.getElementById('a${[i]}') is clicked assign url with this [i] value)
