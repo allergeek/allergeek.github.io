@@ -28,7 +28,9 @@
 
         <div class="remember">
           <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Подпишитесь на еженедельные напоминания, чтобы лучше запомнить важные факты."><span>&check;</span>Запомнить</a>
-          <% include ../../_includes-ru/_post-print %>
+          <div class="print-ctrl">
+            <% include ../../_includes-ru/_post-print %>
+          </div>
         </div>
         <% include ../../_includes-ru/_post-next %>
       </div>
