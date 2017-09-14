@@ -44,6 +44,13 @@ function closeBLayer(event) {
   element.className = "hidden";
 }
 
+function slugBox() {
+  textBox = document.getElementById('card-obj').contentDocument.getElementsByTagName('h1')[0];
+  textBox.innerHTML = slug[0];
+  console.log('slugged');
+  return textBox;
+}
+
 function card(event) {
   event.preventDefault();
   cardBox.className = "";
@@ -74,14 +81,40 @@ function cardObject() {
   cardObject = document.getElementById('card-obj');
   cardObject.data = url;
 }
- 
-// document.getElementById('iframeID').contentWindow.document.getElementById('inputID').value = 'Your Value';
 
-cardObject();
+function nextItem() {
+  var i;
+  i = 0;
+  i = i + 1;
+  i = i % slug.length;
+  return slug[i];
+}
 
-function slugBox() {
-  textBox = myObject.getElementById('slug-box').getElementsByTagName('h1')[0];
-  return textBox;
+// assign actions to prev and next
+function nextNote() {
+  var next;
+  next = document.getElementById('card-obj').contentDocument.getElementById('next-note');
+  next.addEventListener('click', function(event) {
+    textBox.innerHTML = nextItem();
+
+    // for (i = 0, l = slug.length; i < l; i++) {
+    //   if (textBox.innerHTML = slug[i]) {
+    //     i += 1;
+    //     textBox.innerHTML = slug[i];
+    //   }
+    // }
+    console.log('next');
+  });
+}
+
+function prevNote() {
+  var prev;
+
+  prev = document.getElementById('card-obj').contentDocument.getElementById('prev-note');
+  prev.addEventListener('click', function(event) {
+    textBox.innerHTML = slug[0];
+    console.log('prev');
+  });
 }
 
 // delete all spans inside h2
@@ -98,16 +131,33 @@ function normalize() {
 normalize();
 
 button();
+cardObject();
 
-slugBox();
+
+if (document.getElementById('card-obj').readyState === 'complete') {
+  slugBox();
+  nextNote();
+  prevNote();
+  console.log('yes');
+} else {
+  document.getElementById('card-obj').addEventListener('load', function(event) {
+    slugBox();
+    nextNote();
+    prevNote();
+    console.log('loaded now');
+  }
+)};
+
 
 // + on click on cards button
 // + show card overlay
 // + need to delete spans from grabbed h2 content (not from the page)
 // + see ref functions - create an overlay
 // + card overlay contains an <object> from /post/card
-// find h1 inside class card
+// + find h1 inside class card
 // + get all h2 in the content body of the page
+// + assign the first h1 to card's h1
 // assign an h2[i+1] when Next href is clicked
 // same logic for Prev
 // exit cards on click, add an X or Back to the article button
+// create and assign css classes for rendered elements, instead of inline css
