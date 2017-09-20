@@ -9,22 +9,24 @@ function clean(n) {
   return n;
 }
 
-// got anchor id's, need to tie id with click event - to assign 'data' to <object>
-
 // NEED TO disable scroll for original content layer
 // how to NOT TO REDRAW the object each time?
 // ALSO, why the a href - need to make it open in bg with cmd
+
+// close the overlay with esc key
+// navigate through article references with keyboard arrows
 
 textArray = [], anchors = [],
 urls = [], values = [];
 
 var ids = [];
 
-notesArray = []; // store all H2 headings
+// store all H2 headings
+notesArray = [];
 notesArray = document.getElementsByClassName("page-body")[0].getElementsByTagName('h2');
 
 // extract text without stylistic tags and
-// generate urls out of every note
+// generate urls out of every H2 note
 function refs() {
   for (var i = 0, l = notesArray.length; i < l; i++) {
     textArray[i] = notesArray[i].textContent.toLowerCase();
@@ -37,9 +39,8 @@ function refs() {
 
 // delete overlay content (when closing)
 function closeLayer(event) {
-  var element = document.getElementById("ttt");
+  var element = document.getElementById("box");
   element.className = "hidden";
-  // element.outerHTML = "";
 }
 
 // store all spans inside H2 headings
@@ -47,38 +48,36 @@ function val() {
   values = document
     .getElementsByClassName("page-body")[0]
     .querySelectorAll('h2 > span');
-
-  // return values;
+  return values;
 }
 
 var
-  that,
-  curr,
-  large;
+  myObject,
+  box;
 
 function createOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
   var btn = document.createElement('button');
-  large = div;
-  var cc = div2;
+  box = div;
+  var innerBox = div2;
 
-  large.id = "ttt";
-  large.className = "hidden";
+  box.id = "box";
+  box.className = "hidden";
 
-  large.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#f2f2f2;paddding:0;';
+  box.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#f2f2f2;paddding:0;';
 
-  cc.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
+  innerBox.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
 
   btn.textContent = "close and go back";
-  btn.style.cssText = 'position:fixed;top:40px;left:30px;width:120px;height:40px;';
+  btn.style.cssText = 'position:fixed;top:40px;right:30px;width:120px;height:40px;cursor:pointer;';
 
-  large.appendChild(cc);
-  large.appendChild(btn);
-  cc.id = "overlay-content";
+  box.appendChild(innerBox);
+  box.appendChild(btn);
+  innerBox.id = "overlay-content";
 
-  cc.innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
-  document.body.appendChild(large);
+  innerBox.innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
+  document.body.appendChild(box);
   btn.onclick = closeLayer;
 }
 
@@ -87,43 +86,13 @@ createOverlay();
 // open overlay
 function openOverlay(event) {
   event.preventDefault();
-
-  large.className = "";
-
-  // (function p(){
-  //   mw();
-    // setTimeout(p, 3000);
-  // })();
-  // that = document.getElementById("overlay-content").getElementsByTagName('object');
-  // console.log(that);
-  // console.log(that.length); // 1
-
-  return false;
-}
-
-function som(event) {
-  event.preventDefault();
   // console.log('shown');
-  large.className = "";
+  box.className = "";
 }
 
-function mev() {
-  // console.log('here!');
-  that = document.getElementById("overlay-content").getElementsByTagName('object')[0];
-
-
-  for (var i = 0, l = values.length; i < l; i++) {
-    // curr = urls[i];
-    // document.getElementById('a' + i).addEventListener('click', function() {
-
-
-      // that.setAttribute('data',urls[1]); // TEMP
-      // console.log(urls[i]); // works
-      // console.log(curr); // works
-      // console.log(i); // works
-      // console.log('test');
-    // });
-  }
+function getObject() {
+  // get the object
+  myObject = document.getElementById("overlay-content").getElementsByTagName('object')[0];
 }
 
 function all() {
@@ -140,50 +109,30 @@ function all() {
           anchor,
           valueBox;
 
-        // console.log(values);
-
         for (var i = 0, l = values.length; i < l; i++) {
 
           valueBox = values[i].innerHTML;
           val = parseInt(valueBox);
           values[i].className += "hidden";
 
-          // console.log(i);
-          // console.log(urls);
-
           if (val > 0) {
             if (val === 1) {
-              // console.log(valueBox);
-              // console.log(i);
-
 
               values[i].insertAdjacentHTML(
                 'beforebegin',
-                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return som(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
+                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return openOverlay(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
                 reference</span></a>`
               );
-
-              // console.log(urls[i]+ ' urls');
-              // console.log(i);
 
             } else {
 
               values[i].insertAdjacentHTML(
                 'beforebegin',
-                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return som(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
+                `&thinsp;<a href="${urls[i]}" id="a${[i]}" onclick="return openOverlay(event)" class="counter-wrapper"><span class="counter counter-valid">${valueBox}
                 references</span></a>`
               );
 
-              // that = document.getElementById("overlay-content").getElementsByTagName('object');
-              // that[0].setAttribute('data',urls[i]);
-
               valueBox = val + ' references';
-
-              // console.log(urls[i]+ ' urls');
-              // console.log(i);
-
-
-              // if (!document.getElementById("ttt").length > 0) {}
             }
           }
         }
@@ -192,73 +141,28 @@ function all() {
     }
     insertBlock();
   })();
-  // anchors = document.getElementsByClassName('counter-wrapper');
-
 
   // prototype
   function again() {
 
     function geta() {
       anchors = document.getElementsByClassName('counter-wrapper');
-      // console.log(anchors[0] + ' geta');
     }
 
     geta();
 
-    // console.log(anchors[0]);
-    // console.log(anchors.length);
-    // console.log(anchors);
-
-    var a = ['a', 'b', 'c'];
-
-    a.forEach(function(el) {
-      // console.log(el); // works
-      // console.log('lala'); // works
-      // var roar = function() {
-      //   each.addEventListener('click', function() {
-          // mev();
-      //   });
-      // }
-    });
-
-    // console.log(anchors.length);
-
-    mev(); // get the object
+    // get the object
+    getObject();
 
     // gets each anchor's id
     for (var i = 0, l = anchors.length; i < l; i++) {
       var molly = function(index) {
         anchors[index].addEventListener("click", function() {
-          // alert ("You clicked par #: " + anchors[index].id);
-          ids[index] = anchors[index].id; // works
-          // console.log(ids);
-          // var result = ids.map(function(x) {
-            // console.log('me');
-            // return parseInt(x, 10);
-
-          // });
-
-          // console.log(result);
-          // console.log(parseInt(ids[index]),10);
-          // console.log(ids[index].substring(1)); // works !
-
-          // console.log(that);
-          that.data = anchors[index].href;
-
+          ids[index] = anchors[index].id;
+          myObject.data = anchors[index].href;
         });
       }(i);
     }
-
-
-    // console.log('lolo'); // works
-
-    // a.forEach(function(el) {
-      // console.log(el);
-
-      // el.addEventListener('click', function() {
-        // mev();
-      // });
-    // });
   }
 
   again();
@@ -271,18 +175,3 @@ if (document.readyState === 'complete') {
     all();
   });
 }
-
-
-  // if no text is selected
-  // go to a page
-  // function mew(event) {
-  //   var sel = getSelection().toString();
-  //   var haveSel = sel.length > 0;
-  //   if(!haveSel) {
-  //     location.href = "/";
-  //   }
-  // }
-
-
-  // if this span (document.getElementById('a${[i]}') is clicked assign url with this [i] value)
-  // get the links into an array

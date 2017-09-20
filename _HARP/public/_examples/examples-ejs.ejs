@@ -63,7 +63,7 @@ THEME <%= getTheme() %><br>
     </div>
     <% } else { %>
       <div class="all-themes">
-        <% for (var theme in public.theme._data) { %><% var pref = public.theme._data %><% if (pref[theme].lang !== "ru" && pref[theme].index !== true && theme !== "neuroscience") { %><a href="../../theme/<%= theme.toLowerCase() %>"><span class="tag tag-page"><%= theme.charAt(0).toUpperCase() + theme.substring(1) %></span></a><% } %><% } %>
+        <% for (var theme in public.theme._data) { %><% var pref = public.theme._data %><% if (pref[theme].lang !== "ru" && pref[theme].index !== true && theme !== "neuroscience") { %><a href="/theme/<%= theme.toLowerCase() %>"><span class="tag tag-page"><%= theme.charAt(0).toUpperCase() + theme.substring(1) %></span></a><% } %><% } %>
       </div>
     <% } %>
   <% } %>

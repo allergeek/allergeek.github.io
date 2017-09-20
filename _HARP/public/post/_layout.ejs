@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="/css/reset.css">
     <%- include ../_includes/_head %>
     <%- include ../_includes/_post-css %>
   </head>
@@ -16,7 +16,6 @@
         <div class="remember before-post">
           <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Memorize the stuff by getting a short note sent to your inbox. It's something I use myself, opt out any time."><span>&check;</span>Help me remember this</a>
           <div class="print-ctrl">
-            <!-- <% include ../_includes/_cards %> -->
             <% include ../_includes/_post-print %>
           </div>
         </div>
@@ -42,7 +41,6 @@
         <div class="remember">
           <a href="<%- mailtoStr() %>" class="action-btn check" data-descr="Memorize the stuff by getting a short note sent to your inbox. It's something I use myself, opt out any time."><span>&check;</span>Help me remember this</a>
           <div class="print-ctrl">
-            <!-- <% include ../_includes/_cards %> -->
             <% include ../_includes/_post-print %>
           </div>
         </div>
@@ -53,15 +51,9 @@
 
 
       <% if (typeof references !== "undefined" && references) { %>
-        <script src="../../ref.js"></script>
-
-        <%# console.log('yes!!') %>
+        <script src="/ref.js"></script>
 
         <% for (slug in public) { %>
-          <%  %>
-        <% } %>
-
-        <% for (i = 0; i < 0 ; i++) { %>
           <%  %>
         <% } %>
 
@@ -69,5 +61,5 @@
       </div>
     </div>
   </body>
-  <script src="../../cards.js"></script>
+  <script src="/cards.js"></script>
 </html>

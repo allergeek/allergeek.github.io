@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>some title</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/post.css">
-    <link rel="stylesheet" href="../css/comments.css">
-    <link rel="stylesheet" href="../css/card.css">
-    <link rel="stylesheet" href="../css/less.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="/css/comments.css">
+    <link rel="stylesheet" href="/css/card.css">
+    <link rel="stylesheet" href="/css/less.css">
     <script type="text/javascript">
   (function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
   0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
@@ -71,8 +71,8 @@
       <div class="centered">
         <div class="fixed-wrapper">
           <div class="card-nav">
-            <a href="#0" class="">&larr; previous note</a>
-            <a href="#0" class="">next note &rarr;</a>
+            <a href="#previous" id="prev-note" class="">&larr; previous note</a>
+            <a href="#next" id="next-note" class="">next note &rarr;</a>
           </div>
           <div class="parent-card-rel larger">
             <a href="#0">
@@ -93,36 +93,19 @@
         </div>
 
         <div class="page-body">
-
-        <!-- <div class="form auth">
-  <a href="mailto:inbox@aiice2.com?subject=help me remember this&body=Hi%20Alice%2C%0Ahelp%20me%20remember%20this%3A%0A%0Ahttp://aiice2.com/post/card" class="action-btn" data-descr="Get the note in your inbox to review once in a while. It's something I use myself, opt out any time."><span>&plus;</span>Remember this</a>
-</div>
- -->
-
           <div class="card-wrapper">
-            <div class="card">
-              <!-- h1= title--><h1>A slug. The diet modulates memory and mood in the same direction as it modulates neurogenesis.</h1>
+            <div class="card" id="slug-box">
+              
+              <h1></h1>
             </div>
             <div class="card-actions">
               <div class="social-actions">
-                <!-- <a href="#0" class="">Share</a> -->
                 <div class="fb-share-button" data-href="https://aiice2.com" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faiice2.com%2F&amp;src=sdkpreparse">Share</a></div>
                 <a href="https://twitter.com/intent/tweet?hashtags=&text=Hello, AIice2&url=http%3A%2F%2Faiice2.com%2F" class="twitter-share-button" data-show-count="false" data-size="large" target="_blank">Tweet</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
               </div>
-
-              <!-- <div class="form auth">
-  <a href="mailto:inbox@aiice2.com?subject=help me remember this&body=Hi%20Alice%2C%0Ahelp%20me%20remember%20this%3A%0A%0Ahttp://aiice2.com/post/card" class="action-btn" data-descr="Get the note in your inbox to review once in a while. It's something I use myself, opt out any time."><span>&plus;</span>Remember this</a>
-</div>
- -->
-              <!-- <div class="form auth"> -->
-                <a href="mailto:inbox@aiice2.com?subject=help me remember this&body=Hi%20Alice%2C%0Ahelp%20me%20remember%20this%3A%0A%0Ahttp://aiice2.com/post/card" class="action-btn" data-descr="Get the note in your inbox to review once in a while. It's something I use myself, opt out any time."><span>&plus;</span>Remember this</a>
-              <!-- </div> -->
+              <a href="mailto:inbox@aiice2.com?subject=help me remember this&body=Hi%20Alice%2C%0Ahelp%20me%20remember%20this%3A%0A%0Ahttp%3A%2F%2Faiice2.com%2Fpost/card" class="action-btn" data-descr="Get the note in your inbox to review once in a while. It's something I use myself, opt out any time."><span>&plus;</span>Remember this</a>
             </div>
-            <!-- <a href="https://twitter.com/intent/tweet?hashtags=&text=Hello, AIice2&url=http%3A%2F%2Faiice2.com%2F" class="twitter-share-button" data-show-count="false" data-size="large" target="_blank">Tweet</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
- -->
-            <!-- <span>Parent set title - How the brain is capable of growing new cells</span> -->
-
             <span class="tag theme-label">Neuroscience</span>
           </div>
 
@@ -141,6 +124,7 @@
         </div>
       </div>
     </div>
-    <!--  -->
+    <script>
+    </script>
   </body>
 </html>
