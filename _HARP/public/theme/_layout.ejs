@@ -4,7 +4,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="/css/reset.css">
     <%- include ../_includes/_head %>
     <%- include ../_includes/_post-css %>
   </head>
@@ -36,7 +36,7 @@
 
         <%# show themes that have posts in Russian %>
         <% for (var i = 0, l = themesRU.length; i < l; i++) { %><%-
-      %><a href="../theme/<%= themesRUpath[i] %>"><%-
+      %><a href="/theme/<%= themesRUpath[i] %>"><%-
         %><span class="tag tag-page"><%= themesRU[i] %></span><%-
       %></a><%-
       %><% } %>
@@ -54,7 +54,7 @@
       <% } else { %>
 
         <% for (var i = 0, l = themesEN.length; i < l; i++) { %><%-
-      %><a href="../theme/<%= themesEN[i] %>"><%-
+      %><a href="/theme/<%= themesEN[i] %>"><%-
         %><span class="tag tag-page"><%= themesEN[i] %></span><%-
       %></a><%-
       %><% } %>

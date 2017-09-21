@@ -58,7 +58,7 @@ var
 function createOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
-  var btn = document.createElement('button');
+  var btn = document.createElement('a');
   box = div;
   var innerBox = div2;
 
@@ -70,7 +70,8 @@ function createOverlay() {
   innerBox.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
 
   btn.textContent = "close and go back";
-  btn.style.cssText = 'position:fixed;top:40px;right:30px;width:120px;height:40px;cursor:pointer;';
+  btn.className = "action-btn";
+  btn.style.cssText = 'position:fixed;top:40px;right:30px;width:auto;padding:0 18px;height:40px;line-height:40px;cursor:pointer;';
 
   box.appendChild(innerBox);
   box.appendChild(btn);
