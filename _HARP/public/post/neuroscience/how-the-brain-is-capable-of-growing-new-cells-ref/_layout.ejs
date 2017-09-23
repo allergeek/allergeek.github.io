@@ -5,12 +5,12 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/post.css">
     <link rel="stylesheet" href="/css/comments.css">
-    <!-- <link rel="stylesheet" href="../../../css/pages.css"> -->
+    <!-- <link rel="stylesheet" href="/css/pages.css"> -->
     <link rel="stylesheet" href="/css/less.css">
     <%- include ../../../_includes/_head %>
   </head>
   <body>
-    <%# EDIT THE THEME %>
+    <%# EDIT THE THEME IN PATH %>
     <% var path = public.post.neuroscience._data %>
     <div class="body-container start-margin">
       <div class="centered">
@@ -32,7 +32,6 @@
         </div>
 
         <div class="page-body">
-
         <%- include ../../../_includes/_comment-remember %>
         <%- yield %>
         <div class="height-box">

@@ -18,9 +18,8 @@ function cardOverlay() {
   var innerBox = div2;
 
   cardBox.id = "card-box";
-  cardBox.className = "hidden";
 
-  cardBox.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;opacity:1;z-index:999;background:#f2f2f2;paddding:0;';
+  cardBox.className += " hidden";
 
   innerBox.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
 
@@ -54,7 +53,8 @@ function slugBox() {
 
 function card(event) {
   event.preventDefault();
-  cardBox.className = "";
+  cardBox.classList.remove("hidden");
+  cardBox.className += "card-box";
   return false;
 }
 
@@ -158,7 +158,9 @@ if (document.getElementById('card-obj').readyState === 'complete') {
 // + find h1 inside class card
 // + get all h2 in the content body of the page
 // + assign the first h1 to card's h1
+
 // assign an h2[i+1] when Next href is clicked
 // same logic for Prev
-// exit cards on click, add an X or Back to the article button
-// create and assign css classes for rendered elements, instead of inline css
+
+// + exit cards on click, add an X or Back to the article button
+// +- create and assign css classes for rendered elements, instead of inline css
