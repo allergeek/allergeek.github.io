@@ -10,6 +10,8 @@ var
   cardObject,
   textBox;
 
+var num = 0;
+
 function cardOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
@@ -84,11 +86,17 @@ function cardObject() {
 }
 
 function nextItem() {
-  var i;
-  i = 0;
-  i = i + 1;
-  i = i % slug.length; // ???
-  return slug[i];
+  for (let i = num, l = slug.length; i < l ; i++) {
+    num = i + 1;
+    return slug[num];
+  }
+}
+
+function prevItem() {
+  for (let i = num, l = slug.length; i < l ; i--) {
+    num = i - 1;
+    return slug[num];
+  }
 }
 
 // assign actions to prev and next
@@ -97,14 +105,8 @@ function nextNote() {
   next = document.getElementById('card-obj').contentDocument.getElementById('next-note');
   next.addEventListener('click', function(event) {
     textBox.innerHTML = nextItem();
-
-    // for (i = 0, l = slug.length; i < l; i++) {
-    //   if (textBox.innerHTML = slug[i]) {
-    //     i += 1;
-    //     textBox.innerHTML = slug[i];
-    //   }
-    // }
     console.log('next');
+    console.log(num);
   });
 }
 
@@ -113,8 +115,9 @@ function prevNote() {
 
   prev = document.getElementById('card-obj').contentDocument.getElementById('prev-note');
   prev.addEventListener('click', function(event) {
-    textBox.innerHTML = slug[0];
+    textBox.innerHTML = prevItem();
     console.log('prev');
+    console.log(num);
   });
 }
 
