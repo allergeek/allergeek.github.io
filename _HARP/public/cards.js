@@ -86,15 +86,23 @@ function cardObject() {
 }
 
 function nextItem() {
-  for (let i = num, l = slug.length; i < l ; i++) {
-    num = i + 1;
+  if (num < slug.length - 1) {
+    for (let i = num, l = slug.length; i < l ; i++) {
+      num = i + 1;
+      return slug[num];
+    }
+  } else {
     return slug[num];
   }
 }
 
 function prevItem() {
-  for (let i = num, l = slug.length; i < l ; i--) {
-    num = i - 1;
+  if (num > 0) {
+    for (let i = num, l = slug.length + 1; i < l ; i--) {
+      num = i - 1;
+      return slug[num];
+    }
+  } else {
     return slug[num];
   }
 }

@@ -53,8 +53,10 @@ function val() {
 
 var
   myObject,
-  box;
+  box,
+  backBtn;
 
+// draw a hidden overlay
 function createOverlay() {
   var div = document.createElement('div');
   var div2 = document.createElement('div');
@@ -77,7 +79,7 @@ function createOverlay() {
   box.appendChild(btn);
   innerBox.id = "overlay-content";
 
-  innerBox.innerHTML=`<object type="text/html" data="" style="width: 100%;height:100%;"></object>`;
+  innerBox.innerHTML=`<object type="text/html" id="ref-obj" data="" style="width: 100%;height:100%;"></object>`;
   document.body.appendChild(box);
   btn.onclick = closeLayer;
 }
@@ -94,6 +96,14 @@ function openOverlay(event) {
 function getObject() {
   // get the object
   myObject = document.getElementById("overlay-content").getElementsByTagName('object')[0];
+
+
+  // if object.innerHTML exists
+  // ?? document.getElementById('ref-obj').contentDocument.readyState === 'complete'
+
+  // assign an onclik event to parent card
+  // backBtn = document.getElementById('ref-obj').contentDocument.getElementsByClassName("parent-card")[0].getElementsByTagName('a')[0];
+  // console.log(backBtn);
 }
 
 function all() {
