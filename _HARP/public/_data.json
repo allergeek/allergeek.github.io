@@ -2,6 +2,9 @@
   "rss.xml": {
     "layout": false
   },
+  "feed": {
+    "layout": "_feed-layout"
+  },
   "404": {
     "layout": false
   },

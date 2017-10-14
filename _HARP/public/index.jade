@@ -1,36 +1,10 @@
--
-  function excerpt(content) {
-    if(content.indexOf("<!-- preview -->") == -1) return content;
-    else return content.split("<!-- preview -->")[0];
-  }
-
-// for a post in a list of posts
-// create a div to refer to
-// include text content
-// get all h2 in a certain div
-// with client-side js
-// inside each div
-// delete paragraphs.break
-// assign proper anchor and title to each h2
-// need to extract theme from post url (done before)
-
-// this only gets first N h2 headings
-
-// to update, only need to add a post to the list
-
-//
-  div#how-to-start-running
-    != excerpt(partial('how-to-start-running'))
-
-include _feed
-
-- var counter = 0
-
-  for n in sources
-    each note in n
-      a(href= "post/#{themes[counter]}/#{urls[counter]}").note-wrapper
-        h2
-          =note
-          | &thinsp;
-          span.tag.tag-title.inline-title= titles[counter]
-    - counter += 1
+h1 Hello!
+p.introduction
+  | I'm Alice.
+  br
+  a(href="/feed") Please, check out the #[b blog]
+  br
+  a(href="/reminders") or check out the #[b Nutrition reminders]!
+  br
+  br
+  | You can reach me at #[a(href="mailto:inbox@aiice2.com") inbox@aiice2.com]
