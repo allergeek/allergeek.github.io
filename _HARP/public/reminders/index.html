@@ -61,14 +61,20 @@
         margin: 0;
       }
 
-
       .signup {
         margin: 40px 0 20px;
         padding: 4vh;
       }
 
+      .signup.abs {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+      }
+
       a.button {
-        display: inline-block;
+        display: block;
+        float: left;
         /*max-width: calc(60% - 40px);*/
         margin: 40px auto 20px;
         /*background: #77c68f;*/
@@ -83,6 +89,15 @@
         border-radius: 6px;
         font-size: 1.1em;
         border-radius:25px;
+      }
+
+      a.button.messenger {
+        background: dodgerblue;
+      }
+
+      .signup.abs a {
+        display: block;
+        float: none;
       }
 
       .mobile {
@@ -112,6 +127,10 @@
     <script type="text/javascript" src="./jquery-3.2.1.js"></script>
   </head>
   <body>
+    <div class="signup abs">
+      <a href="https://withaone.typeform.com/to/OlzaHm" class="button">Sign up with email</a>
+      <a href="https://withaone.typeform.com/to/OlzaHm" class="button messenger">Chat in Messenger</a>
+    </div>
     <div class="centered">
       <h1>Good nutrition, for&nbsp;starters.</h1>
       <h2>Get tips that help you choose nutrient-rich foods. Email, text or both, for $3 a month.</h2>
