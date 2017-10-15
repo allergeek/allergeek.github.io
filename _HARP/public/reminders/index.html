@@ -142,6 +142,13 @@
         margin: 0 auto 20px;
       }
 
+      .flex {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+      }
+
       @keyframes fadein {
         from { opacity: 0}
         to   { opacity: 1}
@@ -217,7 +224,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=773025496185247";
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=773025496185247";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <div class="signup position" id="menu">
@@ -231,6 +238,8 @@
         <div class="card">
           <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project.</p>
           <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient -- for example Calcium or Folate.</p>
+        </div>
+        <div class="flex">
           <div class="fb-like"
             data-href="http://aiice2.com/reminders/"
             data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true">
