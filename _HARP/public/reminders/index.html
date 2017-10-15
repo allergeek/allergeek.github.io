@@ -44,8 +44,8 @@
       .card {
         /*width: 50%;*/
         max-width: 600px;
-        background: #eee;
-        padding: 4vh;
+        background: #f0f3f5;
+        padding: 40px;
         margin: 20px 0;
         border-radius: 6px;
         overflow: auto;
@@ -89,12 +89,24 @@
         text-decoration: none;
         border-radius: 6px;
         font-size: 1.1em;
-        border-radius:25px;
+        border-radius: 25px;
+        -webkit-transition: 0.2s ease-in;
+      }
+
+      a.button:hover {
+        background: #525b6b;
+        -webkit-transition: 0.2s ease-in;
       }
 
       a.button.messenger {
-        background: dodgerblue;
+        background: #3e7eeb;
         margin: 0;
+        -webkit-transition: 0.2s ease-in;
+      }
+
+      a.button.messenger:hover {
+        background: #4571f2;
+        -webkit-transition: 0.2s ease-in;
       }
 
       .signup.position a {
@@ -102,6 +114,10 @@
         float: none;
         border: solid 2px #fff;
         margin: 10px auto 20px;
+        max-width: 240px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .signup.standalone {
@@ -150,7 +166,7 @@
       }
 
       #menu {
-        animation: delayed50 2s;
+        animation: delayed50 1s;
       }
 
       #h1 {
@@ -182,6 +198,14 @@
           margin: 0vw auto 16vw;
         }
       }
+      @media screen and (max-width: 680px) {
+        .centered {
+          padding: 0 40px;
+        }
+        .signup.position {
+          margin: 10vw 0 0 40px;
+        }
+      }
     </style>
 
     <meta name=viewport content="width=device-width, initial-scale=1">
@@ -198,14 +222,14 @@
     </div>
     <div class="centered">
       <h1 id="h1">Good nutrition, for&nbsp;starters.</h1>
-      <h2 id="h2">Get tips that help you choose nutrient-rich foods. Email, text or both, for $3 a month.</h2>
+      <h2 id="h2">Get tips that help you choose nutrient-dense foods. Email, text or both, for $3 a month.</h2>
       <div id="main">
         <div class="card">
           <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project.</p>
-          <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient.</p>
+          <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient -- for example Calcium or Folate.</p>
         </div>
         <div class="card">
-          <p>I had a few reminders set for myself and they'd been very helpful. The thing I still had to do was to google the foods that had the most of a certain nutrient. I hope to take care of this now and make it really easy to have a balanced meal.</p>
+          <p>I had a few reminders set for myself and they'd been very helpful. The thing I still had to do was to google the foods that had the most of a certain nutrient. I hope to take care of this now and make it really easy to have nutirent-rich meals.</p>
           <p>Fill in the form below and subscribe with Stripe - that's it. You'll start getting the messages on the next day, Pacific Time, afternoon.</p>
           <br>
           <br>
