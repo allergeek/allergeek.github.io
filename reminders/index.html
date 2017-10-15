@@ -9,6 +9,8 @@
 
     gtag('config', 'UA-106745742-1');
     </script>
+    <link rel="stylesheet" type="text/css" href="../../../../reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400|Roboto:400,700" rel="stylesheet">
 
     <style>
       body {
@@ -19,105 +21,253 @@
       }
 
       .centered {
-        margin: 0 auto;
         max-width: 600px;
-        margin: 10vw auto 0;
+        margin: 10vw auto 16vw;
+      }
+
+      h1 {
+        font-size: 4em;
+        line-height: 1em;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        line-height: 1.25em;
+        margin: 20px 0;
+      }
+
+      span.note {
+        font-style: italic;
       }
 
       .card {
         /*width: 50%;*/
         max-width: 600px;
-        background: #eee;
-        padding: 4vh;
-        margin: Good nutrition, for starters. 20px 0;
+        background: #f0f3f5;
+        padding: 40px;
+        margin: 20px 0;
         border-radius: 6px;
+        overflow: auto;
       }
 
       .card p {
         margin: 20px 0 0;
+        font-size: 1.1em;
+        line-height: 1.25em;
+        color: #787f8c;
       }
 
       .card p:first-of-type {
         margin: 0;
       }
 
-
       .signup {
-        margin: 40px 0 20px;
+        margin: 0 0 20px;
+      }
+
+      .signup.position {
+        position: absolute;
+        top: 10vw;
+        left: 40px;
+        box-sizing: border-box;
       }
 
       a.button {
         display: block;
-        width: calc(60% - 40px);
-        margin: 0 auto;
+        float: left;
+        /*max-width: calc(60% - 40px);*/
+        margin: 40px auto 20px;
         /*background: #77c68f;*/
         /*color: #e4f2ca;*/
         color: #fff;
-        /*color: #fff;*/
-        background: #5f6674;
         background: #5f6674;
         text-align: center;
-        padding: 20px;
+        padding: 0 20px;
+        height: 50px;
+        line-height: 50px;
         text-decoration: none;
         border-radius: 6px;
-        font-size: 1.5em;
+        font-size: 1.1em;
+        border-radius: 25px;
+        -webkit-transition: 0.2s ease-in;
+      }
+
+      a.button:hover {
+        background: #525b6b;
+        -webkit-transition: 0.2s ease-in;
+      }
+
+      a.button.messenger {
+        background: #3e7eeb;
+        margin: 0;
+        -webkit-transition: 0.2s ease-in;
+      }
+
+      a.button.messenger:hover {
+        background: #4571f2;
+        -webkit-transition: 0.2s ease-in;
+      }
+
+      .signup.position a {
+        display: block;
+        float: none;
+        border: solid 2px #fff;
+        margin: 10px auto 20px;
+        max-width: 240px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .signup.standalone {
+        padding: 4vh;
       }
 
       .mobile {
-        padding: 40px 0 0;
+        padding: 40px 0 40px;
         text-align: center;
       }
 
+      .flex-row {
+        display: flex;
+        /*flex-direction: row;*/
+        /*overflow: auto;*/
+      }
+
       .mobile img {
-        width: 60%;
-        display: block;
+        /*width: 60%;*/
+        height: 300px;
         display: block;
         margin: 0 auto 20px;
+      }
+
+      @keyframes fadein {
+        from { opacity: 0}
+        to   { opacity: 1}
+      }
+
+      @keyframes delayed50 {
+        0% { opacity: 0}
+        50%   { opacity: 0}
+        100%   { opacity: 1}
+      }
+
+      @keyframes delayed5 {
+        0% { opacity: 0}
+        5%   { opacity: 0}
+        100%   { opacity: 1}
+      }
+
+      @keyframes delayed10 {
+        0% { opacity: 0}
+        10%   { opacity: 0}
+        100%   { opacity: 1}
+      }
+
+      #menu {
+        animation: delayed50 1s;
+      }
+
+      #h1 {
+        animation: fadein 0.5s;
+      }
+
+      #h2 {
+        animation: delayed5 1s;
+      }
+
+      #main {
+        margin: 40px 0 0;
+        animation: delayed10 1.5s;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .signup.position {
+          position: relative;
+          max-width: 600px;
+          margin: 10vw auto 0;
+          left: auto;
+          top: auto;
+          -webkit-transition: 0.5s ease-out;
+        }
+        .signup.position a {
+          display: inline-block;
+        }
+        .centered {
+          margin: 0vw auto 16vw;
+        }
+      }
+      @media screen and (max-width: 680px) {
+        .centered {
+          padding: 0 40px;
+        }
+        .signup.position {
+          margin: 10vw 0 0 40px;
+        }
       }
     </style>
 
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" href="../reset.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../basics.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400|Roboto:300,400,500" rel="stylesheet">
-    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <!-- <script type="text/javascript" src="./jquery-3.2.1.js"></script> -->
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=773025496185247";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="signup position" id="menu">
+      <a href="https://withaone.typeform.com/to/OlzaHm" class="button" target="_blank">Sign up with email</a>
+      <a href="https://www.messenger.com/t/1581752168517848" class="button messenger" target="_blank">Chat in Messenger</a>
+    </div>
     <div class="centered">
-      <h1>Good nutrition, for starters.</h1>
-      <h2>Get nutritonal tips that help you eat balanced meals. Email, text or both, for $3 a month.</h2>
-      <script src="https://www.commencepayments.com/v2/commence.js"
-        data-payment-method="credit-card"
-        data-plan="reminders"
-        data-panel-label="Subscribe Now"
-        data-description="Nutritonal tips for healthier meals."
-        data-name="Nutrition reminders"
-        data-key="pk_test_zvSzLniZ1amfvDAVWj83BxiT">
-      </script>
-      <br>
-      <span>Payments are in test mode for now but please do sign up below!</span>
-      <br>
-      <br>
-      <div class="card">
-        <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project.</p>
-        <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient.</p>
-      </div>
-      <div class="card">
-        <p>I had a few reminders set for myself and they'd been very helpful. The thing I still had to do was to google the foods that had the most of a certain nutrient. I hope to take care of this now and make it really easy to have a balanced meal.</p>
-        <p>Fill in the form below and subscribe with Stripe - that's it. You'll start getting the messages on the next day. Pacific Time, afternoon.</p>
-      </div>
-      <div class="card">
-        <p>Need to exclude some foods? No problem, reply to the text or email me anytime. Message me about allergies and personal preferences, I know very well -- a lot of foods are only available in certain regions.</p>
-        <div class="signup">
-          <a href="https://withaone.typeform.com/to/OlzaHm" class="button">Sign up with email</a>
+      <h1 id="h1">Good nutrition, for&nbsp;starters.</h1>
+      <h2 id="h2">Get tips that help you choose nutrient-dense foods. Email, text or both, for $3 a month.</h2>
+      <div id="main">
+        <div class="card">
+          <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project.</p>
+          <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient -- for example Calcium or Folate.</p>
+          <div class="fb-like"
+            data-href="http://aiice2.com/reminders/"
+            data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true">
+          </div>
+        </div>
+        <div class="card">
+          <p>I had a few reminders set for myself and they'd been very helpful. The thing I still had to do was to google the foods that had the most of a certain nutrient. I hope to take care of this now and make it really easy to have nutirent-rich meals.</p>
+          <p>Fill in the form below and subscribe with Stripe - that's it. You'll start getting the messages on the next day, Pacific Time, afternoon.</p>
+          <br>
+          <br>
+          <script src="https://www.commencepayments.com/v2/commence.js"
+            data-payment-method="credit-card"
+            data-plan="reminders"
+            data-panel-label="Subscribe Now"
+            data-description="Nutritonal tips for healthier meals."
+            data-name="Nutrition reminders"
+            data-key="pk_test_zvSzLniZ1amfvDAVWj83BxiT">
+          </script>
+          <br>
+          <span class="note">Payments are in test mode for now but please do sign up below!</span>
+        </div>
+        <div class="card">
+          <p>Need to exclude some foods? No problem, reply to the text or email me anytime. Message me about allergies and personal preferences, I know very well -- a lot of foods are only available in certain regions.</p>
+          <a class="typeform-share button" href="https://withaone.typeform.com/to/OlzaHm" data-mode="popup" data-hide-headers=true data-hide-footer=true target="_blank">Sign up with email</a>
+          <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+        </div>
+        <div class="mobile">
+          <div class="flex-row">
+            <img src="mobile.png">
+            <!-- <img src="mobile.png"> -->
+          </div>
+          <span>example for vegan diet</span>
+        </div>
+        <div class="signup standalone">
+          <!-- <a href="https://withaone.typeform.com/to/OlzaHm" class="button">Sign up with email</a> -->
         </div>
       </div>
-      <div class="mobile">
-        <img src="mobile.png">
-        <span>example for vegan diet</span>
-      </div>
-      <div class="typeform-widget" data-url="https://withaone.typeform.com/to/OlzaHm" data-transparency="100" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;" > </div>
     </div>
 
     <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>

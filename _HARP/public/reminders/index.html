@@ -209,13 +209,17 @@
     </style>
 
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" href="../reset.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../basics.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400|Roboto:300,400,500" rel="stylesheet">
-    <script type="text/javascript" src="./jquery-3.2.1.js"></script>
+    <!-- <script type="text/javascript" src="./jquery-3.2.1.js"></script> -->
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=773025496185247";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div class="signup position" id="menu">
       <a href="https://withaone.typeform.com/to/OlzaHm" class="button" target="_blank">Sign up with email</a>
       <a href="https://www.messenger.com/t/1581752168517848" class="button messenger" target="_blank">Chat in Messenger</a>
@@ -227,6 +231,10 @@
         <div class="card">
           <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project.</p>
           <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient -- for example Calcium or Folate.</p>
+          <div class="fb-like"
+            data-href="http://aiice2.com/reminders/"
+            data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true">
+          </div>
         </div>
         <div class="card">
           <p>I had a few reminders set for myself and they'd been very helpful. The thing I still had to do was to google the foods that had the most of a certain nutrient. I hope to take care of this now and make it really easy to have nutirent-rich meals.</p>
@@ -252,7 +260,7 @@
         <div class="mobile">
           <div class="flex-row">
             <img src="mobile.png">
-            <img src="mobile.png">
+            <!-- <img src="mobile.png"> -->
           </div>
           <span>example for vegan diet</span>
         </div>
