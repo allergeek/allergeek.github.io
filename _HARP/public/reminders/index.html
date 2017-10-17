@@ -9,6 +9,8 @@
 
     gtag('config', 'UA-106745742-1');
     </script>
+
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../../../reset.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400|Roboto:400,700" rel="stylesheet">
 
@@ -49,6 +51,7 @@
         margin: 20px 0;
         border-radius: 6px;
         overflow: auto;
+        position: relative;
       }
 
       .card p {
@@ -129,7 +132,7 @@
         text-align: center;
       }
 
-      .flex-row {
+      .flex {
         display: flex;
         /*flex-direction: row;*/
         /*overflow: auto;*/
@@ -142,11 +145,32 @@
         margin: 0 auto 20px;
       }
 
-      .flex {
+      .flex-100 {
         display: flex;
         height: 100px;
         align-items: center;
         justify-content: center;
+      }
+
+      .card img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        height: auto;
+        border-bottom: solid 1px rgba(95,102,116,0.3);
+        box-shadow: 0 0 12px rgba(95,102,116,0.1), 0 0 6px rgba(95,102,116,0.1);
+        border-radius: 4px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 40px;
+        width: calc(100% - 80px);
+        height: calc(100% - 81px);
+        box-shadow: inset 0 -24px 24px rgba(255,255,255,1);
+        border-radius: 4px;
       }
 
       @keyframes fadein {
@@ -236,14 +260,18 @@
       <h2 id="h2">Get tips that help you choose nutrient-dense foods. Email, text or both, for $3 a month.</h2>
       <div id="main">
         <div class="card">
-          <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project.</p>
-          <p>I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient &mdash; for example, Calcium or Folate.</p>
+          <p>Hi, I'm Alice. I try to make useful stuff and this is my weekend project. I believe we lack good tools to learn about nutrition.</p>
+          <p>Starting mid-November, I'll be sending out reminders to include certain nutrients in your meals. With each reminder, you'll get a list of top recommended foods, rich in a particular nutrient &mdash; for example, Calcium or Folate.</p>
         </div>
-        <div class="flex">
+        <div class="flex-100">
           <div class="fb-like"
             data-href="http://aiice2.com/reminders/"
             data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true">
           </div>
+        </div>
+        <div class="card">
+          <img src="zinc.png">
+          <div class="overlay"></div>
         </div>
         <div class="card">
           <p>I had a few reminders set for myself and they'd been very helpful. The thing I still had to do was to google the foods that had the most of a certain nutrient. I hope to take care of this now and make it really easy to have nutirent-rich meals.</p>
@@ -259,7 +287,7 @@
             data-key="pk_test_zvSzLniZ1amfvDAVWj83BxiT">
           </script>
           <br>
-          <span class="note">Payments are in test mode for now but please do sign up below!</span>
+          <span class="note">Payments are in test mode for now. Meanwhile, you can fill&nbsp;in a short form below to sign up!</span>
         </div>
         <div class="card">
           <p>Need to exclude some foods? No problem, reply to the text or email me anytime. Message me about allergies and personal preferences, I know very well -- a lot of foods are only available in certain regions.</p>
@@ -267,7 +295,7 @@
           <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
         </div>
         <div class="mobile">
-          <div class="flex-row">
+          <div class="flex">
             <img src="vitamin-d-vegan.png">
             <img src="potassium.png">
             <!-- <img src="vitamin-d-vegan.png"> -->
