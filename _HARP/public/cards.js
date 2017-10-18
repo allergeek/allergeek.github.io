@@ -8,7 +8,8 @@
 var
   cardBox,
   cardObject,
-  textBox;
+  textBox,
+  card;
 
 var num = 0;
 
@@ -47,6 +48,7 @@ function closeBLayer(event) {
   element.className = "hidden";
 }
 
+// set the card as the container for h1
 function slugBox() {
   textBox = document.getElementById('card-obj').contentDocument.getElementsByTagName('h1')[0];
   textBox.innerHTML = slug[0];
@@ -54,7 +56,7 @@ function slugBox() {
   return textBox;
 }
 
-function card(event) {
+function loadCard(event) {
   event.preventDefault();
   cardBox.classList.remove("hidden");
   cardBox.className += "card-box";
@@ -67,7 +69,7 @@ function button() {
   for (var i = 0, l = holder.length; i < l; i++) {
     holder[i].insertAdjacentHTML(
       'beforebegin',
-      '<a href="#1" onclick="return card(event)"><input type="submit" value="&#9655;&nbsp;&nbsp;show cards" class="button chimp-input print-btn"></a>'
+      '<a href="#1" onclick="return loadCard(event)"><input type="submit" value="&#9655;&nbsp;&nbsp;show cards" class="button chimp-input print-btn"></a>'
     );
   }
 }
@@ -136,11 +138,17 @@ function prevNote() {
 
 // when the card with h1 is clicked load next
 function cardClick() {
-  textBox.addEventListener('click', function(event) {
+  card = document.getElementById('card-obj').contentDocument.getElementById('slug-box');
+  card.addEventListener('click', function(event) {
     fillNext();
   });
 }
 
+function backToPost() {
+  var paerntCard;
+  parentCard = document.getElementById('card-obj').contentDocument.getElementById("parent-card");
+  parentCard.onclick = closeBLayer;
+}
 
 // delete all spans inside h2
 function normalize() {
@@ -164,6 +172,7 @@ if (document.getElementById('card-obj').readyState === 'complete') {
   nextNote();
   prevNote();
   cardClick();
+  backToPost()
   console.log('yes');
 } else {
   document.getElementById('card-obj').addEventListener('load', function(event) {
@@ -171,6 +180,7 @@ if (document.getElementById('card-obj').readyState === 'complete') {
     nextNote();
     prevNote();
     cardClick();
+    backToPost()
     console.log('loaded now');
   }
 )};
