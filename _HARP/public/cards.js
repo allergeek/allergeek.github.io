@@ -23,17 +23,18 @@ function cardOverlay() {
 
   cardBox.className += " hidden";
 
-  innerBox.style.cssText = 'position:relative;width:calc(100%);height:calc(100%);margin:0;';
+  innerBox.style.cssText = '';
+  innerBox.className = "inner-box";
 
   btn.textContent = "close and go back";
   btn.className = "action-btn";
-  btn.style.cssText = 'position:fixed;top:40px;right:30px;width:auto;padding:0 18px;height:40px;line-height:40px;cursor:pointer;';
+  btn.className += " close-btn";
 
   cardBox.appendChild(innerBox);
   cardBox.appendChild(btn);
   innerBox.id = "overlay-content";
 
-  innerBox.innerHTML=`<object type="text/html" id="card-obj" data="" style="width: 100%;height:100%;"></object>`;
+  innerBox.innerHTML=`<object type="text/html" id="card-obj" data="" class="card-obj"></object>`;
   document.body.appendChild(cardBox);
   btn.onclick = closeBLayer;
 }
@@ -107,14 +108,18 @@ function prevItem() {
   }
 }
 
+function fillNext() {
+  textBox.innerHTML = nextItem();
+  console.log('next');
+  console.log(num);
+}
+
 // assign actions to prev and next
 function nextNote() {
   var next;
   next = document.getElementById('card-obj').contentDocument.getElementById('next-note');
   next.addEventListener('click', function(event) {
-    textBox.innerHTML = nextItem();
-    console.log('next');
-    console.log(num);
+    fillNext();
   });
 }
 
@@ -128,6 +133,14 @@ function prevNote() {
     console.log(num);
   });
 }
+
+// when the card with h1 is clicked load next
+function cardClick() {
+  textBox.addEventListener('click', function(event) {
+    fillNext();
+  });
+}
+
 
 // delete all spans inside h2
 function normalize() {
@@ -150,12 +163,14 @@ if (document.getElementById('card-obj').readyState === 'complete') {
   slugBox();
   nextNote();
   prevNote();
+  cardClick();
   console.log('yes');
 } else {
   document.getElementById('card-obj').addEventListener('load', function(event) {
     slugBox();
     nextNote();
     prevNote();
+    cardClick();
     console.log('loaded now');
   }
 )};
@@ -170,8 +185,8 @@ if (document.getElementById('card-obj').readyState === 'complete') {
 // + get all h2 in the content body of the page
 // + assign the first h1 to card's h1
 
-// assign an h2[i+1] when Next href is clicked
-// same logic for Prev
+// + assign an h2[i+1] when Next href is clicked
+// + same logic for Prev
 
 // + exit cards on click, add an X or Back to the article button
-// +- create and assign css classes for rendered elements, instead of inline css
+// + create and assign css classes for rendered elements, instead of inline css

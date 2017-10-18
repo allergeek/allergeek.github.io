@@ -538,6 +538,29 @@ div.last-post {
   padding: 0;
 }
 
+.inner-box {
+  position: relative;
+  width: calc(100%);
+  height: calc(100%);
+  margin: 0;
+}
+
+a.close-btn {
+  position: fixed;
+  top: 40px;
+  right: 30px;
+  width: auto;
+  padding: 0 18px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.card-obj {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 768px) {
   .bar-wrapper,
   .title-bar {
