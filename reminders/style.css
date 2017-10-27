@@ -73,9 +73,8 @@ a.button {
   height: 50px;
   line-height: 50px;
   text-decoration: none;
-  border-radius: 6px;
   font-size: 1.1em;
-  border-radius: 25px;
+  border-radius: 2em;
   -webkit-transition: 0.2s ease-in;
 }
 
@@ -90,14 +89,9 @@ a.button.messenger {
   -webkit-transition: 0.2s ease-in;
 }
 
-a.button.messenger:hover {
-  background: #4571f2;
-  -webkit-transition: 0.2s ease-in;
-}
-
 span.item {
   display: inline-block;
-  border-radius: 1em;
+  border-radius: 2em;
   background: #92CBAE;
   color: #fff;
   height: 2em;
@@ -105,11 +99,13 @@ span.item {
   font-size: 1em;
   padding: 0 16px;
   margin: 6px 6px 0 0;
+  border: solid 2px #f0f3f5;
   cursor: default;
 }
 
 span.item:hover {
   background: #97cb92;
+  border: solid 2px #97cb92;
 }
 
 .signup.position a {
@@ -121,6 +117,17 @@ span.item:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  -webkit-transition: none;
+}
+
+.signup.position a:hover {
+  border: solid 2px #525b6b;
+  -webkit-transition: none;
+}
+
+.signup.position a.button.messenger:hover {
+  background: #4571f2;
+  border: solid 2px #4571f2;
 }
 
 .signup.standalone {
@@ -130,6 +137,10 @@ span.item:hover {
 .mobile {
   padding: 40px 0 40px;
   text-align: center;
+}
+
+.overflow {
+  overflow: auto;
 }
 
 .flex {
