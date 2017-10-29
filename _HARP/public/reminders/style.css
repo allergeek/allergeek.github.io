@@ -149,6 +149,22 @@ span.item:hover {
   /*overflow: auto;*/
 }
 
+.avatar {
+  box-sizing: border-box;
+  position: absolute;
+  /*top: 0;*/
+  margin-top: calc(20px + 4px);
+  left: calc((100% - 600px) / 2 - 80px);
+  height: 100px;
+  width: 100px;
+  background: url('av.jpg') 64% 10% no-repeat;
+  background-size: 240%;
+  border-radius: 100px;
+  z-index: 1;
+  border: solid 4px darkgrey;
+  /*-webkit-transition: 0.5 ease-in;*/
+}
+
 .mobile img {
   /*width: 60%;*/
   height: 300px;
