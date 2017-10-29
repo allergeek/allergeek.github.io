@@ -1,3 +1,20 @@
+/*
+COLORS
+
+#525b6b
+#5f6674
+#787f8c
+#f0f3f5
+#fff
+
+#3e7eeb
+#4571f2
+
+#92cbae
+#97cb92
+
+*/
+
 body {
   /*font-family: 'Roboto', sans-serif;*/
   font-family: 'Roboto', Arial, sans-serif;
@@ -11,9 +28,12 @@ body {
 }
 
 h1 {
+  /*display: inline-block;*/
   font-size: 4em;
   line-height: 1em;
+  padding: 0 0 10px 0;
   font-weight: 700;
+  overflow: auto;
 }
 
 h2 {
@@ -30,18 +50,24 @@ span.note {
   /*width: 50%;*/
   max-width: 600px;
   background: #f0f3f5;
-  padding: 40px;
+  padding: 3em;
   margin: 20px 0;
   border-radius: 6px;
   overflow: auto;
   position: relative;
 }
 
+.card.stack {
+  margin: -2em 0;
+  box-shadow: 0 -4px 0 #fff;
+  padding: 2em 3em 3em;
+}
+
 .card p {
   margin: 20px 0 0;
-  font-size: 1.1em;
-  line-height: 1.25em;
-  color: #787f8c;
+  font-size: 1.25em;
+  line-height: 1.35em;
+  color: #525b6b;
 }
 
 .card p:first-of-type {
@@ -92,7 +118,7 @@ a.button.messenger {
 span.item {
   display: inline-block;
   border-radius: 2em;
-  background: #92CBAE;
+  background: #92cbae;
   color: #fff;
   height: 2em;
   line-height: 2em;
@@ -157,12 +183,21 @@ span.item:hover {
   left: calc((100% - 600px) / 2 - 80px);
   height: 100px;
   width: 100px;
-  background: url('av.jpg') 64% 10% no-repeat;
-  background-size: 240%;
+  background: url('av.jpg') 63% 6% no-repeat, #fff;
+  background-size: 270%;
   border-radius: 100px;
   z-index: 1;
-  border: solid 4px darkgrey;
-  /*-webkit-transition: 0.5 ease-in;*/
+  border: solid 4px #787f8c;
+  -webkit-transition: 0.1s ease-in;
+}
+
+.avatar:hover {
+  height: 150px;
+  width: 150px;
+  margin-top: calc(20px + 4px - 25px);
+  left: calc((100% - 600px) / 2 - 80px - 25px);
+  background-size: 300%;
+  -webkit-transition: 0.3s ease-out;
 }
 
 .mobile img {
@@ -193,9 +228,18 @@ span.item:hover {
   position: absolute;
   top: 0;
   left: 0;
-  margin: 40px;
-  width: calc(100% - 80px);
-  height: calc(100% - 81px);
+  margin: 3em;
+  /*width: calc(100% - 96px);*/
+  /*height: calc(100% - 96px);*/
+
+  /*width: 100%;
+  height: 100%;
+  max-width: 480px;
+  max-height: 480px;*/
+
+  height: calc(100% - 6em - 1px);
+  width: calc(100% - 6em);
+
   box-shadow: inset 0 -24px 24px rgba(255,255,255,1);
   border-radius: 4px;
 }
@@ -261,6 +305,44 @@ span.item:hover {
     padding: 0 40px;
   }
   .signup.position {
-    margin: 10vw 0 0 40px;
+    margin: 10vw 0 10px 40px;
+  }
+  .card {
+    padding: 2em;
+  }
+  .card.stack {
+    margin: -1.5em 0;
+    padding: 1.5em 2em 2em;
+  }
+  .overlay {
+    margin: 2em;
+    height: calc(100% - 4em - 1px);
+    width: calc(100% - 4em);
+  }
+  h1 {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .centered {
+    padding: 0 20px;
+  }
+  .signup.position {
+    margin: 10vw 0 10px 20px;
+  }
+  .card {
+    padding: 1.5em;
+  }
+  .card.stack {
+    padding: 1.5em 1.5em 1.5em;
+  }
+  .card p {
+    font-size: 1em;
+  }
+  span.item {
+    /*font-size: 1em;*/
+    padding: 0 12px;
+    height: 1.75em;
+    line-height: 1.75em;
   }
 }
