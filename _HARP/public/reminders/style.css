@@ -58,7 +58,7 @@ span.note {
 }
 
 .card.stack {
-  margin: -2em 0;
+  margin: -2em 0 0;
   box-shadow: 0 -4px 0 #fff;
   padding: 2em 3em 3em;
 }
@@ -288,13 +288,14 @@ span.item:hover {
   .signup.position {
     position: relative;
     max-width: 600px;
-    margin: 10vw auto 0;
+    margin: 10vw auto 40px;
     left: auto;
     top: auto;
     -webkit-transition: 0.5s ease-out;
   }
   .signup.position a {
     display: inline-block;
+    margin: 0px auto -6px;
   }
   .centered {
     margin: 0vw auto 16vw;
@@ -305,13 +306,13 @@ span.item:hover {
     padding: 0 40px;
   }
   .signup.position {
-    margin: 10vw 0 10px 40px;
+    margin: 10vw 0 40px 40px;
   }
   .card {
     padding: 2em;
   }
   .card.stack {
-    margin: -1.5em 0;
+    margin: -1.5em 0 0;
     padding: 1.5em 2em 2em;
   }
   .overlay {
@@ -320,7 +321,7 @@ span.item:hover {
     width: calc(100% - 4em);
   }
   h1 {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 @media screen and (max-width: 400px) {
@@ -328,10 +329,24 @@ span.item:hover {
     padding: 0 20px;
   }
   .signup.position {
-    margin: 10vw 0 10px 20px;
+    margin: 10vw 0 20px 20px;
+  }
+  .signup.position a {
+    margin: 0px auto -6px;
+  }
+  h2 {
+    margin: 10px 0 0;
+  }
+  #main {
+    margin: 20px 0 0;
   }
   .card {
     padding: 1.5em;
+  }
+  .overlay {
+    margin: 1.5em;
+    height: calc(100% - 3em - 1px);
+    width: calc(100% - 3em);
   }
   .card.stack {
     padding: 1.5em 1.5em 1.5em;
