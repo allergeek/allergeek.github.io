@@ -183,7 +183,7 @@ span.item:hover {
   left: calc((100% - 600px) / 2 - 80px);
   height: 100px;
   width: 100px;
-  background: url('av.jpg') 63% 6% no-repeat, #fff;
+  background: url('pics/av.jpg') 63% 6% no-repeat, #fff;
   background-size: 270%;
   border-radius: 100px;
   z-index: 1;
